@@ -8,7 +8,7 @@ msgstr ""
 "Language: fr\n"
 "Project-Id-Version: testreza\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-11-06 14:45\n"
+"PO-Revision-Date: 2023-12-12 14:52\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
@@ -975,57 +975,57 @@ msgstr " Attention, votre slippage est élevé (={selectedSlippage}). Votre éch
 #. js-lingui-explicit-id
 #: widget/embedded/src/components/Quote/Quote.tsx:185
 #~ msgid "min required Slippage: {minRequiredSlippage}"
-#~ msgstr ""
+#~ msgstr "min required Slippage: {minRequiredSlippage}"
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/components/QuoteWarningsAndErrors/QuoteWarningsAndErrors.helpers.ts:40
 #~ msgid "minimum required slippage for this route: {minRequiredSlippage}"
-#~ msgstr ""
+#~ msgstr "minimum required slippage for this route: {minRequiredSlippage}"
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/components/QuoteWarningsAndErrors/QuoteWarningsAndErrors.helpers.ts:48
 #~ msgid "Caution, your slippage is high"
-#~ msgstr ""
+#~ msgstr "Caution, your slippage is high"
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/components/QuoteWarningsAndErrors/QuoteWarningsAndErrors.tsx:71
 #~ msgid "Change Settings"
-#~ msgstr ""
+#~ msgstr "Change Settings"
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/components/SwapDetailsModal/SwapDetailsModal.Cancel.tsx:13
 #~ msgid "Transaction Cancel"
-#~ msgstr "Opération annulée"
+#~ msgstr "Transaction Cancel"
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/components/SwapDetailsModal/SwapDetailsModal.Cancel.tsx:14
 #~ msgid "Are you sure you want to Cancel this swap?"
-#~ msgstr "Êtes-vous sûr de vouloir annuler cet échange ?"
+#~ msgstr "Are you sure you want to Cancel this swap?"
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/constants/errors.ts:12
 #~ msgid "You have limited the liquidity sources and this might result in Rango finding no routes. Please consider resetting your liquidity sources"
-#~ msgstr "Vous avez limité les sources de liquidités et cela pourrait entraîner une recherche de Rango sans traces. Veuillez envisager de réinitialiser vos sources de liquidités"
+#~ msgstr "You have limited the liquidity sources and this might result in Rango finding no routes. Please consider resetting your liquidity sources"
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/constants/errors.ts:17
 #~ msgid "No Routes Found"
-#~ msgstr "Aucune route trouvée"
+#~ msgstr "No Routes Found"
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/constants/errors.ts:23
 #~ msgid "Bridge Limit Error: Please increase your amount"
-#~ msgstr "Erreur de limite de pont : veuillez augmenter votre montant"
+#~ msgstr "Bridge Limit Error: Please increase your amount"
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/constants/errors.ts:24
 #~ msgid "Bridge Limit Error: Please decrease your amount"
-#~ msgstr "Erreur de limite de pont : veuillez réduire votre montant"
+#~ msgstr "Bridge Limit Error: Please decrease your amount"
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/constants/errors.ts:32
 #~ msgid "Confirm High price impact"
-#~ msgstr "Confirmer un impact élevé sur les prix"
+#~ msgstr "Confirm High price impact"
 
 #. js-lingui-explicit-id
 #: widget/ui/src/containers/TokenInfo/TokenInfo.tsx:179
@@ -1041,3 +1041,4 @@ msgstr "montant maximum d'actif"
 #: widget/ui/src/containers/TokenInfo/TokenInfo.tsx:181
 msgid "swap to"
 msgstr "swap vers"
+
