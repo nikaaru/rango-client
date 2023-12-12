@@ -46,3 +46,9 @@ jobs:
           REF: ${{ github.ref }}
           BASE_REF: ${{ github.event.pull_request.base.ref }}
           GH_TOKEN: ${{ github.token }}
+
+
+      - name: crowdin action
+        uses: crowdin/github-action@v1
+        run: yarn run i18n:extract && yarn run i18n:push
+          
