@@ -48,12 +48,8 @@ jobs:
           GH_TOKEN: ${{ github.token }}
 
 
-      - name: CrowdIn Action
-        uses: crowdin/github-action@v1
-        with:
-          run: yarn run i18n:extract
+      - name: Lingui Extract Action
+        run: yarn run i18n:extract        
           
-      - name: CrowdIn Action
-        uses: crowdin/github-action@v1
-        with:
-          run: yarn run i18n:push
+      - name: CrowdIn Push Action
+        run: yarn run i18n:push
