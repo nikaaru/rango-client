@@ -51,5 +51,12 @@ jobs:
       - name: Lingui Extract Action
         run: yarn run i18n:extract        
           
-      - name: CrowdIn Push Action
-        run: yarn run i18n:push
+      - name: Crowdin push
+        uses: crowdin/github-action@v1
+        with:
+          upload_sources: true
+          upload_translations: false
+          download_translations: false
+        env:
+          CROWDIN_PROJECT_ID: ${{ secrets.REACT_APP_CROWDIN_PROJECT_ID }}
+          CROWDIN_PERSONAL_TOKEN: ${{ secrets.REACT_APP_CROWDIN_API_KEY }}
