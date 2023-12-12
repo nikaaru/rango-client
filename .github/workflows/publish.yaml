@@ -51,5 +51,9 @@ jobs:
       - name: CrowdIn Action
         uses: crowdin/github-action@v1
         with:
-          run: yarn run i18n:extract && yarn run i18n:push
+          run: yarn run i18n:extract
           
+      - name: CrowdIn Action
+        uses: crowdin/github-action@v1
+        with:
+          run: yarn run i18n:push
