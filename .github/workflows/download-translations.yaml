@@ -1,9 +1,9 @@
-name: Crowdin-translations
+name: download-translations
 on:
   workflow_dispatch:
 
 jobs:
-  crowdin-translations:
+  download-translations:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
