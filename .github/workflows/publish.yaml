@@ -57,7 +57,7 @@ jobs:
           upload_sources: true
           upload_translations: false
           download_translations: false
-          source: /translations/en.po                     
-          translation: /translations/%two_letters_code%.po
+          source: translations/en.po                     
+          translation: translations/%two_letters_code%.po
           project_id: ${{ secrets.REACT_APP_CROWDIN_PROJECT_ID }}  
           token: ${{ secrets.REACT_APP_CROWDIN_API_KEY }}  
