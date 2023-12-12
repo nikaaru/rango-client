@@ -45,11 +45,7 @@ jobs:
         env:
           REF: ${{ github.ref }}
           BASE_REF: ${{ github.event.pull_request.base.ref }}
-          GH_TOKEN: ${{ github.token }}
-
-
-      - name: Lingui Extract Action
-        run: yarn run i18n:extract        
+          GH_TOKEN: ${{ github.token }}  
           
       - name: Crowdin push
         uses: crowdin/github-action@v1
@@ -59,5 +55,5 @@ jobs:
           download_translations: false
           source: translations/en.po                     
           translation: translations/%two_letters_code%.po
-          project_id: ${{ secrets.REACT_APP_CROWDIN_PROJECT_ID }}  
-          token: ${{ secrets.REACT_APP_CROWDIN_API_KEY }}  
+          project_id: ${{ secrets.CROWDIN_PROJECT_ID }}  
+          token: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}  
