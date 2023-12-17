@@ -60,7 +60,7 @@ export function ThemePage() {
         </Typography>
       ),
       onClick: () => setTheme(Mode.AUTO as Theme),
-      start: <AutoThemeIcon color="gray" />,
+      start: <AutoThemeIcon color="red" />,
       end: <Radio value={Mode.AUTO} />,
     },
   ];
