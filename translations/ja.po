@@ -8,7 +8,7 @@ msgstr ""
 "Language: ja\n"
 "Project-Id-Version: nikaru\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-12-17 16:24\n"
+"PO-Revision-Date: 2023-12-17 16:27\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -17,11 +17,6 @@ msgstr ""
 "X-Crowdin-Language: ja\n"
 "X-Crowdin-File: /translations/en.po\n"
 "X-Crowdin-File-ID: 4\n"
-
-#. js-lingui-explicit-id
-#: widget/embedded/src/pages/ThemePage.tsx:71
-msgid "apple"
-msgstr ""
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/components/BlockchainList/BlockchainList.tsx:37
@@ -712,6 +707,11 @@ msgstr "ダーク"
 #: widget/embedded/src/pages/ThemePage.tsx:59
 msgid "Auto"
 msgstr "自動"
+
+#. js-lingui-explicit-id
+#: widget/embedded/src/pages/ThemePage.tsx:71
+msgid "apple"
+msgstr "リンゴ|リンゴ|リンゴ|リンゴ|リンゴ|リンゴ|リンゴ|リンゴ|リンゴ|リンゴ|リンゴ|リンゴ|リンゴ|リンゴ|リンゴ|リンゴ|リンゴ|"
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/pages/WalletsPage.tsx:63

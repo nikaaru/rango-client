@@ -14,11 +14,6 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. js-lingui-explicit-id
-#: widget/embedded/src/pages/ThemePage.tsx:71
-msgid "apple"
-msgstr "apple"
-
-#. js-lingui-explicit-id
 #: widget/embedded/src/components/BlockchainList/BlockchainList.tsx:37
 #: widget/embedded/src/components/TokenList/TokenList.tsx:125
 #: widget/embedded/src/pages/HistoryPage.tsx:95
@@ -707,6 +702,11 @@ msgstr "Dark"
 #: widget/embedded/src/pages/ThemePage.tsx:59
 msgid "Auto"
 msgstr "Auto"
+
+#. js-lingui-explicit-id
+#: widget/embedded/src/pages/ThemePage.tsx:71
+msgid "apple"
+msgstr "apple"
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/pages/WalletsPage.tsx:63
