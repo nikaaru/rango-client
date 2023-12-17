@@ -8,7 +8,7 @@ msgstr ""
 "Language: ja\n"
 "Project-Id-Version: nikaru\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-12-17 15:46\n"
+"PO-Revision-Date: 2023-12-17 16:24\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -17,6 +17,11 @@ msgstr ""
 "X-Crowdin-Language: ja\n"
 "X-Crowdin-File: /translations/en.po\n"
 "X-Crowdin-File-ID: 4\n"
+
+#. js-lingui-explicit-id
+#: widget/embedded/src/pages/ThemePage.tsx:71
+msgid "apple"
+msgstr ""
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/components/BlockchainList/BlockchainList.tsx:37
@@ -674,7 +679,6 @@ msgstr "有効な取引所"
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/pages/SettingsPage.tsx:135
-#: widget/embedded/src/pages/ThemePage.tsx:71
 #: widget/embedded/src/pages/ThemePage.tsx:80
 msgid "Theme"
 msgstr "テーマ"
