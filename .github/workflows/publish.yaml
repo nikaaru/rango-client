@@ -37,26 +37,12 @@ jobs:
           path: '**/node_modules'
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
 
-      # - name: Install packages
-      #   run: yarn install --frozen-lockfile
+      - name: Install packages
+        run: yarn install --frozen-lockfile      
 
-      # - name: Build, Version & Publish packages
-      #   run: yarn run publish
-      #   env:
-      #     REF: ${{ github.ref }}
-      #     BASE_REF: ${{ github.event.pull_request.base.ref }}
-      #     GH_TOKEN: ${{ github.token }}  
-
-      - name: Extract new source
-        run: yarn run i18n:extract
-          
-      - name: Crowdin push
-        uses: crowdin/github-action@v1
-        with:
-          upload_sources: true
-          upload_translations: false
-          download_translations: false
-          source: translations/en.po                     
-          translation: translations/%two_letters_code%.po
-          project_id: ${{ secrets.CROWDIN_PROJECT_ID }}  
-          token: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}  
+      - name: Build, Version & Publish packages
+        run: yarn run publish
+        env:
+          REF: ${{ github.ref }}
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+          GH_TOKEN: ${{ github.token }}  
