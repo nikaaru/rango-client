@@ -14,9 +14,9 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. js-lingui-explicit-id
-#: widget/embedded/src/pages/LanguagePage.tsx:37
-msgid "Hello World"
-msgstr "Hello World"
+#: widget/embedded/src/pages/LanguagePage.tsx:44
+msgid "test language"
+msgstr "test language"
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/components/BlockchainList/BlockchainList.tsx:37
@@ -628,9 +628,9 @@ msgid "To"
 msgstr "To"
 
 #. js-lingui-explicit-id
-#: widget/embedded/src/pages/LanguagePage.tsx:44
-msgid "language"
-msgstr "language"
+#: widget/embedded/src/pages/LanguagePage.tsx:37
+msgid "Hello World"
+msgstr "Hello World"
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/pages/LiquiditySourcePage.tsx:118
