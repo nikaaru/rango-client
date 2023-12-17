@@ -45,6 +45,7 @@ jobs:
           
       - name: Crowdin push & pull translations
         uses: crowdin/github-action@v1
+        id: crowdin-download
         with:
           upload_sources: true
           upload_translations: false
