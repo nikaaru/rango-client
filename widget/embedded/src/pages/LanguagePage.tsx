@@ -41,7 +41,7 @@ export function LanguagePage() {
           <List
             type={
               <ListItemButton
-                title={i18n.t('language')}
+                title={i18n.t('test language')}
                 id="_"
                 onClick={() => console.log()}
               />
