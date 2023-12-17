@@ -68,7 +68,7 @@ export function ThemePage() {
   return (
     <Layout
       header={{
-        title: i18n.t('Theme'),
+        title: i18n.t('apple'),
       }}>
       <SettingsContainer>
         <RadioRoot
