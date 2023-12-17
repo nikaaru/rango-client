@@ -8,7 +8,7 @@ msgstr ""
 "Language: fr\n"
 "Project-Id-Version: nikaru\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-12-17 14:40\n"
+"PO-Revision-Date: 2023-12-17 15:20\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/pages/LanguagePage.tsx:37
-msgid "Hello Language"
+msgid "Hello World"
 msgstr ""
 
 #. js-lingui-explicit-id
