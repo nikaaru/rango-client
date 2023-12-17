@@ -62,6 +62,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Approve the PR
+        if: steps.crowdin-download.outputs.pull_request_url
+        run: gh pr --repo $GITHUB_REPOSITORY review ${{ steps.crowdin-download.outputs.pull_request_url }} --approve
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}      
 
       - name: Enable auto-merge for the PR
         if: steps.crowdin-download.outputs.pull_request_url
@@ -69,8 +74,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
-      - name: Approve the PR
-        if: steps.crowdin-download.outputs.pull_request_url
-        run: gh pr --repo $GITHUB_REPOSITORY review ${{ steps.crowdin-download.outputs.pull_request_url }} --approve
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}          
+    
