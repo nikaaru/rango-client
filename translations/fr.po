@@ -8,7 +8,7 @@ msgstr ""
 "Language: fr\n"
 "Project-Id-Version: nikaru\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-12-17 16:24\n"
+"PO-Revision-Date: 2023-12-17 16:27\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
@@ -17,11 +17,6 @@ msgstr ""
 "X-Crowdin-Language: fr\n"
 "X-Crowdin-File: /translations/en.po\n"
 "X-Crowdin-File-ID: 4\n"
-
-#. js-lingui-explicit-id
-#: widget/embedded/src/pages/ThemePage.tsx:71
-msgid "apple"
-msgstr ""
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/components/BlockchainList/BlockchainList.tsx:37
@@ -712,6 +707,11 @@ msgstr "Sombre"
 #: widget/embedded/src/pages/ThemePage.tsx:59
 msgid "Auto"
 msgstr "Automatique"
+
+#. js-lingui-explicit-id
+#: widget/embedded/src/pages/ThemePage.tsx:71
+msgid "apple"
+msgstr "pomme"
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/pages/WalletsPage.tsx:63
