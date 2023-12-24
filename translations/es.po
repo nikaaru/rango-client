@@ -6,17 +6,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: es\n"
-"Project-Id-Version: testreza\n"
+"Project-Id-Version: nikaru\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-11-06 14:45\n"
+"PO-Revision-Date: 2023-12-24 12:00\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: testreza\n"
-"X-Crowdin-Project-ID: 625660\n"
+"X-Crowdin-Project: nikaru\n"
+"X-Crowdin-Project-ID: 633762\n"
 "X-Crowdin-Language: es-ES\n"
 "X-Crowdin-File: /translations/en.po\n"
-"X-Crowdin-File-ID: 20\n"
+"X-Crowdin-File-ID: 4\n"
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/components/BlockchainList/BlockchainList.tsx:37
@@ -192,7 +192,7 @@ msgstr "No tiene ninguna notificación"
 #. js-lingui-explicit-id
 #: widget/embedded/src/components/Quote/Quote.tsx:198
 msgid "Slippage Error:"
-msgstr ""
+msgstr "Error de deslizamiento:"
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/components/Quote/Quote.tsx:222
@@ -202,7 +202,7 @@ msgstr "Tu: {amount} {symbol}"
 #. js-lingui-explicit-id
 #: widget/embedded/src/components/Quote/Quote.tsx:243
 msgid "Minimum required slippage is {minRequiredSlippage}"
-msgstr ""
+msgstr "El deslizamiento mínimo requerido es {minRequiredSlippage}"
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/components/QuoteWarningsAndErrors/HighValueLossWarningModal.tsx:41
@@ -239,12 +239,12 @@ msgstr "Te recomendamos que aumentes el deslizamiento a al menos {minRequiredSli
 #. js-lingui-explicit-id
 #: widget/embedded/src/components/QuoteWarningsAndErrors/QuoteWarningsAndErrors.helpers.ts:50
 msgid "Caution, your slippage is high."
-msgstr ""
+msgstr "Precaución, tu deslizamiento es alto."
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/components/QuoteWarningsAndErrors/QuoteWarningsAndErrors.helpers.ts:62
 msgid "You need to increase slippage to at least {minRequiredSlippage} for this route."
-msgstr ""
+msgstr "Necesitas aumentar el deslizamiento a al menos {minRequiredSlippage} para esta ruta."
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/components/QuoteWarningsAndErrors/QuoteWarningsAndErrors.tsx:71
@@ -270,7 +270,7 @@ msgstr "Deslizamiento bajo"
 #. js-lingui-explicit-id
 #: widget/embedded/src/components/QuoteWarningsAndErrors/SlippageWariningModal.tsx:53
 msgid " Caution, your slippage is high (={userSlippage}). Your trade may be front run."
-msgstr ""
+msgstr " Precaución, su deslizamiento es alto (={userSlippage}). Su operación puede ser inicial."
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/components/QuoteWarningsAndErrors/SlippageWariningModal.tsx:72
@@ -395,12 +395,12 @@ msgstr "Ver detalles"
 #. js-lingui-explicit-id
 #: widget/embedded/src/components/SwapDetailsModal/SwapDetailsModal.Cancel.tsx:13
 msgid "Cancel Swap"
-msgstr ""
+msgstr "Cancelar intercambio"
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/components/SwapDetailsModal/SwapDetailsModal.Cancel.tsx:14
 msgid "Are you sure you want to cancel this swap?"
-msgstr ""
+msgstr "¿Está seguro de que desea cancelar este intercambio?"
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/components/SwapDetailsModal/SwapDetailsModal.Cancel.tsx:23
@@ -490,12 +490,12 @@ msgstr "Por favor, reinicie sus fuentes de liquidez."
 #. js-lingui-explicit-id
 #: widget/embedded/src/constants/errors.ts:12
 msgid "You have limited the liquidity sources and this might result in Rango finding no routes. Please consider resetting your liquidity sources."
-msgstr ""
+msgstr "Usted ha limitado las fuentes de liquidez y esto puede resultar en que Rango no encuentre rutas. Por favor considere restablecer sus fuentes de liquidez."
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/constants/errors.ts:17
 msgid "No Routes Found."
-msgstr ""
+msgstr "No se encontraron Rutas."
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/constants/errors.ts:18
@@ -505,12 +505,12 @@ msgstr "Razones por las que Rango no pudo encontrar una ruta: baja liquidez en e
 #. js-lingui-explicit-id
 #: widget/embedded/src/constants/errors.ts:23
 msgid "Bridge Limit Error: Please increase your amount."
-msgstr ""
+msgstr "Error en el límite del puente. Por favor, aumente su cantidad."
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/constants/errors.ts:26
 msgid "Bridge Limit Error: Please decrease your amount."
-msgstr ""
+msgstr "Error en el límite del puente. Por favor disminuya su cantidad."
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/constants/errors.ts:31
@@ -530,7 +530,7 @@ msgstr "El impacto de los precios es significativamente más alto que la cantida
 #. js-lingui-explicit-id
 #: widget/embedded/src/constants/errors.ts:36
 msgid "Confirm high price impact"
-msgstr ""
+msgstr "Confirmar alto impacto de precio"
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/constants/errors.ts:39
@@ -631,12 +631,12 @@ msgstr "A"
 #. js-lingui-explicit-id
 #: widget/embedded/src/pages/LanguagePage.tsx:37
 msgid "Language"
-msgstr "Idioma"
+msgstr ""
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/pages/LanguagePage.tsx:44
 msgid "language"
-msgstr "idioma"
+msgstr ""
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/pages/LiquiditySourcePage.tsx:118
@@ -865,7 +865,7 @@ msgstr "Intercambios"
 #. js-lingui-explicit-id
 #: widget/ui/src/components/SelectableCategoryList/SelectableCategoryList.tsx:63
 msgid "{blockchainCategory}"
-msgstr ""
+msgstr "{blockchainCategory}"
 
 #. js-lingui-explicit-id
 #: widget/ui/src/components/StepDetails/StepDetails.tsx:58
@@ -969,76 +969,6 @@ msgid " Caution, your slippage is high (={selectedSlippage}). Your trade may be 
 msgstr " Precaución, su deslizamiento es alto (={selectedSlippage}). Su operación puede ser inicial."
 
 #. js-lingui-explicit-id
-#: widget/embedded/src/pages/SettingsPage.tsx:147
-#~ msgid "Infinite Approval"
-#~ msgstr "Aprobación infinita"
-
-#. js-lingui-explicit-id
-#: widget/embedded/src/pages/SettingsPage.tsx:156
-#~ msgid "Enabling the 'Infinite Approval' mode grants unrestricted access to smart contracts of DEXes/Bridges, allowing them to utilize the approved token amount without limitations."
-#~ msgstr "Habilitar el modo 'Aprobación infinita' permite el acceso sin restricciones a contratos inteligentes de DEXes/Bridges, permitiéndoles utilizar la cantidad de fichas aprobadas sin limitaciones."
-
-#. js-lingui-explicit-id
-#: widget/embedded/src/pages/SettingsPage.tsx:183
-#~ msgid "Setting"
-#~ msgstr "Ajustes"
-
-#. js-lingui-explicit-id
-#: widget/embedded/src/components/Quote/Quote.tsx:185
-#~ msgid "min required Slippage: {minRequiredSlippage}"
-#~ msgstr ""
-
-#. js-lingui-explicit-id
-#: widget/embedded/src/components/QuoteWarningsAndErrors/QuoteWarningsAndErrors.helpers.ts:40
-#~ msgid "minimum required slippage for this route: {minRequiredSlippage}"
-#~ msgstr ""
-
-#. js-lingui-explicit-id
-#: widget/embedded/src/components/QuoteWarningsAndErrors/QuoteWarningsAndErrors.helpers.ts:48
-#~ msgid "Caution, your slippage is high"
-#~ msgstr ""
-
-#. js-lingui-explicit-id
-#: widget/embedded/src/components/QuoteWarningsAndErrors/QuoteWarningsAndErrors.tsx:71
-#~ msgid "Change Settings"
-#~ msgstr ""
-
-#. js-lingui-explicit-id
-#: widget/embedded/src/components/SwapDetailsModal/SwapDetailsModal.Cancel.tsx:13
-#~ msgid "Transaction Cancel"
-#~ msgstr "Cancelar transacción"
-
-#. js-lingui-explicit-id
-#: widget/embedded/src/components/SwapDetailsModal/SwapDetailsModal.Cancel.tsx:14
-#~ msgid "Are you sure you want to Cancel this swap?"
-#~ msgstr "¿Está seguro de que desea cancelar este intercambio?"
-
-#. js-lingui-explicit-id
-#: widget/embedded/src/constants/errors.ts:12
-#~ msgid "You have limited the liquidity sources and this might result in Rango finding no routes. Please consider resetting your liquidity sources"
-#~ msgstr "Usted ha limitado las fuentes de liquidez y esto puede resultar en que Rango no encuentre rutas. Por favor considere restablecer sus fuentes de liquidez"
-
-#. js-lingui-explicit-id
-#: widget/embedded/src/constants/errors.ts:17
-#~ msgid "No Routes Found"
-#~ msgstr "No hay Rutas Encontradas"
-
-#. js-lingui-explicit-id
-#: widget/embedded/src/constants/errors.ts:23
-#~ msgid "Bridge Limit Error: Please increase your amount"
-#~ msgstr "Error de límite del puente: por favor aumente su cantidad"
-
-#. js-lingui-explicit-id
-#: widget/embedded/src/constants/errors.ts:24
-#~ msgid "Bridge Limit Error: Please decrease your amount"
-#~ msgstr "Error de límite del puente: por favor disminuya su cantidad"
-
-#. js-lingui-explicit-id
-#: widget/embedded/src/constants/errors.ts:32
-#~ msgid "Confirm High price impact"
-#~ msgstr "Confirmar el alto impacto del precio"
-
-#. js-lingui-explicit-id
 #: widget/ui/src/containers/TokenInfo/TokenInfo.tsx:179
 msgid "swap from"
 msgstr "intercambiar desde"
@@ -1052,3 +982,4 @@ msgstr "cantidad máxima de activos"
 #: widget/ui/src/containers/TokenInfo/TokenInfo.tsx:181
 msgid "swap to"
 msgstr "cambiar a"
+
