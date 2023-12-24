@@ -1,16 +1,19 @@
-name: crowdin-action
+name: crowdin
 
 on:
-  push:
-    branches:
-      - main
-      - next
-
-  workflow_dispatch:
+  workflow_call:
     inputs:
       branch:
         description: 'to trigger the workflow manually'
         required: false
+        type: string
+    secrets:
+      CROWDIN_PROJECT_ID:
+        description: 'You need a crowdin project id to be set.'
+        required: true
+      CROWDIN_PERSONAL_TOKEN:
+        description: 'You need a crowdin token to be set.'
+        required: true
 
 jobs:
   crowdin-action:
@@ -18,27 +21,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          fetch-depth: 0
-
-      - name: Setup NodeJS
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-          cache: 'yarn'
-
-      - name: Git
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-
-      - name: Restore cache
-        uses: actions/cache@v3
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
-
-      - name: Install packages
-        run: yarn install --frozen-lockfile      
+          fetch-depth: 0      
+          
+      - name: Prepare
+        uses: ./.github/actions/prepare
 
       - name: Extract new source
         run: yarn run i18n:extract
