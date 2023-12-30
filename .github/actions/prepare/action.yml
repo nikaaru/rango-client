@@ -1,13 +1,13 @@
-name: Setup Enviroments
-description: "Setting up Git, NodeJS and authenticate."
+name: Setup Environments
+description: 'Setting up Git, NodeJS and authenticate.'
 inputs:
   NPM_TOKEN:
     description: 'Put your NPM_TOKEN'
     required: false
 
 runs:
-  using: "composite"
-  steps: 
+  using: 'composite'
+  steps:
     - name: Setup NodeJS
       uses: actions/setup-node@v3
       with:
@@ -18,8 +18,7 @@ runs:
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-      shell: "bash"
-      
+      shell: 'bash'
 
     - name: Auth
       if: ${{ inputs.NPM_TOKEN != 0 }}
@@ -28,8 +27,7 @@ runs:
         npm whoami
       env:
         NPM_TOKEN: ${{ inputs.NPM_TOKEN }}
-      shell: "bash"
-      
+      shell: 'bash'
 
     - name: Restore cache
       uses: actions/cache@v3
@@ -39,4 +37,4 @@ runs:
 
     - name: Install packages
       run: yarn install --frozen-lockfile
-      shell: "bash"
+      shell: 'bash'
