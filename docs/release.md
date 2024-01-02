@@ -31,10 +31,6 @@ Release should be triggered manually and then it will automatically published. Y
 
 `yarn run release-prod`
 
-After release (Green pipleline), make sure you will merge `main` into `next` as well. 
-
-`yarn run post-release-prod`
-
 ### Deploy flow
 
 You should manually trigger the `deploy` workflow.

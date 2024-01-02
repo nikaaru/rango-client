@@ -156,7 +156,11 @@ export async function publishCommitAndTags(pkgs) {
   const message = subject + list;
   let body = `Affected packages: ${tags.join(',')}`;
 
-  // TODO: write a comment on this.
+  /* 
+    When we are pushing a publish commit into main, it triggers a redundant workflow run,
+    To avoid this, by adding a [skip ci] the workflow run will be skipped.
+    We don't need it on `next` since the next workflow is running on `pullrequest.closed` event.
+  */
   if (channel === 'prod') {
     body += '\n[skip ci]';
   }
@@ -246,39 +250,6 @@ export async function merge(branch) {
     .catch((error) => {
       throw new GitError(`git merge failed. \n ${error.stderr}`);
     });
-
-  return output;
-}
-
-export async function createAndSwitch(branch) {
-  const output = await execa('git', ['checkout', '-b', branch])
-    .then(({ stdout }) => stdout)
-    .catch((error) => {
-      throw new GitError(`git checkout -b failed. \n ${error.stderr}`);
-    });
-
-  return output;
-}
-
-export async function del(branch) {
-  const remote = 'origin';
-  const deleteRemoteBranch = execa('git', ['push', '-d', remote, branch])
-    .then(({ stdout }) => stdout)
-    .catch((error) => {
-      throw new GitError(`git push -d failed. \n ${error.stderr}`);
-    });
-  const deleteLocalBranch = execa('git', ['branch', '-d', branch])
-    .then(({ stdout }) => stdout)
-    .catch((error) => {
-      throw new GitError(`git branch failed. \n ${error.stderr}`);
-    });
-
-  const output = await Promise.allSettled([
-    deleteRemoteBranch,
-    deleteLocalBranch,
-  ]).then((values) =>
-    values.map((item) => `[${item.status}]:\n${item.value}`).join('\n\n')
-  );
 
   return output;
 }
