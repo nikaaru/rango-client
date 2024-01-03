@@ -4,7 +4,6 @@ import { readFileSync } from 'fs';
 import { join } from 'path';
 import { execa } from 'execa';
 import process from 'node:process';
-import { NPM_ORG_NAME } from './constants.mjs';
 
 const root = join(printDirname(), '..', '..');
 
