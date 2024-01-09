@@ -92,13 +92,3 @@ export function getEnvWithFallback(name) {
 export function generateTagName(pkg) {
   return `${packageNameWithoutScope(pkg.name)}@${pkg.version}`;
 }
-
-/**
- * Opposite of `generateTagName`
- *
- * @param {string} pkgNameWithoutScope
- * @returns
- */
-export function tagNameToPkgName(pkgNameWithoutScope) {
-  return `${NPM_ORG_NAME}/${pkgNameWithoutScope}`;
-}
