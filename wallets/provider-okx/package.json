@@ -1,6 +1,6 @@
 {
   "name": "@nikaru-dev/provider-okx",
-  "version": "0.25.1-next.1",
+  "version": "0.25.1-next.2",
   "license": "MIT",
   "type": "module",
   "source": "./src/index.ts",
@@ -21,9 +21,9 @@
     "lint": "eslint \"**/*.{ts,tsx}\" --ignore-path ../../.eslintignore"
   },
   "dependencies": {
-    "@nikaru-dev/signer-evm": "^0.25.0",
-    "@nikaru-dev/signer-solana": "^0.25.0",
-    "@nikaru-dev/wallets-shared": "^0.25.1-next.1",
+    "@nikaru-dev/signer-evm": "^0.25.1-next.0",
+    "@nikaru-dev/signer-solana": "^0.25.1-next.0",
+    "@nikaru-dev/wallets-shared": "^0.25.1-next.2",
     "rango-types": "^0.1.57"
   },
   "publishConfig": {
