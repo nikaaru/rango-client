@@ -1,5 +1,5 @@
 import { i18n } from '@lingui/core';
-import { Divider, Skeleton, Typography } from '@rango-dev/ui';
+import { Divider, Skeleton, Typography } from '@nikaru-dev/ui';
 import React from 'react';
 
 import { QuoteSummarySkeleton, StepSkeleton } from '../QuoteSkeleton';
@@ -8,7 +8,7 @@ import {
   Container,
   extraInfoStyles,
   StepContainer,
-  StepSeparator,
+  StepSeparator
 } from './LoadingSwapDetails.styles';
 
 export function LoadingSwapDetails() {

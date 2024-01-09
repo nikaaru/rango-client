@@ -1,8 +1,8 @@
-import type { WalletType } from '@rango-dev/wallets-shared';
+import type { WalletType } from '@nikaru-dev/wallets-shared';
 import type { PropsWithChildren } from 'react';
 
-import { useQueueManager } from '@rango-dev/queue-manager-rango-preset';
-import { useWallets } from '@rango-dev/wallets-react';
+import { useQueueManager } from '@nikaru-dev/queue-manager-rango-preset';
+import { useWallets } from '@nikaru-dev/wallets-react';
 import { isEvmBlockchain } from 'rango-types';
 import React, { Fragment } from 'react';
 import { MemoryRouter, useInRouterContext } from 'react-router';
@@ -34,7 +34,7 @@ export function AppRouter({
     clearDisconnectedWallet: props.clearDisconnectedWallet,
     disconnectedWallet: props.disconnectedWallet,
     evmChains,
-    canSwitchNetworkTo,
+    canSwitchNetworkTo
   });
 
   return (

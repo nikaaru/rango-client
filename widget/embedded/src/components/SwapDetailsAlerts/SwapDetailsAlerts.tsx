@@ -1,7 +1,7 @@
 import type { SwapAlertsProps } from './SwapDetailsAlerts.types';
 
 import { i18n } from '@lingui/core';
-import { Alert, IconButton, LinkIcon } from '@rango-dev/ui';
+import { Alert, IconButton, LinkIcon } from '@nikaru-dev/ui';
 import React, { Fragment } from 'react';
 
 import { isNetworkStatusInWarningState } from '../../utils/swap';
@@ -17,7 +17,7 @@ export function SwapDetailsAlerts(props: SwapAlertsProps) {
     setNetworkModal,
     message,
     step,
-    hasAlreadyProceededToSign,
+    hasAlreadyProceededToSign
   } = props;
 
   const hasWarning = isNetworkStatusInWarningState(step);

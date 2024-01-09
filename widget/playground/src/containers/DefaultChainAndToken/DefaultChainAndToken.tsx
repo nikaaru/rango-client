@@ -1,7 +1,7 @@
 import type { Type } from '../../types';
 import type { tokensConfigType } from '../../utils/configs';
 
-import { ChainsIcon, Divider, Tooltip } from '@rango-dev/ui';
+import { ChainsIcon, Divider, Tooltip } from '@nikaru-dev/ui';
 import React, { useState } from 'react';
 
 import { ItemPicker } from '../../components/ItemPicker';
@@ -18,10 +18,10 @@ export function DefaultChainAndToken({ type }: { type: Type }) {
   const {
     config: { from, to },
     onChangeBlockChain,
-    onChangeToken,
+    onChangeToken
   } = useConfigStore();
   const {
-    meta: { blockchains, tokens },
+    meta: { blockchains, tokens }
   } = useMetaStore();
 
   const selectedType = type === 'Source' ? from : to;
@@ -57,7 +57,7 @@ export function DefaultChainAndToken({ type }: { type: Type }) {
           {
             blockchain: selectedToken.blockchain,
             address: selectedToken.address,
-            symbol: selectedToken.symbol,
+            symbol: selectedToken.symbol
           },
           type
         );
@@ -104,7 +104,7 @@ export function DefaultChainAndToken({ type }: { type: Type }) {
             list={filteredBlockchains.map((chain) => ({
               name: chain.displayName,
               image: chain.logo,
-              value: chain.name,
+              value: chain.name
             }))}
             title="Default Blockchain"
             defaultValue={selectedType?.blockchain}
@@ -120,7 +120,7 @@ export function DefaultChainAndToken({ type }: { type: Type }) {
             list={filteredTokens.map((token) => ({
               name: token.symbol,
               image: token.image,
-              value: tokenToString(token),
+              value: tokenToString(token)
             }))}
             title="Default Token"
             defaultValue={

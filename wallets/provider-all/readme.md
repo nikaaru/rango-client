@@ -1,1 +1,1 @@
-# @rango-dev/provider-all
+# @nikaru-dev/provider-all

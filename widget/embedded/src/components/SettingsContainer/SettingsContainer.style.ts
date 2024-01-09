@@ -1,4 +1,4 @@
-import { styled } from '@rango-dev/ui';
+import { styled } from '@nikaru-dev/ui';
 
 export const SettingsContainer = styled('div', {
   height: '100%',

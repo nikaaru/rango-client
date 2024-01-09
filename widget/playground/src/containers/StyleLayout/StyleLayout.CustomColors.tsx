@@ -1,6 +1,6 @@
 import type { CustomColorsTypes } from './StyleLayout.types';
 import type { Mode } from '../../store/config';
-import type { WidgetColorsKeys } from '@rango-dev/widget-embedded';
+import type { WidgetColorsKeys } from '@nikaru-dev/widget-embedded';
 
 import {
   ChevronDownIcon,
@@ -8,8 +8,8 @@ import {
   Collapsible,
   CustomColorsIcon,
   Divider,
-  Typography,
-} from '@rango-dev/ui';
+  Typography
+} from '@nikaru-dev/ui';
 import React, { useEffect, useState } from 'react';
 
 import { ColorPicker } from '../../components/ColorPicker';
@@ -24,7 +24,7 @@ import {
   CustomColorCollapsible,
   CustomColors,
   FieldTitle,
-  Row,
+  Row
 } from './StyleLayout.styles';
 
 const Colors = (props: { mainColor?: string; secondColor?: string }) => {
@@ -36,7 +36,7 @@ const Colors = (props: { mainColor?: string; secondColor?: string }) => {
           position="absolute"
           style={{
             backgroundColor: props.secondColor,
-            right: -10,
+            right: -10
           }}
         />
       )}
@@ -88,7 +88,7 @@ export function CustomColorsSection(props: CustomColorsTypes) {
       mode,
       color,
       singleTheme: !isAutoTab,
-      resetColors,
+      resetColors
     });
   };
 
@@ -113,7 +113,7 @@ export function CustomColorsSection(props: CustomColorsTypes) {
       onOpenChange={() =>
         toggleCustomColors((prev) => ({
           tab,
-          value: tab === prev.tab ? !prev.value : true,
+          value: tab === prev.tab ? !prev.value : true
         }))
       }
       trigger={

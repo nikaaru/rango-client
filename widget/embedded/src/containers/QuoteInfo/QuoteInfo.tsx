@@ -1,6 +1,6 @@
 import type { PropTypes } from './QuoteInfo.types';
 
-import { Divider } from '@rango-dev/ui';
+import { Divider } from '@nikaru-dev/ui';
 import React from 'react';
 
 import { Quote } from '../../components/Quote';
@@ -12,7 +12,7 @@ import { QuoteErrorType } from '../../types';
 import {
   PositionTopAlerts,
   QuoteContainer,
-  SkeletonContainer,
+  SkeletonContainer
 } from './QuoteInfo.styles';
 
 export function QuoteInfo(props: PropTypes) {
@@ -29,7 +29,7 @@ export function QuoteInfo(props: PropTypes) {
     onConfirmWarningModal,
     onChangeSettings,
     expanded = false,
-    alertPosition = 'bottom',
+    alertPosition = 'bottom'
   } = props;
   const { inputAmount, inputUsdValue, outputUsdValue, outputAmount } =
     useQuoteStore();
@@ -78,11 +78,11 @@ export function QuoteInfo(props: PropTypes) {
             recommended={true}
             input={{
               value: inputAmount,
-              usdValue: inputUsdValue?.toString() ?? '',
+              usdValue: inputUsdValue?.toString() ?? ''
             }}
             output={{
               value: outputAmount?.toString() ?? '',
-              usdValue: outputUsdValue?.toString() ?? '',
+              usdValue: outputUsdValue?.toString() ?? ''
             }}
           />
         </QuoteContainer>

@@ -6,8 +6,8 @@ import {
   Popover,
   SettingsIcon,
   Tooltip,
-  TransactionIcon,
-} from '@rango-dev/ui';
+  TransactionIcon
+} from '@nikaru-dev/ui';
 import React from 'react';
 
 import { useAppStore } from '../../store/AppStore';
@@ -23,7 +23,7 @@ export function HomeButtons(props: HomeButtonsPropTypes) {
   const { layoutRef, onClickRefresh, onClickHistory, onClickSettings } = props;
 
   const {
-    config: { features },
+    config: { features }
   } = useAppStore();
 
   const isNotificationsHidden = isFeatureHidden('notification', features);

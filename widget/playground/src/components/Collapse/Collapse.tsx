@@ -1,13 +1,13 @@
 import type { PropTypes } from './Collapse.types';
 import type { PropsWithChildren } from 'react';
 
-import { ChevronDownIcon, ChevronUpIcon, Typography } from '@rango-dev/ui';
+import { ChevronDownIcon, ChevronUpIcon, Typography } from '@nikaru-dev/ui';
 import React from 'react';
 
 import {
   CollapseContainer,
   CollapseContent,
-  CollapseHeader,
+  CollapseHeader
 } from './Collapse.styles';
 
 export function Collapse(props: PropsWithChildren<PropTypes>) {

@@ -1,4 +1,4 @@
-import { DefaultStarknetSigner } from '@rango-dev/signer-starknet';
+import { DefaultStarknetSigner } from '@nikaru-dev/signer-starknet';
 import {
   DefaultSignerFactory,
   SignerFactory,

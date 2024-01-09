@@ -1,1 +1,1 @@
-# @rango-dev/signer-solana
+# @nikaru-dev/signer-solana

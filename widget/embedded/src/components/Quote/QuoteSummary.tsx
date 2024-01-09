@@ -1,7 +1,7 @@
-import type { PriceImpactWarningLevel, Step } from '@rango-dev/ui';
+import type { PriceImpactWarningLevel, Step } from '@nikaru-dev/ui';
 
 import { i18n } from '@lingui/core';
-import { TokenAmount } from '@rango-dev/ui';
+import { TokenAmount } from '@nikaru-dev/ui';
 import React from 'react';
 
 import { getContainer } from '../../utils/common';
@@ -29,11 +29,11 @@ export function QuoteSummary(props: PropTypes) {
           value: from.price.value,
           usdValue: from.price.usdValue,
           realValue: from.price.realValue,
-          realUsdValue: from.price.realUsdValue,
+          realUsdValue: from.price.realUsdValue
         }}
         token={{
           displayName: from.token.displayName,
-          image: from.token.image,
+          image: from.token.image
         }}
         chain={{ image: from.chain.image }}
       />
@@ -47,11 +47,11 @@ export function QuoteSummary(props: PropTypes) {
           value: to.price.value,
           usdValue: to.price.usdValue,
           realValue: to.price.realValue,
-          realUsdValue: to.price.realUsdValue,
+          realUsdValue: to.price.realUsdValue
         }}
         token={{
           displayName: to.token.displayName,
-          image: to.token.image,
+          image: to.token.image
         }}
         chain={{ image: to.chain.image }}
         percentageChange={percentageChange}

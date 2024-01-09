@@ -1,6 +1,6 @@
 import type { WalletPropTypes } from './Wallet.types';
 
-import { detectInstallLink } from '@rango-dev/wallets-shared';
+import { detectInstallLink } from '@nikaru-dev/wallets-shared';
 import React from 'react';
 
 import { Image } from '../common';
@@ -15,7 +15,7 @@ import {
   Text,
   Title,
   WalletButton,
-  WalletImageContainer,
+  WalletImageContainer
 } from './Wallet.styles';
 import { WalletState } from './Wallet.types';
 

@@ -1,4 +1,4 @@
-import { ColorsIcon, Divider, Typography } from '@rango-dev/ui';
+import { ColorsIcon, Divider, Typography } from '@nikaru-dev/ui';
 import React, { useState } from 'react';
 
 import { TABS } from '../../constants';
@@ -10,7 +10,7 @@ import {
   FieldTitle,
   GeneralContainer,
   Tab,
-  Tabs,
+  Tabs
 } from './StyleLayout.styles';
 
 const TAB_WIDTH = 80;
@@ -40,7 +40,7 @@ export function Themes() {
           ))}
           <BackdropTab
             css={{
-              transform: `translateX(${TAB_WIDTH * currentTabIndex}px)`,
+              transform: `translateX(${TAB_WIDTH * currentTabIndex}px)`
             }}
           />
         </Tabs>

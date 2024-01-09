@@ -1,1 +1,1 @@
-# @rango-dev/signer-terra
+# @nikaru-dev/signer-terra

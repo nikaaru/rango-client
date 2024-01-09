@@ -1,5 +1,5 @@
-import type { WalletType } from '@rango-dev/wallets-shared';
-import type { WidgetConfig } from '@rango-dev/widget-embedded';
+import type { WalletType } from '@nikaru-dev/wallets-shared';
+import type { WidgetConfig } from '@nikaru-dev/widget-embedded';
 
 import {
   Button,
@@ -7,10 +7,10 @@ import {
   Divider,
   Switch,
   Typography,
-  WalletIcon,
-} from '@rango-dev/ui';
-import { WalletTypes } from '@rango-dev/wallets-shared';
-import { useWallets } from '@rango-dev/widget-embedded';
+  WalletIcon
+} from '@nikaru-dev/ui';
+import { WalletTypes } from '@nikaru-dev/wallets-shared';
+import { useWallets } from '@nikaru-dev/widget-embedded';
 import React from 'react';
 
 import { MultiSelect } from '../../components/MultiSelect';
@@ -23,7 +23,7 @@ import {
   connectButtonStyles,
   ExternalSection,
   Footer,
-  SwitchField,
+  SwitchField
 } from './FunctionalLayout.styles';
 
 export function WalletSection() {
@@ -31,7 +31,7 @@ export function WalletSection() {
   const {
     onChangeWallets,
     onChangeBooleansConfig,
-    config: { externalWallets, wallets, multiWallets },
+    config: { externalWallets, wallets, multiWallets }
   } = useConfigStore();
 
   const allWalletList = Object.values(WalletTypes)
@@ -42,7 +42,7 @@ export function WalletSection() {
         title,
         logo,
         name: wallet,
-        supportedNetworks: getCategoryNetworks(supportedChains),
+        supportedNetworks: getCategoryNetworks(supportedChains)
       };
     });
 
@@ -98,7 +98,7 @@ export function WalletSection() {
         label={
           <Typography
             style={{
-              fontWeight: 500,
+              fontWeight: 500
             }}
             size="small"
             variant="body"

@@ -1,6 +1,6 @@
 import type {
   LiquiditySourceType,
-  UniqueSwappersGroupType,
+  UniqueSwappersGroupType
 } from '../utils/settings';
 
 import { i18n } from '@lingui/core';
@@ -10,8 +10,8 @@ import {
   Image,
   ListItemButton,
   NotFound,
-  Typography,
-} from '@rango-dev/ui';
+  Typography
+} from '@nikaru-dev/ui';
 import React, { useState } from 'react';
 
 import { Layout } from '../components/Layout';
@@ -21,7 +21,7 @@ import {
   LiquiditySourceList,
   LiquiditySourceSuffix,
   NotFoundContainer,
-  SettingsContainer,
+  SettingsContainer
 } from '../components/SettingsContainer';
 import { useAppStore } from '../store/AppStore';
 import { containsText } from '../utils/numbers';
@@ -81,7 +81,7 @@ export function LiquiditySourcePage({ sourceType }: PropTypes) {
           {i18n.t(groupTitle)}
         </Typography>
       ),
-      ...sourceItem,
+      ...sourceItem
     };
   });
 
@@ -107,7 +107,7 @@ export function LiquiditySourcePage({ sourceType }: PropTypes) {
               {hasSelectAll ? i18n.t('Deselect all') : i18n.t('Select all')}
             </Button>
           </LiquiditySourceSuffix>
-        ),
+        )
       }}>
       <SettingsContainer>
         <SearchInput
@@ -117,7 +117,7 @@ export function LiquiditySourcePage({ sourceType }: PropTypes) {
           color="light"
           variant="contained"
           placeholder={i18n.t('Search {sourceType}', {
-            sourceType: types[sourceType],
+            sourceType: types[sourceType]
           })}
           onChange={searchHandler}
         />

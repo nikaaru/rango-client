@@ -1,6 +1,6 @@
 import type { ChangeEvent } from 'react';
 
-import { Divider, TextField, Typography } from '@rango-dev/ui';
+import { Divider, TextField, Typography } from '@nikaru-dev/ui';
 import React from 'react';
 
 import { useConfigStore } from '../../store/config';
@@ -11,13 +11,13 @@ import { SupportedTokens } from '../SupportedTokens';
 import {
   amountStyles,
   FromAmount,
-  FromToContainer,
+  FromToContainer
 } from './FunctionalLayout.styles';
 
 export function FromSection() {
   const {
     config: { amount },
-    onChangeAmount,
+    onChangeAmount
   } = useConfigStore();
 
   const handleChangeAmount = (e: ChangeEvent<HTMLInputElement>) => {

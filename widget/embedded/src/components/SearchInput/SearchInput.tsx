@@ -1,6 +1,6 @@
 import type { PropTypes } from './SearchInput.types';
 
-import { CloseIcon, IconButton, SearchIcon, TextField } from '@rango-dev/ui';
+import { CloseIcon, IconButton, SearchIcon, TextField } from '@nikaru-dev/ui';
 import React from 'react';
 
 import { IconWrapper } from './SearchInput.styles';
@@ -40,7 +40,7 @@ export function SearchInput(props: PropTypes) {
       style={{
         padding: 10,
         borderRadius: 25,
-        alignItems: 'center',
+        alignItems: 'center'
       }}
       size={size}
       value={value}

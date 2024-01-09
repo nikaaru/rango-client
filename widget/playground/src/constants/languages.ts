@@ -1,4 +1,4 @@
-import { English, French, Japanese, Spanish } from '@rango-dev/ui';
+import { English, French, Japanese, Spanish } from '@nikaru-dev/ui';
 
 export const LANGUAGES = [
   { name: 'English', value: 'en', Icon: English },

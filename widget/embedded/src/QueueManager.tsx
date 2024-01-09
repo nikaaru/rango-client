@@ -1,14 +1,14 @@
-import type { SwapQueueContext } from '@rango-dev/queue-manager-rango-preset';
-import type { Network, WalletType } from '@rango-dev/wallets-shared';
+import type { SwapQueueContext } from '@nikaru-dev/queue-manager-rango-preset';
+import type { Network, WalletType } from '@nikaru-dev/wallets-shared';
 import type { PropsWithChildren } from 'react';
 
 import {
   checkWaitingForNetworkChange,
-  makeQueueDefinition,
-} from '@rango-dev/queue-manager-rango-preset';
-import { Provider as ManagerProvider } from '@rango-dev/queue-manager-react';
-import { useWallets } from '@rango-dev/wallets-react';
-import { convertEvmBlockchainMetaToEvmChainInfo } from '@rango-dev/wallets-shared';
+  makeQueueDefinition
+} from '@nikaru-dev/queue-manager-rango-preset';
+import { Provider as ManagerProvider } from '@nikaru-dev/queue-manager-react';
+import { useWallets } from '@nikaru-dev/wallets-react';
+import { convertEvmBlockchainMetaToEvmChainInfo } from '@nikaru-dev/wallets-shared';
 import { isEvmBlockchain } from 'rango-types';
 import React, { useMemo } from 'react';
 
@@ -24,13 +24,13 @@ function QueueManager(props: PropsWithChildren<{ apiKey?: string }>) {
     state,
     connect,
     canSwitchNetworkTo,
-    getWalletInfo,
+    getWalletInfo
   } = useWallets();
 
   const swapQueueDef = useMemo(() => {
     return makeQueueDefinition({
       API_KEY: props.apiKey || getConfig('API_KEY'),
-      BASE_URL: getConfig('BASE_URL'),
+      BASE_URL: getConfig('BASE_URL')
     });
   }, [props.apiKey]);
 
@@ -40,8 +40,8 @@ function QueueManager(props: PropsWithChildren<{ apiKey?: string }>) {
   const wallets = {
     blockchains: connectedWallets.map((wallet) => ({
       accounts: [wallet],
-      name: wallet.chain,
-    })),
+      name: wallet.chain
+    }))
   };
 
   const switchNetwork = async (wallet: WalletType, network: Network) => {
@@ -76,7 +76,7 @@ function QueueManager(props: PropsWithChildren<{ apiKey?: string }>) {
       evmBasedChains: evmBasedChains,
       evmNetworkChainInfo:
         convertEvmBlockchainMetaToEvmChainInfo(evmBasedChains),
-      getSupportedChainNames,
+      getSupportedChainNames
     },
     getSigners,
     //todo: remove Network type
@@ -88,7 +88,7 @@ function QueueManager(props: PropsWithChildren<{ apiKey?: string }>) {
     canSwitchNetworkTo,
     connect,
     state,
-    isMobileWallet,
+    isMobileWallet
   };
 
   return (

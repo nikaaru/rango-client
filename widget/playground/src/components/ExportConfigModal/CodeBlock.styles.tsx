@@ -1,20 +1,20 @@
-import { Button, styled } from '@rango-dev/ui';
+import { Button, styled } from '@nikaru-dev/ui';
 
 export const CopyCodeBlock = styled('div', {
   position: 'absolute',
   right: '$16',
-  bottom: '$12',
+  bottom: '$12'
 });
 
 export const CopyCodeBlockButton = styled(Button, {
   width: '$48',
   height: '$48',
-  lineHeight: '$12 !important',
+  lineHeight: '$12 !important'
 });
 
 export const CodeBlockContainer = styled('div', {
   position: 'relative',
   borderRadius: '$sm',
   height: '507px',
-  width: '100%',
+  width: '100%'
 });

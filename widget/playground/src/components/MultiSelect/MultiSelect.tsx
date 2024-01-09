@@ -1,6 +1,6 @@
 import type {
   MuliSelectPropTypes,
-  MultiSelectChipProps,
+  MultiSelectChipProps
 } from './MultiSelect.types';
 
 import {
@@ -8,8 +8,8 @@ import {
   ChevronRightIcon,
   Divider,
   Typography,
-  WalletIcon,
-} from '@rango-dev/ui';
+  WalletIcon
+} from '@nikaru-dev/ui';
 import React, { useState } from 'react';
 
 import { MultiList } from '../MultiList';

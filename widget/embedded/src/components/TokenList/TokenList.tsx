@@ -14,8 +14,8 @@ import {
   PinIcon,
   Skeleton,
   Typography,
-  VirtualizedList,
-} from '@rango-dev/ui';
+  VirtualizedList
+} from '@nikaru-dev/ui';
 import React, { forwardRef, useEffect, useState } from 'react';
 
 import { useAppStore } from '../../store/AppStore';
@@ -40,7 +40,7 @@ import {
   tokenNameStyles,
   tokenTitleStyles,
   tokenWithoutNameStyles,
-  usdValueStyles,
+  usdValueStyles
 } from './TokenList.styles';
 
 const PAGE_SIZE = 20;
@@ -109,7 +109,7 @@ export function TokenList(props: PropTypes) {
         ref={ref as any}
         style={{
           ...render.style,
-          height: `${parseFloat(render.style?.height as string) + 8 * 2}px`,
+          height: `${parseFloat(render.style?.height as string) + 8 * 2}px`
         }}
       />
     );
@@ -155,30 +155,30 @@ export function TokenList(props: PropTypes) {
           const customCssForTag = {
             $$color: color[`${token.symbol}100`],
             [`.${darkTheme} &`]: {
-              $$color: color[`${token.symbol}900`],
+              $$color: color[`${token.symbol}900`]
             },
-            backgroundColor: '$$color',
+            backgroundColor: '$$color'
           };
 
           const customCssForTagTitle = {
             $$color: color[`${token.symbol}700`],
             [`.${darkTheme} &`]: {
-              $$color: color[`${token.symbol}100`],
+              $$color: color[`${token.symbol}100`]
             },
-            color: '$$color',
+            color: '$$color'
           };
 
           return (
             <div
               style={{
                 ...style,
-                paddingRight: 5,
+                paddingRight: 5
               }}>
               <ListItemButton
                 style={{
                   height: style?.height,
                   width: '100%',
-                  overflow: 'hidden',
+                  overflow: 'hidden'
                 }}
                 tab-index={index}
                 key={`${token.symbol}${token.address}`}
@@ -227,7 +227,7 @@ export function TokenList(props: PropTypes) {
                         name: token.name,
                         url: blockchain.info.addressUrl
                           .split('{wallet}')
-                          .join(address),
+                          .join(address)
                       })
                     : token.name || undefined
                 }

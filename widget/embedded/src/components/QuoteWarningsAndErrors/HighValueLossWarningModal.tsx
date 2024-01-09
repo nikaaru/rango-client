@@ -7,8 +7,8 @@ import {
   MessageBox,
   Modal,
   Typography,
-  WarningIcon,
-} from '@rango-dev/ui';
+  WarningIcon
+} from '@nikaru-dev/ui';
 import React from 'react';
 
 import { errorMessages } from '../../constants/errors';
@@ -18,7 +18,7 @@ import {
   PERCENTAGE_CHANGE_MAX_DECIMALS,
   PERCENTAGE_CHANGE_MIN_DECIMALS,
   USD_VALUE_MAX_DECIMALS,
-  USD_VALUE_MIN_DECIMALS,
+  USD_VALUE_MIN_DECIMALS
 } from '../../constants/routing';
 import { getContainer } from '../../utils/common';
 import { numberToString } from '../../utils/numbers';
@@ -43,7 +43,7 @@ export function HighValueLossWarningModal(props: Props) {
         warning.inputUsdValue,
         USD_VALUE_MIN_DECIMALS,
         USD_VALUE_MAX_DECIMALS
-      ),
+      )
     },
     {
       title: i18n.t('Gas cost'),
@@ -51,7 +51,7 @@ export function HighValueLossWarningModal(props: Props) {
         warning.totalFee,
         GAS_FEE_MIN_DECIMALS,
         GAS_FEE_MAX_DECIMALS
-      ),
+      )
     },
     {
       title: i18n.t('Receiving'),
@@ -59,7 +59,7 @@ export function HighValueLossWarningModal(props: Props) {
         warning.outputUsdValue,
         USD_VALUE_MIN_DECIMALS,
         USD_VALUE_MAX_DECIMALS
-      ),
+      )
     },
     {
       title: i18n.t('Price impact'),
@@ -68,8 +68,8 @@ export function HighValueLossWarningModal(props: Props) {
         PERCENTAGE_CHANGE_MIN_DECIMALS,
         PERCENTAGE_CHANGE_MAX_DECIMALS
       ),
-      valueColor: `${type}500`,
-    },
+      valueColor: `${type}500`
+    }
   ];
 
   return (

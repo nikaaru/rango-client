@@ -1,13 +1,13 @@
 import type { ModalContentProps } from './WalletModal.types';
 
 import { i18n } from '@lingui/core';
-import { Image, MessageBox, WalletState } from '@rango-dev/ui';
+import { Image, MessageBox, WalletState } from '@nikaru-dev/ui';
 import React from 'react';
 
 import {
   LogoContainer,
   Spinner,
-  WalletImageContainer,
+  WalletImageContainer
 } from './WalletModalContent.styles';
 
 export function ModalContent(props: ModalContentProps) {

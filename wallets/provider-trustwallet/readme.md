@@ -1,1 +1,1 @@
-# @rango-dev/provider-trustwallet
+# @nikaru-dev/provider-trustwallet

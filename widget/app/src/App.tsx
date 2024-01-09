@@ -1,6 +1,6 @@
-import type { WidgetConfig } from '@rango-dev/widget-embedded';
+import type { WidgetConfig } from '@nikaru-dev/widget-embedded';
 
-import { Widget } from '@rango-dev/widget-embedded';
+import { Widget } from '@nikaru-dev/widget-embedded';
 import React, { useRef } from 'react';
 import { Route, Routes, useSearchParams } from 'react-router-dom';
 
@@ -35,7 +35,7 @@ export function App() {
 
       config = {
         apiKey: '',
-        walletConnectProjectId: WC_PROJECT_ID,
+        walletConnectProjectId: WC_PROJECT_ID
       };
     }
     if (!!config) {

@@ -1,7 +1,7 @@
 import type { Type } from '../../types';
 import type { tokensConfigType } from '../../utils/configs';
 
-import { ChainsIcon } from '@rango-dev/ui';
+import { ChainsIcon } from '@nikaru-dev/ui';
 import React from 'react';
 
 import { MultiSelect } from '../../components/MultiSelect';
@@ -15,10 +15,10 @@ export function SupportedTokens({ type }: { type: Type }) {
     config: { from, to },
     onChangeTokens,
     onChangeToken,
-    onChangePinnedTokens,
+    onChangePinnedTokens
   } = useConfigStore();
   const {
-    meta: { tokens, blockchains },
+    meta: { tokens, blockchains }
   } = useMetaStore();
 
   const selectedType = type === 'Source' ? from : to;
@@ -45,7 +45,7 @@ export function SupportedTokens({ type }: { type: Type }) {
       checked:
         !tokensConfig || (!isExclude && !isToken) || (isExclude && isToken),
       pinned:
-        !!pinnedTokens && pinnedTokens.some((ct) => tokensAreEqual(ct, token)),
+        !!pinnedTokens && pinnedTokens.some((ct) => tokensAreEqual(ct, token))
     };
   });
 
@@ -75,7 +75,7 @@ export function SupportedTokens({ type }: { type: Type }) {
             pinnedTokens?.map(({ symbol, blockchain, address }) => ({
               symbol,
               blockchain,
-              address,
+              address
             })),
             type
           );

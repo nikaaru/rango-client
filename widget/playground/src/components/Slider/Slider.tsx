@@ -1,13 +1,13 @@
 import type { PropTypes } from './Slider.types';
 
-import { Typography } from '@rango-dev/ui';
+import { Typography } from '@nikaru-dev/ui';
 import React, { useEffect } from 'react';
 
 import {
   Content,
   RangeWrapper,
   SliderContainer,
-  ValueSection,
+  ValueSection
 } from './Slider.styles';
 
 const MAX_VALUE = 100;
@@ -20,7 +20,7 @@ function Slider(props: PropTypes) {
     variant = 'custom',
     min,
     max = MAX_VALUE,
-    id,
+    id
   } = props;
 
   const progressScript = () => {

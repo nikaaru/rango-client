@@ -1,6 +1,6 @@
 import type { WidgetInfoContextInterface } from './WidgetInfo.types';
 
-import { useManager } from '@rango-dev/queue-manager-react';
+import { useManager } from '@nikaru-dev/queue-manager-react';
 import React, { createContext, useContext } from 'react';
 
 import { useLanguage } from '../../hooks/useLanguage';
@@ -36,15 +36,15 @@ export function WidgetInfo(props: React.PropsWithChildren) {
       isLoading,
       details,
       totalBalance,
-      refetch,
+      refetch
     },
     meta: {
       blockchains,
       tokens,
       swappers,
-      loadingStatus,
+      loadingStatus
     },
-    resetLanguage,
+    resetLanguage
   };
 
   return (

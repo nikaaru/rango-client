@@ -1,8 +1,8 @@
 import type { PendingSwap, PendingSwapStep } from 'rango-types';
 
 import { i18n } from '@lingui/core';
-import { useManager } from '@rango-dev/queue-manager-react';
-import { Divider, NotFound, styled } from '@rango-dev/ui';
+import { useManager } from '@nikaru-dev/queue-manager-react';
+import { Divider, NotFound, styled } from '@nikaru-dev/ui';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -20,7 +20,7 @@ const Container = styled('div', {
   flexDirection: 'column',
   alignItems: 'flex-start',
   height: '100%',
-  gap: 15,
+  gap: 15
 });
 
 const SwapsGroupContainer = styled('div', {
@@ -29,7 +29,7 @@ const SwapsGroupContainer = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   gap: 15,
-  height: '100%',
+  height: '100%'
 });
 
 const isStepContainsText = (steps: PendingSwapStep[], value: string) => {
@@ -74,7 +74,7 @@ export function HistoryPage() {
   return (
     <Layout
       header={{
-        title: i18n.t('History'),
+        title: i18n.t('History')
       }}>
       <Container>
         <SearchInput

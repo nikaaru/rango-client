@@ -1,1 +1,1 @@
-# @rango-dev/wallets-core
+# @nikaru-dev/wallets-core
