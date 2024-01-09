@@ -1,3 +1,26 @@
+# 0.26.0 (2024-01-09)
+
+
+### Bug Fixes
+
+* disable safe on provider-all since it breaks the CRA ([32092c0](https://github.com/nikaaru/rango-client/commit/32092c01b320f58495a1d43bd5cee0d05cc1e8d9))
+* fix HMR for widget and playground ([8524820](https://github.com/nikaaru/rango-client/commit/8524820f10cf0b8921f3db0c4f620ff98daa4103))
+* update organization name to nikar-dev ([726b29d](https://github.com/nikaaru/rango-client/commit/726b29d0a014cd9577a0ae4a7888312026fe01bf))
+
+
+### Features
+
+* add bitkeep wallet ([c02c3df](https://github.com/nikaaru/rango-client/commit/c02c3dfd236070295eada74aeb97514f8dacd0ed))
+* add default injected wallet ([238977c](https://github.com/nikaaru/rango-client/commit/238977c0e3cd09feba9f2557f1b099b9af3afb0d))
+* add project id as a external value ([0c80404](https://github.com/nikaaru/rango-client/commit/0c80404a8cacb6c5b0338dea1e416b0b11db254b))
+* don't show safe when not injected ([3e32420](https://github.com/nikaaru/rango-client/commit/3e324208d9dcc8d11267a37bf6df84547975c1bf))
+* Get Wallet Connect project id from config ([9fb30b4](https://github.com/nikaaru/rango-client/commit/9fb30b4b1a83e2005bbf42553298f24b1e278e1c))
+* support braavos wallet ([fb38ebe](https://github.com/nikaaru/rango-client/commit/fb38ebef00a33b92cabf506c88ef83d8c77cce84))
+* Support for WalletConnect 2 ([faedef0](https://github.com/nikaaru/rango-client/commit/faedef0b5e6fc3c5ef881cbbe4ec05334cc1c910))
+* support safe wallet ([d04cbcd](https://github.com/nikaaru/rango-client/commit/d04cbcd2a612755563512d9dff6f2312088d8b4d))
+
+
+
 # [0.25.0](https://github.com/rango-exchange/rango-client/compare/provider-all@0.24.0...provider-all@0.25.0) (2023-12-24)
 
 

@@ -1,3 +1,20 @@
+# 0.26.0 (2024-01-09)
+
+
+### Bug Fixes
+
+* fix HMR for widget and playground ([8524820](https://github.com/nikaaru/rango-client/commit/8524820f10cf0b8921f3db0c4f620ff98daa4103))
+* seems npm needs a bit time to update the cdn and return the correct version ([09168ac](https://github.com/nikaaru/rango-client/commit/09168acdc3ca400abd2016eebc0c62103edae3a2))
+* update organization name to nikar-dev ([726b29d](https://github.com/nikaaru/rango-client/commit/726b29d0a014cd9577a0ae4a7888312026fe01bf))
+
+
+### Features
+
+* add delete action to queue manager ([9590554](https://github.com/nikaaru/rango-client/commit/95905549394f906fcbc4839a52b92dae2d408500))
+* Support for WalletConnect 2 ([faedef0](https://github.com/nikaaru/rango-client/commit/faedef0b5e6fc3c5ef881cbbe4ec05334cc1c910))
+
+
+
 # [0.25.0](https://github.com/rango-exchange/rango-client/compare/queue-manager-core@0.23.0...queue-manager-core@0.25.0) (2023-12-24)
 
 

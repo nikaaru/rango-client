@@ -1,6 +1,6 @@
 {
   "name": "@nikaru-dev/provider-halo",
-  "version": "0.25.1-next.2",
+  "version": "0.26.0",
   "license": "MIT",
   "type": "module",
   "source": "./src/index.ts",
@@ -21,8 +21,8 @@
     "lint": "eslint \"**/*.{ts,tsx}\" --ignore-path ../../.eslintignore"
   },
   "dependencies": {
-    "@nikaru-dev/signer-evm": "^0.25.1-next.0",
-    "@nikaru-dev/wallets-shared": "^0.25.1-next.2",
+    "@nikaru-dev/signer-evm": "^0.26.0",
+    "@nikaru-dev/wallets-shared": "^0.26.0",
     "rango-types": "^0.1.57"
   },
   "publishConfig": {

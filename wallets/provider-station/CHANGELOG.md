@@ -1,3 +1,21 @@
+# 0.25.0 (2024-01-09)
+
+
+### Bug Fixes
+
+* cleanup wallets' subscriber when setProvider get null ([88d6a42](https://github.com/nikaaru/rango-client/commit/88d6a423c49b34b3d9ff567e22df36c3b009bb76))
+* fix HMR for widget and playground ([8524820](https://github.com/nikaaru/rango-client/commit/8524820f10cf0b8921f3db0c4f620ff98daa4103))
+* refactor station wallet ([580a2af](https://github.com/nikaaru/rango-client/commit/580a2af692f63a85921d69152464143551b3f748))
+* update organization name to nikar-dev ([726b29d](https://github.com/nikaaru/rango-client/commit/726b29d0a014cd9577a0ae4a7888312026fe01bf))
+* update station wallet dependecies ([c00aa6f](https://github.com/nikaaru/rango-client/commit/c00aa6f2529957952e6f314ddf67385f4fd3cdc0))
+
+
+### Reverts
+
+* Revert "support for rango-types cjs format" ([ed4e050](https://github.com/nikaaru/rango-client/commit/ed4e050bfc0dcde7aeffa6b0d73b02080a5721eb))
+
+
+
 # [0.24.0](https://github.com/rango-exchange/rango-client/compare/provider-station@0.23.0...provider-station@0.24.0) (2023-12-24)
 
 
