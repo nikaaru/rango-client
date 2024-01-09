@@ -1,9 +1,9 @@
-import type { WalletInfo } from '@rango-dev/wallets-shared';
+import type { WalletInfo } from '@nikaru-dev/wallets-shared';
 import type { Token } from 'rango-sdk';
 
-import { allProviders } from '@rango-dev/provider-all';
-import { useWallets } from '@rango-dev/wallets-react';
-import { sortWalletsBasedOnState } from '@rango-dev/wallets-shared';
+import { allProviders } from '@nikaru-dev/provider-all';
+import { useWallets } from '@nikaru-dev/wallets-react';
+import { sortWalletsBasedOnState } from '@nikaru-dev/wallets-shared';
 import React from 'react';
 
 import { WC_PROJECT_ID } from '../../constants';
@@ -15,7 +15,7 @@ import './styles.css';
 function List({ tokens }: { tokens: Token[] }) {
   const { state, getWalletInfo } = useWallets();
   const providerTypes = allProviders({
-    walletconnect2: { WC_PROJECT_ID: WC_PROJECT_ID },
+    walletconnect2: { WC_PROJECT_ID: WC_PROJECT_ID }
   }).map((p) => p.config.type);
   const allWallets = sortWalletsBasedOnState(
     providerTypes.map((type) => {
@@ -27,7 +27,7 @@ function List({ tokens }: { tokens: Token[] }) {
         type,
         connected,
         extensionAvailable: installed,
-        info,
+        info
       };
     })
   );

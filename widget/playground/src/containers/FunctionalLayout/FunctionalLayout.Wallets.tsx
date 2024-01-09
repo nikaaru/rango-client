@@ -1,27 +1,29 @@
-import type { WalletType } from '@rango-dev/wallets-shared';
-import type { WidgetConfig } from '@rango-dev/widget-embedded';
+import type { WalletType } from '@nikaru-dev/wallets-shared';
+import type { WidgetConfig } from '@nikaru-dev/widget-embedded';
 
 import {
+  Button,
   Checkbox,
   Divider,
   Switch,
   Typography,
-  WalletIcon,
-} from '@rango-dev/ui';
-import { WalletTypes } from '@rango-dev/wallets-shared';
-import { useWallets } from '@rango-dev/widget-embedded';
+  WalletIcon
+} from '@nikaru-dev/ui';
+import { WalletTypes } from '@nikaru-dev/wallets-shared';
+import { useWallets } from '@nikaru-dev/widget-embedded';
 import React from 'react';
 
-import { MultiSelect } from '../../components/MultiSelect/MultiSelect';
+import { MultiSelect } from '../../components/MultiSelect';
 import { NOT_FOUND } from '../../constants';
 import { useConfigStore } from '../../store/config';
 import { getCategoryNetworks } from '../../utils/blockchains';
 import { excludedWallets } from '../../utils/common';
 
 import {
+  connectButtonStyles,
   ExternalSection,
-  StyledButton,
-  SwitchField,
+  Footer,
+  SwitchField
 } from './FunctionalLayout.styles';
 
 export function WalletSection() {
@@ -29,7 +31,7 @@ export function WalletSection() {
   const {
     onChangeWallets,
     onChangeBooleansConfig,
-    config: { externalWallets, wallets, multiWallets },
+    config: { externalWallets, wallets, multiWallets }
   } = useConfigStore();
 
   const allWalletList = Object.values(WalletTypes)
@@ -40,7 +42,7 @@ export function WalletSection() {
         title,
         logo,
         name: wallet,
-        supportedNetworks: getCategoryNetworks(supportedChains),
+        supportedNetworks: getCategoryNetworks(supportedChains)
       };
     });
 
@@ -96,7 +98,7 @@ export function WalletSection() {
         label={
           <Typography
             style={{
-              fontWeight: 500,
+              fontWeight: 500
             }}
             size="small"
             variant="body"
@@ -106,6 +108,7 @@ export function WalletSection() {
         }
       />
       <Divider size={24} />
+
       <ExternalSection>
         <SwitchField>
           <Typography size="large" variant="label" color="secondary500">
@@ -122,12 +125,13 @@ export function WalletSection() {
           already implemented, check it out here.
         </Typography>
         <Divider size={16} />
-        <div className="footer">
-          <StyledButton
+        <Footer>
+          <Button
             type={externalWallets ? 'primary' : 'secondary'}
             size="small"
             variant="outlined"
             disabled={!externalWallets}
+            className={connectButtonStyles()}
             onClick={() => {
               if (state('metamask').connected) {
                 void disconnect('metamask');
@@ -138,8 +142,8 @@ export function WalletSection() {
             {externalWallets && state('metamask').connected
               ? 'Disconnect MetaMask'
               : 'Connect MetaMask'}
-          </StyledButton>
-        </div>
+          </Button>
+        </Footer>
       </ExternalSection>
     </>
   );

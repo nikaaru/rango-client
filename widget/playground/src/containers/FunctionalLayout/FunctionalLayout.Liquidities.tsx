@@ -1,9 +1,9 @@
 import type { LiquidityType } from './FunctionalLayout.types';
 
-import { ChainsIcon, Checkbox, Divider, Typography } from '@rango-dev/ui';
+import { ChainsIcon, Checkbox, Divider, Typography } from '@nikaru-dev/ui';
 import React from 'react';
 
-import { MultiSelect } from '../../components/MultiSelect/MultiSelect';
+import { MultiSelect } from '../../components/MultiSelect';
 import { useConfigStore } from '../../store/config';
 import { useMetaStore } from '../../store/meta';
 import { removeDuplicates } from '../../utils/common';
@@ -15,11 +15,11 @@ export function LiquiditiesSection() {
   const {
     onChangeSources,
     onChangeBooleansConfig,
-    config: { liquiditySources, enableNewLiquiditySources },
+    config: { liquiditySources, enableNewLiquiditySources }
   } = useConfigStore();
 
   const {
-    meta: { swappers },
+    meta: { swappers }
   } = useMetaStore();
 
   const excludedMode = enableNewLiquiditySources ?? true;
@@ -38,7 +38,7 @@ export function LiquiditiesSection() {
       .map(({ title, logo, swapperGroup }) => ({
         logo,
         title,
-        name: swapperGroup,
+        name: swapperGroup
       }));
 
   const selectedDexs = defaultSelectedItems('DEX');
@@ -62,14 +62,14 @@ export function LiquiditiesSection() {
   ) => {
     const currentConfig = removeDuplicates([
       ...(liquiditySources || (excludedMode ? [] : otherCategoryList)),
-      ...categories,
+      ...categories
     ]);
 
     let sources;
     if (currentSelection) {
       sources = removeDuplicates([
         ...(previousSelection || (excludedMode ? [] : otherCategoryList)),
-        ...currentSelection,
+        ...currentSelection
       ]);
     } else if (currentConfig.length === uniqueSwappersGroup.length) {
       sources = excludedMode
@@ -107,7 +107,7 @@ export function LiquiditiesSection() {
           handleChange(allDexsNames, allBridgeNames, items, selectedBridges)
         }
       />
-      <Divider size={12} />
+      <Divider size={10} />
       <MultiSelect
         label={`${excludedMode ? 'Excluded' : 'Supported'} Bridges`}
         icon={<ChainsIcon size={24} />}
@@ -126,7 +126,7 @@ export function LiquiditiesSection() {
           handleChange(allBridgeNames, allDexsNames, items, selectedDexs)
         }
       />
-      <Divider size={24} />
+      <Divider size={4} />
       <Checkbox
         id="new-source"
         onCheckedChange={handleCheckChange}

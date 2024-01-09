@@ -1,4 +1,4 @@
-import { Divider } from '@rango-dev/ui';
+import { Divider } from '@nikaru-dev/ui';
 import React from 'react';
 
 import { DefaultChainAndToken } from '../DefaultChainAndToken/DefaultChainAndToken';
@@ -11,10 +11,10 @@ export function ToSection() {
   return (
     <>
       <SupportedBlockchains type="Destination" />
-      <Divider size={12} />
+      <Divider size={10} />
 
       <SupportedTokens type="Destination" />
-      <Divider size={12} />
+      <Divider size={10} />
 
       <FromToContainer>
         <DefaultChainAndToken type="Destination" />

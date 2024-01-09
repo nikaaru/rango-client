@@ -1,1 +1,1 @@
-# @rango-dev/provider-coinbase
+# @nikaru-dev/provider-coinbase

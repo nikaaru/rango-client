@@ -7,8 +7,8 @@ import {
   ListItemButton,
   Radio,
   RadioRoot,
-  Typography,
-} from '@rango-dev/ui';
+  Typography
+} from '@nikaru-dev/ui';
 import React from 'react';
 
 import { Layout } from '../components/Layout';
@@ -20,7 +20,7 @@ type Theme = 'dark' | 'light' | 'auto';
 enum Mode {
   DARK = 'dark',
   LIGHT = 'light',
-  AUTO = 'auto',
+  AUTO = 'auto'
 }
 
 export function ThemePage() {
@@ -37,7 +37,7 @@ export function ThemePage() {
       ),
       onClick: () => setTheme(Mode.LIGHT as Theme),
       start: <LightModeIcon color="gray" />,
-      end: <Radio value={Mode.LIGHT} />,
+      end: <Radio value={Mode.LIGHT} />
     },
     {
       id: Mode.DARK,
@@ -49,7 +49,7 @@ export function ThemePage() {
       ),
       onClick: () => setTheme(Mode.DARK as Theme),
       start: <DarkModeIcon color="gray" />,
-      end: <Radio value={Mode.DARK} />,
+      end: <Radio value={Mode.DARK} />
     },
     {
       id: Mode.AUTO,
@@ -61,14 +61,14 @@ export function ThemePage() {
       ),
       onClick: () => setTheme(Mode.AUTO as Theme),
       start: <AutoThemeIcon color="gray" />,
-      end: <Radio value={Mode.AUTO} />,
-    },
+      end: <Radio value={Mode.AUTO} />
+    }
   ];
 
   return (
     <Layout
       header={{
-        title: i18n.t('Theme'),
+        title: i18n.t('Theme')
       }}>
       <SettingsContainer>
         <RadioRoot

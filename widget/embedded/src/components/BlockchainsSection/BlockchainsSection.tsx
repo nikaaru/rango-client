@@ -8,8 +8,8 @@ import {
   Image,
   Skeleton,
   Tooltip,
-  Typography,
-} from '@rango-dev/ui';
+  Typography
+} from '@nikaru-dev/ui';
 import React from 'react';
 
 import { BLOCKCHAIN_LIST_SIZE } from '../../constants/configs';
@@ -26,7 +26,7 @@ export function BlockchainsSection(props: PropTypes) {
   const { blockchains, type, blockchain, onChange, onMoreClick } = props;
   const blockchainsList = usePrepareBlockchainList(blockchains, {
     limit: BLOCKCHAIN_LIST_SIZE,
-    selected: blockchain?.name,
+    selected: blockchain?.name
   });
 
   const { fetchStatus } = useAppStore();
@@ -98,7 +98,7 @@ export function BlockchainsSection(props: PropTypes) {
               <BlockchainsChip onClick={onMoreClick} key="more-blockchains">
                 <Typography variant="body" size="xsmall" color="secondary500">
                   {i18n._('More +{count}', {
-                    count: blockchainsList.more.length,
+                    count: blockchainsList.more.length
                   })}
                 </Typography>
               </BlockchainsChip>

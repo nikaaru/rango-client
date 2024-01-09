@@ -1,4 +1,4 @@
-import type { WalletType } from '@rango-dev/wallets-shared';
+import type { WalletType } from '@nikaru-dev/wallets-shared';
 import type { PendingSwapNetworkStatus } from 'rango-types';
 
 export type ModalState =
@@ -24,7 +24,9 @@ export interface CompleteModalPropTypes {
   onClose: () => void;
   status: 'success' | 'failed';
   priceValue: string;
+  realValue: string;
   usdValue: string;
+  realUsdValue: string;
   percentageChange: string;
   chain: {
     displayName?: string;

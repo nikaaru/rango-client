@@ -1,4 +1,4 @@
-import type { WidgetConfig } from '@rango-dev/widget-embedded';
+import type { WidgetConfig } from '@nikaru-dev/widget-embedded';
 
 import { getEmbeddedCode, getIframeCode } from '../../utils/export';
 
@@ -13,16 +13,16 @@ export const typesOfCodeBlocks: {
 } = {
   embedded: {
     language: 'jsx',
-    generateCode: (config) => getEmbeddedCode(config),
+    generateCode: (config) => getEmbeddedCode(config)
   },
   iframe: {
     language: 'javascript',
-    generateCode: (config) => getIframeCode(config),
+    generateCode: (config) => getIframeCode(config)
   },
   config: {
     language: 'javascript',
-    generateCode: (config) => config,
-  },
+    generateCode: (config) => config
+  }
 };
 
 export interface ExportConfigModalProps {

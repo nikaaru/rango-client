@@ -3,7 +3,7 @@ import {
   Divider,
   getCountCategories,
   SelectableCategoryList
-} from '@rango-dev/ui';
+} from '@nikaru-dev/ui';
 import React, { useState } from 'react';
 
 import { BlockchainList } from '../components/BlockchainList';
@@ -27,7 +27,7 @@ export function SelectBlockchainPage(props: PropTypes) {
   const fetchStatus = useAppStore().fetchStatus;
 
   const blockchains = useAppStore().blockchains({
-    type: type
+    type
   });
 
   const countActiveCategories = getCountCategories(blockchains);

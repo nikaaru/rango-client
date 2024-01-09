@@ -4,8 +4,8 @@ import {
   Alert,
   ChevronDownIcon,
   ChevronUpIcon,
-  IconButton,
-} from '@rango-dev/ui';
+  IconButton
+} from '@nikaru-dev/ui';
 import React, { useState } from 'react';
 
 export function FailedAlert(props: FailedAlertsProps) {

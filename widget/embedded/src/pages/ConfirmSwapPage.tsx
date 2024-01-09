@@ -1,24 +1,23 @@
 /* eslint-disable @typescript-eslint/no-magic-numbers */
 import type {
   ConfirmSwap,
-  ConfirmSwapFetchResult,
+  ConfirmSwapFetchResult
 } from '../hooks/useConfirmSwap/useConfirmSwap.types';
 
 import { i18n } from '@lingui/core';
-import { useManager } from '@rango-dev/queue-manager-react';
+import { useManager } from '@nikaru-dev/queue-manager-react';
 import {
   Alert,
   Button,
   css,
   Divider,
   IconButton,
-  RefreshIcon,
   SettingsIcon,
   styled,
   Tooltip,
   Typography,
-  WalletIcon,
-} from '@rango-dev/ui';
+  WalletIcon
+} from '@nikaru-dev/ui';
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 import { useNavigate } from 'react-router-dom';
@@ -26,6 +25,7 @@ import { useNavigate } from 'react-router-dom';
 import { getRequiredWallets } from '../components/ConfirmWalletsModal/ConfirmWallets.helpers';
 import { ConfirmWalletsModal } from '../components/ConfirmWalletsModal/ConfirmWalletsModal';
 import { HeaderButton } from '../components/HeaderButtons/HeaderButtons.styles';
+import { RefreshButton } from '../components/HeaderButtons/RefreshButton';
 import { Layout } from '../components/Layout';
 import { navigationRoutes } from '../constants/navigationRoutes';
 import { getQuoteUpdateWarningMessage } from '../constants/warnings';
@@ -43,8 +43,8 @@ const Container = styled('div', {
   width: '100%',
 
   '& .quote-update__alert': {
-    paddingTop: '$10',
-  },
+    paddingTop: '$10'
+  }
 });
 
 const Buttons = styled('div', {
@@ -53,13 +53,13 @@ const Buttons = styled('div', {
   justifyContent: 'space-between',
   [`& ${IconButton}`]: {
     width: '$48',
-    height: '$48',
-  },
+    height: '$48'
+  }
 });
 
 const confirmBtnStyles = css({
   flexGrow: 1,
-  paddingRight: '$10',
+  paddingRight: '$10'
 });
 
 const iconStyles = css({
@@ -67,13 +67,13 @@ const iconStyles = css({
   height: '$24',
   display: 'flex',
   justifyContent: 'center',
-  alignItems: 'center',
+  alignItems: 'center'
 });
 
 const descriptionStyles = css({
   display: 'flex',
   justifyContent: 'space-between',
-  alignItems: 'center',
+  alignItems: 'center'
 });
 
 export function ConfirmSwapPage() {
@@ -85,7 +85,7 @@ export function ConfirmSwapPage() {
     quoteWalletsConfirmed,
     setQuoteWalletConfirmed,
     customDestination,
-    quoteWarningsConfirmed,
+    quoteWarningsConfirmed
   } = useQuoteStore();
   const navigate = useNavigate();
   const [dbErrorMessage, setDbErrorMessage] = useState<string>('');
@@ -100,20 +100,20 @@ export function ConfirmSwapPage() {
   const {
     fetch: confirmSwap,
     loading: fetchingConfirmationQuote,
-    cancelFetch,
+    cancelFetch
   } = useConfirmSwap();
   const [confirmSwapResult, setConfirmSwapResult] =
     useState<ConfirmSwapFetchResult>({
       swap: null,
       error: null,
-      warnings: null,
+      warnings: null
     });
 
   const [showQuoteWarningModal, setShowQuoteWarningModal] = useState(false);
 
   const onConfirmSwap: ConfirmSwap['fetch'] = async ({
     selectedWallets,
-    customDestination,
+    customDestination
   }) => {
     const result = await confirmSwap?.({ selectedWallets, customDestination });
     setConfirmSwapResult(result);
@@ -132,7 +132,7 @@ export function ConfirmSwapPage() {
 
         const swap_url = `../${navigationRoutes.swaps}/${confirmSwapResult.swap.requestId}`;
         navigate(swap_url, {
-          replace: true,
+          replace: true
         });
         setTimeout(() => {
           setInputAmount('');
@@ -159,7 +159,7 @@ export function ConfirmSwapPage() {
     setConfirmSwapResult({
       error: null,
       swap: null,
-      warnings: null,
+      warnings: null
     });
     confirmSwap({ selectedWallets, customDestination })
       .then((res) => {
@@ -254,7 +254,7 @@ export function ConfirmSwapPage() {
   }, [
     confirmSwapResult.warnings?.quote,
     selectedWallets.length,
-    connectedWallets.length,
+    connectedWallets.length
   ]);
 
   useLayoutEffect(() => {
@@ -283,7 +283,7 @@ export function ConfirmSwapPage() {
               <SettingsIcon size={18} color="black" />
             </HeaderButton>
           </Tooltip>
-        ),
+        )
       }}
       footer={
         <Buttons>
@@ -324,15 +324,17 @@ export function ConfirmSwapPage() {
           <Typography variant="title" size="small">
             {i18n.t('You get')}
           </Typography>
-          <Button
-            style={{ padding: '0' }}
-            variant="ghost"
-            disabled={fetchingConfirmationQuote}
-            onClick={onRefresh}>
-            <div className={iconStyles()}>
-              <RefreshIcon size={16} />
-            </div>
-          </Button>
+          <div className={iconStyles()}>
+            <RefreshButton
+              onClick={
+                !fetchingConfirmationQuote &&
+                !showWallets &&
+                !showQuoteWarningModal
+                  ? onRefresh
+                  : undefined
+              }
+            />
+          </div>
         </div>
         {dbErrorMessage && (
           <>

@@ -6,7 +6,7 @@ import type {
   Subscribe,
   SwitchNetwork,
   WalletInfo,
-} from '@rango-dev/wallets-shared';
+} from '@nikaru-dev/wallets-shared';
 import type { BlockchainMeta, SignerFactory } from 'rango-types';
 
 import {
@@ -15,7 +15,7 @@ import {
   subscribeToEvm,
   switchNetworkForEvm,
   WalletTypes,
-} from '@rango-dev/wallets-shared';
+} from '@nikaru-dev/wallets-shared';
 import { evmBlockchains, isEvmBlockchain } from 'rango-types';
 
 import { getSafeInstance } from './helpers';
@@ -53,7 +53,7 @@ export const subscribe: Subscribe = ({
 }) => {
   const evmBlockchainMeta = meta.filter(isEvmBlockchain);
 
-  subscribeToEvm({
+  const cleanup = subscribeToEvm({
     instance,
     state,
     updateChainId,
@@ -62,6 +62,11 @@ export const subscribe: Subscribe = ({
     connect,
     disconnect,
   });
+  return () => {
+    if (cleanup) {
+      cleanup();
+    }
+  };
 };
 
 export const switchNetwork: SwitchNetwork = switchNetworkForEvm;

@@ -1,8 +1,8 @@
 import type { ProviderContext } from './types';
-import type { WalletType } from '@rango-dev/wallets-shared';
+import type { WalletType } from '@nikaru-dev/wallets-shared';
 import type { PropsWithChildren } from 'react';
 
-import { useWallets } from '@rango-dev/wallets-react';
+import { useWallets } from '@nikaru-dev/wallets-react';
 import React, { createContext, useContext, useMemo, useReducer } from 'react';
 
 import { defaultState, state_reducer } from './helpers';
@@ -14,7 +14,7 @@ const AdapterContext = createContext<ProviderContext>({});
 
 function Adapter({
   children,
-  list,
+  list
 }: PropsWithChildren<{ list: WalletType[] }>) {
   const [modalState, dispatch] = useReducer(state_reducer, defaultState);
   const {
@@ -22,7 +22,7 @@ function Adapter({
     canSwitchNetworkTo,
     getSigners,
     getWalletInfo,
-    providers,
+    providers
   } = useWallets();
   const api = useMemo(() => {
     const providerContext: ProviderContext = {
@@ -46,7 +46,7 @@ function Adapter({
       },
       getSigners(type: string) {
         return getSigners(type);
-      },
+      }
     };
     return providerContext;
   }, []);

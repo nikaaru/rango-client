@@ -1,18 +1,18 @@
+import type { Wallet } from './flows/rango/types';
+import type { SwapQueueContext } from '@nikaru-dev/queue-manager-rango-preset';
+import type { Network, WalletType } from '@nikaru-dev/wallets-shared';
+
+import { makeQueueDefinition } from '@nikaru-dev/queue-manager-rango-preset';
+import { Provider as ManagerProvider } from '@nikaru-dev/queue-manager-react';
+import { useWallets } from '@nikaru-dev/wallets-react';
 import React, { useMemo } from 'react';
-import { Provider as ManagerProvider } from '@rango-dev/queue-manager-react';
+
 import { FlowsList } from './components/FlowsList';
-import { meta } from './flows/rango/mock';
-import { useWallets } from '@rango-dev/wallets-react';
-import { metamaskWallet } from './flows/rango/mock';
-import { Wallet } from './flows/rango/types';
-import { Network, WalletType } from '@rango-dev/wallets-shared';
-import { Wallets } from './components/Wallets';
 import { History } from './components/History';
-import {
-  SwapQueueContext,
-  makeQueueDefinition,
-} from '@rango-dev/queue-manager-rango-preset';
+import { Wallets } from './components/Wallets';
 import { getConfig } from './configs';
+import { meta, metamaskWallet } from './flows/rango/mock';
+
 const wallet: Wallet = metamaskWallet;
 
 interface PropTypes {
@@ -26,7 +26,7 @@ export function App(props: PropTypes) {
     state,
     canSwitchNetworkTo,
     connect,
-    getWalletInfo,
+    getWalletInfo
   } = useWallets();
 
   const switchNetwork = (wallet: WalletType, network: Network) => {
@@ -49,12 +49,12 @@ export function App(props: PropTypes) {
     connect,
     state,
     isMobileWallet,
-    canSwitchNetworkTo,
+    canSwitchNetworkTo
   };
 
   const swapQueueDef = useMemo(() => {
     return makeQueueDefinition({
-      API_KEY: getConfig('API_KEY'),
+      API_KEY: getConfig('API_KEY')
     });
   }, []);
 

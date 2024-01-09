@@ -1,6 +1,6 @@
 import type {
   MuliSelectPropTypes,
-  MultiSelectChipProps,
+  MultiSelectChipProps
 } from './MultiSelect.types';
 
 import {
@@ -8,8 +8,8 @@ import {
   ChevronRightIcon,
   Divider,
   Typography,
-  WalletIcon,
-} from '@rango-dev/ui';
+  WalletIcon
+} from '@nikaru-dev/ui';
 import React, { useState } from 'react';
 
 import { MultiList } from '../MultiList';
@@ -60,7 +60,7 @@ export function MultiSelect(props: MuliSelectPropTypes) {
               <Chip label={`+${value.length - MAX_CHIPS}`} variant="outlined" />
             )}
           </div>
-          <ChevronRightIcon size={12} />
+          <ChevronRightIcon size={12} color="gray" />
         </div>
       </Select>
       {showNextModal && (
@@ -87,6 +87,7 @@ export function MultiSelect(props: MuliSelectPropTypes) {
           ) : (
             <TokensPanel
               list={list}
+              tokensConfig={props.tokensConfig}
               onChange={(selectedTokens, pinnedTokens) => {
                 props.onChange(selectedTokens, pinnedTokens);
                 onBack();

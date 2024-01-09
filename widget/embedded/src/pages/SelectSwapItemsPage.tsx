@@ -1,7 +1,7 @@
 import type { BlockchainMeta, Token } from 'rango-sdk';
 
 import { i18n } from '@lingui/core';
-import { Divider } from '@rango-dev/ui';
+import { Divider } from '@nikaru-dev/ui';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -30,7 +30,7 @@ export function SelectSwapItemsPage(props: PropTypes) {
     setFromToken,
     setToToken,
     setFromBlockchain,
-    setToBlockchain,
+    setToBlockchain
   } = useQuoteStore();
   const getBalanceFor = useWalletsStore.use.getBalanceFor();
   const [searchedFor, setSearchedFor] = useState<string>('');
@@ -41,12 +41,12 @@ export function SelectSwapItemsPage(props: PropTypes) {
 
   // Tokens & Blockchains list
   const blockchains = useAppStore().blockchains({
-    type,
+    type
   });
   const tokens = useAppStore().tokens({
     type,
     blockchain: selectedBlockchainName,
-    searchFor: searchedFor,
+    searchFor: searchedFor
   });
 
   const checkIsTokenPinned = (token: Token) => isTokenPinned(token, type);
@@ -68,11 +68,15 @@ export function SelectSwapItemsPage(props: PropTypes) {
       setToToken({ token, meta: { blockchains, tokens } });
     }
   };
+  const types = {
+    source: i18n.t('Source'),
+    destination: i18n.t('Destination')
+  };
 
   return (
     <Layout
       header={{
-        title: i18n.t('Swap {type}', { type }),
+        title: i18n.t('Swap {type}', { type: types[type] })
       }}>
       <BlockchainsSection
         blockchains={blockchains}

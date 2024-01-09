@@ -1,6 +1,6 @@
 import type { PropTypes } from './ItemPicker.types';
 
-import { ChevronRightIcon, Divider, Image, Typography } from '@rango-dev/ui';
+import { ChevronRightIcon, Divider, Image, Typography } from '@nikaru-dev/ui';
 import React from 'react';
 
 import { Container, InputContainer, Title } from './ItemPicker.styles';
@@ -13,7 +13,7 @@ function ItemPicker(props: PropTypes) {
     iconTitle,
     hasLogo,
     placeholder,
-    disabled,
+    disabled
   } = props;
 
   const LogoComponent = logo;
@@ -26,7 +26,7 @@ function ItemPicker(props: PropTypes) {
           {title}
         </Typography>
       </Title>
-      <Divider size={8} />
+      <Divider size={4} />
       <InputContainer
         onClick={disabled ? undefined : onClick}
         disabled={disabled}>

@@ -1,6 +1,6 @@
 import type { Asset } from 'rango-sdk';
 
-import { WalletTypes } from '@rango-dev/wallets-shared';
+import { WalletTypes } from '@nikaru-dev/wallets-shared';
 
 export function shallowEqual<T>(
   object1: { [x: string]: T | undefined },
@@ -53,5 +53,4 @@ export const excludedWallets = [
   WalletTypes.LEAP,
   WalletTypes.SAFE,
   WalletTypes.MY_TON_WALLET,
-  WalletTypes.WALLET_CONNECT_2,
 ];

@@ -1,1 +1,1 @@
-# @rango-dev/provider-safepal
+# @nikaru-dev/provider-safepal

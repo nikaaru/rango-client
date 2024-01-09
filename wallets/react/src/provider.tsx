@@ -1,5 +1,5 @@
 import type { ProviderContext, ProviderProps } from './types';
-import type { WalletType } from '@rango-dev/wallets-shared';
+import type { WalletType } from '@nikaru-dev/wallets-shared';
 
 import React, { useEffect, useReducer, useRef } from 'react';
 
@@ -14,7 +14,7 @@ import {
   makeEventHandler,
   state_reducer,
   tryPersistWallet,
-  tryRemoveWalletFromPersistance,
+  tryRemoveWalletFromPersistance
 } from './helpers';
 import { useInitializers } from './hooks';
 
@@ -45,7 +45,7 @@ function Provider(props: ProviderProps) {
         void tryPersistWallet({
           type,
           walletActions: wallet.actions,
-          getState: api.state,
+          getState: api.state
         });
       }
 
@@ -147,7 +147,7 @@ function Provider(props: ProviderProps) {
       const result = walletInstance.getSigners(provider);
 
       return result;
-    },
+    }
   };
 
   useEffect(() => {
@@ -191,7 +191,7 @@ function Provider(props: ProviderProps) {
         );
         walletInstance.setInfo({
           supportedBlockchains: walletInfo.supportedChains,
-          isContractWallet: !!walletInfo.isContractWallet,
+          isContractWallet: !!walletInfo.isContractWallet
         });
       });
     }

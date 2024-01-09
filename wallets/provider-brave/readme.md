@@ -1,1 +1,1 @@
-# @rango-dev/provider-brave
+# @nikaru-dev/provider-brave

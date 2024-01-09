@@ -1,4 +1,4 @@
-import { styled } from '@rango-dev/ui';
+import { styled } from '@nikaru-dev/ui';
 
 export const InputContainer = styled('div', {
   border: '1px solid $neutral300',
@@ -33,6 +33,7 @@ export const InputContainer = styled('div', {
 export const Container = styled('div', {
   display: 'flex',
   flexDirection: 'column',
+  width: '100%',
 });
 
 export const Title = styled('div', {

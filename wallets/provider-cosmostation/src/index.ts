@@ -7,7 +7,7 @@ import type {
   Suggest,
   SwitchNetwork,
   WalletInfo,
-} from '@rango-dev/wallets-shared';
+} from '@nikaru-dev/wallets-shared';
 import type { BlockchainMeta, SignerFactory } from 'rango-types';
 
 import {
@@ -21,7 +21,7 @@ import {
   suggestCosmosChain,
   switchNetworkForEvm,
   WalletTypes,
-} from '@rango-dev/wallets-shared';
+} from '@nikaru-dev/wallets-shared';
 import {
   cosmosBlockchains,
   evmBlockchains,
@@ -86,7 +86,7 @@ export const subscribe: Subscribe = ({
   const ethInstance = instance.get(Networks.ETHEREUM);
   const EvmBlockchainMeta = meta.filter(isEvmBlockchain);
 
-  subscribeToEvm({
+  const cleanupEvm = subscribeToEvm({
     instance: ethInstance,
     state,
     updateChainId,
@@ -96,10 +96,22 @@ export const subscribe: Subscribe = ({
     disconnect,
   });
 
-  window.cosmostation.cosmos.on('accountChanged', () => {
+  const handleCosmosAccountChanged = () => {
     disconnect();
     connect();
-  });
+  };
+
+  window.cosmostation.cosmos.on('accountChanged', handleCosmosAccountChanged);
+
+  return () => {
+    if (cleanupEvm) {
+      cleanupEvm();
+    }
+    window.cosmostation.cosmos.off(
+      'accountChanged',
+      handleCosmosAccountChanged
+    );
+  };
 };
 
 export const suggest: Suggest = async (options) => {

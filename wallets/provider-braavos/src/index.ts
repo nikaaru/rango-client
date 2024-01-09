@@ -4,10 +4,10 @@ import type {
   Connect,
   Subscribe,
   WalletInfo,
-} from '@rango-dev/wallets-shared';
+} from '@nikaru-dev/wallets-shared';
 import type { BlockchainMeta, SignerFactory } from 'rango-types';
 
-import { Networks, WalletTypes } from '@rango-dev/wallets-shared';
+import { Networks, WalletTypes } from '@nikaru-dev/wallets-shared';
 import { starknetBlockchain } from 'rango-types';
 
 import { getBraavosInstance } from './helpers';
@@ -32,13 +32,17 @@ export const connect: Connect = async ({ instance }) => {
 };
 
 export const subscribe: Subscribe = ({ instance, state, updateAccounts }) => {
-  instance?.on('accountsChanged', (accounts: any) => {
+  const handleAccountsChanged = (accounts: any) => {
     if (state.connected) {
       if (instance) {
         updateAccounts([accounts], Networks.STARKNET);
       }
     }
-  });
+  };
+  instance?.on('accountsChanged', handleAccountsChanged);
+  return () => {
+    instance?.off('accountsChanged', handleAccountsChanged);
+  };
 };
 
 export const canSwitchNetworkTo: CanSwitchNetwork = () => false;

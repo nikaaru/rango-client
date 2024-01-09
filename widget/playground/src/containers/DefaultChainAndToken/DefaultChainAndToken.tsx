@@ -1,6 +1,7 @@
 import type { Type } from '../../types';
+import type { tokensConfigType } from '../../utils/configs';
 
-import { ChainsIcon, Divider, Tooltip } from '@rango-dev/ui';
+import { ChainsIcon, Divider, Tooltip } from '@nikaru-dev/ui';
 import React, { useState } from 'react';
 
 import { ItemPicker } from '../../components/ItemPicker';
@@ -9,6 +10,7 @@ import { SingleList } from '../../components/SingleList';
 import { useConfigStore } from '../../store/config';
 import { useMetaStore } from '../../store/meta';
 import { tokensAreEqual, tokenToString } from '../../utils/common';
+import { isTokenExcludedInConfig } from '../../utils/configs';
 import { ModalState } from '../FunctionalLayout/FunctionalLayout.types';
 
 export function DefaultChainAndToken({ type }: { type: Type }) {
@@ -16,20 +18,19 @@ export function DefaultChainAndToken({ type }: { type: Type }) {
   const {
     config: { from, to },
     onChangeBlockChain,
-    onChangeToken,
+    onChangeToken
   } = useConfigStore();
   const {
-    meta: { blockchains, tokens },
+    meta: { blockchains, tokens }
   } = useMetaStore();
 
   const selectedType = type === 'Source' ? from : to;
-  const configTokens = selectedType?.tokens;
+  const tokensConfig = selectedType?.tokens as tokensConfigType;
   const filteredTokens = selectedType?.blockchain
-    ? tokens.filter(
-        (token) =>
-          token.blockchain === selectedType.blockchain &&
-          (!configTokens || configTokens.some((t) => tokensAreEqual(token, t)))
-      )
+    ? tokens.filter((token) => {
+        const isToken = isTokenExcludedInConfig(token, tokensConfig);
+        return token.blockchain === selectedType.blockchain && !isToken;
+      })
     : [];
   const chainValue = blockchains.find(
     (chain) => chain.name === selectedType?.blockchain
@@ -56,7 +57,7 @@ export function DefaultChainAndToken({ type }: { type: Type }) {
           {
             blockchain: selectedToken.blockchain,
             address: selectedToken.address,
-            symbol: selectedToken.symbol,
+            symbol: selectedToken.symbol
           },
           type
         );
@@ -82,7 +83,7 @@ export function DefaultChainAndToken({ type }: { type: Type }) {
         hasLogo={true}
         placeholder="Chain"
       />
-      <Divider size={12} />
+      <Divider size={10} />
       <Tooltip
         content="Choose the default blockchain first"
         open={!chainValue ? undefined : false}
@@ -103,7 +104,7 @@ export function DefaultChainAndToken({ type }: { type: Type }) {
             list={filteredBlockchains.map((chain) => ({
               name: chain.displayName,
               image: chain.logo,
-              value: chain.name,
+              value: chain.name
             }))}
             title="Default Blockchain"
             defaultValue={selectedType?.blockchain}
@@ -119,7 +120,7 @@ export function DefaultChainAndToken({ type }: { type: Type }) {
             list={filteredTokens.map((token) => ({
               name: token.symbol,
               image: token.image,
-              value: tokenToString(token),
+              value: tokenToString(token)
             }))}
             title="Default Token"
             defaultValue={

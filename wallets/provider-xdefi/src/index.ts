@@ -6,7 +6,7 @@ import type {
   Subscribe,
   SwitchNetwork,
   WalletInfo,
-} from '@rango-dev/wallets-shared';
+} from '@nikaru-dev/wallets-shared';
 import type { BlockchainMeta, SignerFactory } from 'rango-types';
 
 import {
@@ -20,7 +20,7 @@ import {
   switchNetworkForEvm,
   WalletTypes,
   XDEFI_WALLET_SUPPORTED_NATIVE_CHAINS,
-} from '@rango-dev/wallets-shared';
+} from '@nikaru-dev/wallets-shared';
 
 import { SUPPORTED_ETH_CHAINS } from './constants';
 import { getNonEvmAccounts, xdefi as xdefi_instances } from './helpers';
@@ -59,8 +59,7 @@ export const subscribe: Subscribe = ({
   updateChainId,
   connect,
 }) => {
-  const eth = chooseInstance(instance, meta, Networks.ETHEREUM);
-  eth?.on('chainChanged', (chainId: string) => {
+  const handleChainChanged = (chainId: string) => {
     const network = getBlockChainNameFromId(chainId, meta) || Networks.Unknown;
     /*
      *TODO:
@@ -77,7 +76,13 @@ export const subscribe: Subscribe = ({
      */
     updateChainId(chainId);
     connect(network);
-  });
+  };
+  const eth = chooseInstance(instance, meta, Networks.ETHEREUM);
+  eth?.on('chainChanged', handleChainChanged);
+
+  return () => {
+    eth?.off('chainChanged', handleChainChanged);
+  };
 };
 
 export const switchNetwork: SwitchNetwork = switchNetworkForEvm;

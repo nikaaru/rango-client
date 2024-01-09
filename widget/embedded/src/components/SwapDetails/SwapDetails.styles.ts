@@ -1,4 +1,4 @@
-import { css, darkTheme, styled } from '@rango-dev/ui';
+import { css, darkTheme, styled } from '@nikaru-dev/ui';
 
 export const Container = styled('div', {
   display: 'flex',
@@ -54,6 +54,10 @@ export const rowStyles = css({
   color: '$neutral500',
 });
 
+export const datePlaceholderStyles = css({
+  padding: '$5 0',
+});
+
 export const requestIdStyles = css({
   display: 'flex',
   justifyContent: 'center',
@@ -72,4 +76,13 @@ export const outputStyles = css({
 export const titleStepsStyles = css({
   width: '100%',
   padding: '0 $20 $10',
+});
+
+export const StyledLink = styled('a', {
+  fontSize: '$16',
+  fontWeight: '$400',
+  color: '$neutral700',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
 });

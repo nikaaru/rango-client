@@ -1,4 +1,4 @@
-# @rango-dev/ui
+# @nikaru-dev/ui
 
 ### Icons
 

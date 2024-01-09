@@ -1,7 +1,7 @@
 import type { PropTypes } from './QuoteWarningsAndErrors.types';
 
 import { i18n } from '@lingui/core';
-import { Alert, Button, InfoIcon } from '@rango-dev/ui';
+import { Alert, Button, InfoIcon } from '@nikaru-dev/ui';
 import React from 'react';
 
 import { QuoteErrorType, QuoteWarningType } from '../../types';
@@ -22,13 +22,13 @@ export function QuoteWarningsAndErrors(props: PropTypes) {
     onOpenWarningModal,
     onCloseWarningModal,
     onConfirmWarningModal,
-    onChangeSettings,
+    onChangeSettings
   } = props;
 
   const warningModalHandlers = {
     open: showWarningModal,
     onClose: onCloseWarningModal,
-    onConfirm: onConfirmWarningModal,
+    onConfirm: onConfirmWarningModal
   };
 
   const showNoResultMessage =
@@ -60,7 +60,7 @@ export function QuoteWarningsAndErrors(props: PropTypes) {
                 <Action onClick={onOpenWarningModal}>
                   <InfoIcon size={12} color="gray" />
                 </Action>
-              ),
+              )
             })}
             {...(alertInfo.action === 'change-settings' && {
               action: (
@@ -70,7 +70,7 @@ export function QuoteWarningsAndErrors(props: PropTypes) {
                   onClick={onChangeSettings}>
                   {i18n.t('Change')}
                 </Button>
-              ),
+              )
             })}
           />
         </Alerts>

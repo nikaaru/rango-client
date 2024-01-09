@@ -1,6 +1,6 @@
 import type { PropTypes } from './QuoteSummarySkeleton.types';
 
-import { ChainToken, Divider, Skeleton } from '@rango-dev/ui';
+import { ChainToken, Divider, Skeleton } from '@nikaru-dev/ui';
 import React from 'react';
 
 import {
@@ -13,7 +13,7 @@ import {
   QuoteSummarySeparator,
   SwapPreview,
   TokenAmount,
-  TokenAmountLabel,
+  TokenAmountLabel
 } from './QuoteSummarySkeleton.styles';
 
 export function QuoteSummarySkeleton(props: PropTypes) {

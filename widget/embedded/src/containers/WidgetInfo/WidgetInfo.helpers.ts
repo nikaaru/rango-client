@@ -1,5 +1,5 @@
 import type { Meta } from '../../store/quote';
-import type { Manager } from '@rango-dev/queue-manager-core';
+import type { Manager } from '@nikaru-dev/queue-manager-core';
 import type { PendingSwap } from 'rango-types/lib';
 
 import {
@@ -7,7 +7,7 @@ import {
   getCurrentBlockchainOfOrNull,
   getCurrentStep,
   getRelatedWalletOrNull,
-} from '@rango-dev/queue-manager-rango-preset';
+} from '@nikaru-dev/queue-manager-rango-preset';
 
 import { getPendingSwaps } from '../../utils/queue';
 

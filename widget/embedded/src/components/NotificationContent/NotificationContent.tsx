@@ -5,8 +5,8 @@ import {
   ChainToken,
   ChevronRightIcon,
   ListItemButton,
-  Typography,
-} from '@rango-dev/ui';
+  Typography
+} from '@nikaru-dev/ui';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 

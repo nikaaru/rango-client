@@ -1,16 +1,17 @@
 import type {
   OnConnectHandler,
   PropTypes,
-  WidgetContextInterface,
+  WidgetContextInterface
 } from './Wallets.types';
+import type { Wallet } from '../../types/wallets';
 import type { ProvidersOptions } from '../../utils/providers';
-import type { EventHandler } from '@rango-dev/wallets-react';
-import type { Network } from '@rango-dev/wallets-shared';
+import type { EventHandler } from '@nikaru-dev/wallets-react';
+import type { Network } from '@nikaru-dev/wallets-shared';
 import type { PropsWithChildren } from 'react';
 
-import { Events, Provider } from '@rango-dev/wallets-react';
+import { Events, Provider } from '@nikaru-dev/wallets-react';
 import { isEvmBlockchain } from 'rango-sdk';
-import React, { createContext, useEffect, useRef } from 'react';
+import React, { createContext, useEffect, useRef, useState } from 'react';
 
 import { useSyncStoresWithConfig } from '../../hooks/useSyncStoresWithConfig';
 import { useWalletProviders } from '../../hooks/useWalletProviders';
@@ -18,13 +19,13 @@ import { AppStoreProvider, useAppStore } from '../../store/AppStore';
 import { useWalletsStore } from '../../store/wallets';
 import {
   prepareAccountsForWalletStore,
-  walletAndSupportedChainsNames,
+  walletAndSupportedChainsNames
 } from '../../utils/wallets';
 
 export const WidgetContext = createContext<WidgetContextInterface>({
   onConnectWallet: () => {
     return;
-  },
+  }
 });
 
 function Main(props: PropsWithChildren<PropTypes>) {
@@ -32,8 +33,9 @@ function Main(props: PropsWithChildren<PropTypes>) {
   const blockchains = useAppStore().blockchains();
   const tokens = useAppStore().tokens();
   const walletOptions: ProvidersOptions = {
-    walletConnectProjectId: props.config?.walletConnectProjectId,
+    walletConnectProjectId: props.config?.walletConnectProjectId
   };
+  const [accounts, setAccounts] = useState<Wallet[]>([]);
   const { providers } = useWalletProviders(props.config.wallets, walletOptions);
   const { connectWallet, disconnectWallet } = useWalletsStore();
   const onConnectWalletHandler = useRef<OnConnectHandler>();
@@ -66,7 +68,7 @@ function Main(props: PropsWithChildren<PropTypes>) {
           supportedChainNames,
           meta.isContractWallet
         );
-        connectWallet(data, tokens);
+        setAccounts(data);
       } else {
         disconnectWallet(type);
       }
@@ -99,13 +101,20 @@ function Main(props: PropsWithChildren<PropTypes>) {
       props.onUpdateState(type, event, value, state, meta);
     }
   };
+
+  useEffect(() => {
+    if (accounts.length) {
+      connectWallet(accounts, tokens);
+    }
+  }, [accounts, tokens]);
+
   return (
     <WidgetContext.Provider
       // eslint-disable-next-line react/jsx-no-constructed-context-values
       value={{
         onConnectWallet: (handler) => {
           onConnectWalletHandler.current = handler;
-        },
+        }
       }}>
       <Provider
         allBlockChains={blockchains}

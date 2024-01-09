@@ -1,9 +1,9 @@
 import type { Type } from '../../types';
 
-import { ChainsIcon } from '@rango-dev/ui';
+import { ChainsIcon } from '@nikaru-dev/ui';
 import React from 'react';
 
-import { MultiSelect } from '../../components/MultiSelect/MultiSelect';
+import { MultiSelect } from '../../components/MultiSelect';
 import { useConfigStore } from '../../store/config';
 import { useMetaStore } from '../../store/meta';
 import { getCategoryNetworks } from '../../utils/blockchains';
@@ -14,10 +14,10 @@ export function SupportedBlockchains({ type }: { type: Type }) {
     onChangeBlockChains,
     onChangeBlockChain,
     onChangeToken,
-    onChangeTokens,
+    onChangeTokens
   } = useConfigStore();
   const {
-    meta: { blockchains },
+    meta: { blockchains }
   } = useMetaStore();
 
   const selectedType = type === 'Source' ? from : to;
@@ -30,7 +30,7 @@ export function SupportedBlockchains({ type }: { type: Type }) {
       title,
       logo,
       name,
-      supportedNetworks: getCategoryNetworks([blockchain]),
+      supportedNetworks: getCategoryNetworks([blockchain])
     };
   });
 

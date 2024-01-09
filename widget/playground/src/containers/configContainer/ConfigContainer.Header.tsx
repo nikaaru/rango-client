@@ -1,4 +1,4 @@
-import { Divider } from '@rango-dev/ui';
+import { Divider } from '@nikaru-dev/ui';
 import React, { useState } from 'react';
 
 import { ExportConfigModal } from '../../components/ExportConfigModal';
@@ -7,7 +7,7 @@ import { useConfigStore } from '../../store/config';
 import {
   HeaderContainer,
   ResetButton,
-  StyledButton,
+  StyledButton
 } from './ConfigContainer.styles';
 
 export function Header() {

@@ -13,11 +13,12 @@ import {
   MessageBox,
   Modal,
   Typography,
-  WalletIcon,
-} from '@rango-dev/ui';
+  WalletIcon
+} from '@nikaru-dev/ui';
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import { RANGO_SWAP_BOX_ID } from '../../constants';
 import { getQuoteErrorMessage } from '../../constants/errors';
 import { getQuoteUpdateWarningMessage } from '../../constants/warnings';
 import { useAppStore } from '../../store/AppStore';
@@ -44,7 +45,7 @@ import {
   Trigger,
   Wallets,
   WalletsContainer,
-  walletsListStyles,
+  walletsListStyles
 } from './ConfirmWallets.styles';
 import { WalletList } from './WalletList';
 
@@ -61,7 +62,7 @@ export function ConfirmWalletsModal(props: PropTypes) {
     quoteWalletsConfirmed: quoteWalletsConfirmed,
     setQuoteWalletConfirmed: setQuoteWalletConfirmed,
     customDestination,
-    setCustomDestination,
+    setCustomDestination
   } = useQuoteStore();
   const { connectedWallets, selectWallets } = useWalletsStore();
 
@@ -128,7 +129,7 @@ export function ConfirmWalletsModal(props: PropTypes) {
           anyWalletSelected = true;
           return {
             ...selectableWallet,
-            selected: true,
+            selected: true
           };
         }
         return selectableWallet;
@@ -190,7 +191,7 @@ export function ConfirmWalletsModal(props: PropTypes) {
     );
     const result = await onCheckBalance?.({
       selectedWallets,
-      customDestination: destination,
+      customDestination: destination
     });
 
     const warnings = result.warnings;
@@ -238,7 +239,9 @@ export function ConfirmWalletsModal(props: PropTypes) {
     }
   }, [showCustomDestination]);
 
-  const modalContainer = document.querySelector('#swap-box') as HTMLDivElement;
+  const modalContainer = document.getElementById(
+    RANGO_SWAP_BOX_ID
+  ) as HTMLDivElement;
 
   const navigate = useNavigate();
   return (
@@ -271,10 +274,10 @@ export function ConfirmWalletsModal(props: PropTypes) {
               type="primary"
               fullWidth
               size="large">
-              Confirm
+              {i18n.t('Confirm')}
             </Button>
           </ConfirmButton>
-        ),
+        )
       })}
       {...(showMoreWalletFor && {
         containerStyle: { padding: '$0' },
@@ -292,12 +295,12 @@ export function ConfirmWalletsModal(props: PropTypes) {
                   blockchainName: getBlockchainShortNameFor(
                     showMoreWalletFor,
                     blockchains
-                  ),
-                },
+                  )
+                }
               })}
             </Typography>
           </ShowMoreHeader>
-        ),
+        )
       })}
       anchor="center">
       <Modal
@@ -363,7 +366,7 @@ export function ConfirmWalletsModal(props: PropTypes) {
                     <Typography variant="title" size="xmedium">
                       {i18n.t({
                         id: 'Your {blockchainName} wallets',
-                        values: { blockchainName: blockchain?.shortName },
+                        values: { blockchainName: blockchain?.shortName }
                       })}
                     </Typography>
                     <Typography
@@ -372,7 +375,7 @@ export function ConfirmWalletsModal(props: PropTypes) {
                       size="medium">
                       {i18n.t({
                         id: 'You need to connect a {blockchainName} wallet.',
-                        values: { blockchainName: blockchain?.shortName },
+                        values: { blockchainName: blockchain?.shortName }
                       })}
                     </Typography>
                   </Title>
@@ -412,7 +415,7 @@ export function ConfirmWalletsModal(props: PropTypes) {
                                   ) {
                                     return {
                                       ...selectableWallet,
-                                      selected: false,
+                                      selected: false
                                     };
                                   }
                                   return selectableWallet;
@@ -466,7 +469,7 @@ export function ConfirmWalletsModal(props: PropTypes) {
                             type="error"
                             title={i18n.t({
                               values: { destination },
-                              id: "Address {destination} doesn't match the blockchain address pattern.",
+                              id: "Address {destination} doesn't match the blockchain address pattern."
                             })}
                           />
                         </div>

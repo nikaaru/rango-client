@@ -1,5 +1,5 @@
 import type { QuoteProps } from './Quote.types';
-import type { Step } from '@rango-dev/ui';
+import type { Step } from '@nikaru-dev/ui';
 import type { SwapResult } from 'rango-sdk';
 
 import { i18n } from '@lingui/core';
@@ -14,8 +14,9 @@ import {
   StepDetails,
   TokenAmount,
   Tooltip,
-  Typography,
-} from '@rango-dev/ui';
+  Typography
+} from '@nikaru-dev/ui';
+import BigNumber from 'bignumber.js';
 import React, { useLayoutEffect, useRef, useState } from 'react';
 
 import {
@@ -26,23 +27,24 @@ import {
   TOKEN_AMOUNT_MAX_DECIMALS,
   TOKEN_AMOUNT_MIN_DECIMALS,
   USD_VALUE_MAX_DECIMALS,
-  USD_VALUE_MIN_DECIMALS,
+  USD_VALUE_MIN_DECIMALS
 } from '../../constants/routing';
 import {
   FooterAlert,
-  FooterStepAlarm,
+  FooterStepAlarm
 } from '../../containers/QuoteInfo/QuoteInfo.styles';
 import { useAppStore } from '../../store/AppStore';
 import { QuoteErrorType, QuoteWarningType } from '../../types';
 import { getContainer } from '../../utils/common';
 import {
   getBlockchainShortNameFor,
-  getSwapperDisplayName,
+  getSwapperDisplayName
 } from '../../utils/meta';
 import {
+  formatTooltipNumbers,
   numberToString,
   secondsToString,
-  totalArrivalTime,
+  totalArrivalTime
 } from '../../utils/numbers';
 import { getPriceImpact, getPriceImpactLevel } from '../../utils/quote';
 import { getTotalFeeInUsd } from '../../utils/swap';
@@ -52,6 +54,7 @@ import {
   basicInfoStyles,
   ChainImageContainer,
   Chains,
+  ContainerInfoOutput,
   Content,
   EXPANDABLE_QUOTE_TRANSITION_DURATION,
   FrameIcon,
@@ -60,7 +63,7 @@ import {
   QuoteContainer,
   stepsDetailsStyles,
   SummaryContainer,
-  summaryStyles,
+  summaryStyles
 } from './Quote.styles';
 import { QuoteSummary } from './QuoteSummary';
 
@@ -72,7 +75,7 @@ export function Quote(props: QuoteProps) {
     error,
     warning,
     type,
-    recommended = true,
+    recommended = true
   } = props;
   const tokens = useAppStore().tokens();
   const blockchains = useAppStore().blockchains();
@@ -133,7 +136,7 @@ export function Quote(props: QuoteProps) {
       return {
         swapper: {
           displayName: getSwapperDisplayName(swap.swapperId, swappers),
-          image: swap.swapperLogo,
+          image: swap.swapperLogo
         },
         from: {
           token: { displayName: swap.from.symbol, image: swap.from.logo },
@@ -142,7 +145,7 @@ export function Quote(props: QuoteProps) {
               swap.from.blockchain,
               blockchains
             ),
-            image: swap.from.blockchainLogo,
+            image: swap.from.blockchainLogo
           },
           price: {
             value:
@@ -162,7 +165,15 @@ export function Quote(props: QuoteProps) {
               USD_VALUE_MIN_DECIMALS,
               USD_VALUE_MAX_DECIMALS
             ),
-          },
+            realValue: formatTooltipNumbers(
+              index === 0 ? input.value : swap.fromAmount
+            ),
+            realUsdValue: formatTooltipNumbers(
+              new BigNumber(swap.from.usdPrice ?? 0).multipliedBy(
+                swap.fromAmount
+              )
+            )
+          }
         },
         to: {
           token: { displayName: swap.to.symbol, image: swap.to.logo },
@@ -171,7 +182,7 @@ export function Quote(props: QuoteProps) {
               swap.to.blockchain,
               blockchains
             ),
-            image: swap.to.blockchainLogo,
+            image: swap.to.blockchainLogo
           },
           price: {
             value: numberToString(
@@ -184,7 +195,11 @@ export function Quote(props: QuoteProps) {
               USD_VALUE_MIN_DECIMALS,
               USD_VALUE_MAX_DECIMALS
             ),
-          },
+            realValue: formatTooltipNumbers(swap.toAmount),
+            realUsdValue: formatTooltipNumbers(
+              new BigNumber(swap.to.usdPrice ?? 0).multipliedBy(swap.toAmount)
+            )
+          }
         },
         state: stepState,
         alerts:
@@ -227,8 +242,8 @@ export function Quote(props: QuoteProps) {
                                 TOKEN_AMOUNT_MIN_DECIMALS,
                                 TOKEN_AMOUNT_MAX_DECIMALS
                               ),
-                              symbol: swap?.from.symbol,
-                            },
+                              symbol: swap?.from.symbol
+                            }
                           })}
                         </Typography>
                       </>
@@ -246,14 +261,14 @@ export function Quote(props: QuoteProps) {
                             ...(error?.type ===
                               QuoteErrorType.INSUFFICIENT_SLIPPAGE && {
                               minRequiredSlippage:
-                                error.recommendedSlippages?.get(index),
+                                error.recommendedSlippages?.get(index)
                             }),
                             ...(warning?.type ===
                               QuoteWarningType.INSUFFICIENT_SLIPPAGE && {
                               minRequiredSlippage:
-                                warning.recommendedSlippages?.get(index),
-                            }),
-                          },
+                                warning.recommendedSlippages?.get(index)
+                            })
+                          }
                         })}
                       </Typography>
                     )}
@@ -261,7 +276,7 @@ export function Quote(props: QuoteProps) {
                 }
               />
             </FooterStepAlarm>
-          ) : undefined,
+          ) : undefined
       };
     });
   };
@@ -291,30 +306,52 @@ export function Quote(props: QuoteProps) {
               <FrameIcon>
                 <InfoIcon size={12} color="gray" />
               </FrameIcon>
-              <BasicInfoOutput size="small" variant="body">
-                {`${roundedInput} ${
-                  steps[0].from.token.displayName
-                } = ${roundedOutput} ${
-                  steps[steps.length - 1].to.token.displayName
-                }`}
-              </BasicInfoOutput>
-              <Typography
-                color="$neutral600"
-                ml={2}
-                size="xsmall"
-                variant="body">
-                {`($${roundedOutputUsdValue})`}
-              </Typography>
+              <ContainerInfoOutput>
+                <BasicInfoOutput size="small" variant="body">
+                  {`${roundedInput} ${steps[0].from.token.displayName} = `}
+                </BasicInfoOutput>
+                <Tooltip
+                  content={formatTooltipNumbers(output.value)}
+                  container={tooltipContainer}
+                  open={!output.value ? false : undefined}>
+                  <BasicInfoOutput size="small" variant="body">
+                    &nbsp;
+                    {`${roundedOutput} ${
+                      steps[steps.length - 1].to.token.displayName
+                    }`}
+                  </BasicInfoOutput>
+                </Tooltip>
+              </ContainerInfoOutput>
+              <Tooltip
+                content={formatTooltipNumbers(output.usdValue)}
+                container={tooltipContainer}
+                style={{
+                  display: 'flex'
+                }}>
+                <Typography
+                  color="$neutral600"
+                  ml={2}
+                  size="xsmall"
+                  variant="body">
+                  {`($${roundedOutputUsdValue})`}
+                </Typography>
+              </Tooltip>
             </div>
           )}
           {type === 'list-item' && (
             <TokenAmount
               type="output"
               direction="vertical"
-              price={{ value: roundedOutput, usdValue: roundedOutputUsdValue }}
+              tooltipContainer={tooltipContainer}
+              price={{
+                value: roundedOutput,
+                usdValue: roundedOutputUsdValue,
+                realValue: formatTooltipNumbers(output.value),
+                realUsdValue: formatTooltipNumbers(output.usdValue)
+              }}
               token={{
                 displayName: steps[numberOfSteps - 1].to.token.displayName,
-                image: steps[numberOfSteps - 1].to.token.image,
+                image: steps[numberOfSteps - 1].to.token.image
               }}
               chain={{ image: steps[numberOfSteps - 1].to.chain.image }}
               percentageChange={percentageChange}
@@ -350,7 +387,7 @@ export function Quote(props: QuoteProps) {
                       size={12}
                       color="black"
                       {...(step.state && {
-                        color: step.state === 'error' ? 'error' : 'warning',
+                        color: step.state === 'error' ? 'error' : 'warning'
                       })}
                     />
                   </IconContainer>
@@ -402,6 +439,7 @@ export function Quote(props: QuoteProps) {
                     step={step}
                     hasSeparator={index !== steps.length - 1}
                     state={step.state}
+                    tooltipContainer={tooltipContainer}
                   />
                 );
               })}

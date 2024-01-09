@@ -5,8 +5,9 @@ import {
   Divider,
   FontIcon,
   LanguageIcon,
-  Typography,
-} from '@rango-dev/ui';
+  Typography
+} from '@nikaru-dev/ui';
+import { useWidget } from '@nikaru-dev/widget-embedded';
 import React, { useCallback, useState } from 'react';
 
 import { ItemPicker } from '../../components/ItemPicker';
@@ -17,7 +18,7 @@ import {
   DEFAULT_PRIMARY_RADIUS,
   DEFAULT_SECONDARY_RADIUS,
   FONTS,
-  LANGUAGES,
+  LANGUAGES
 } from '../../constants';
 import { useConfigStore } from '../../store/config';
 
@@ -37,11 +38,13 @@ export function General() {
   const fontFamily =
     useConfigStore.use.config().theme?.fontFamily || FONTS[0].value;
   const language = useConfigStore.use.config().language || LANGUAGES[0].value;
+  const { resetLanguage } = useWidget();
+
   const handleFontChange = (value: string) => {
     if (value) {
       onChangeTheme({
         name: 'fontFamily',
-        value: value === FONTS[0].value ? undefined : value,
+        value: value === FONTS[0].value ? undefined : value
       });
     }
     onBack();
@@ -49,6 +52,7 @@ export function General() {
   const handleLanguageChange = (value: string) => {
     if (value) {
       onChangeLanguage(value);
+      resetLanguage();
     }
     onBack();
   };
@@ -58,7 +62,7 @@ export function General() {
       const value = parseInt(e.target.value);
       onChangeTheme({
         name: 'borderRadius',
-        value: value === DEFAULT_PRIMARY_RADIUS ? undefined : value,
+        value: value === DEFAULT_PRIMARY_RADIUS ? undefined : value
       });
     },
     [borderRadius]
@@ -69,7 +73,7 @@ export function General() {
       const value = parseInt(e.target.value);
       onChangeTheme({
         name: 'secondaryBorderRadius',
-        value: value === DEFAULT_SECONDARY_RADIUS ? undefined : value,
+        value: value === DEFAULT_SECONDARY_RADIUS ? undefined : value
       });
     },
     [secondaryBorderRadius]
@@ -84,7 +88,7 @@ export function General() {
           onClick={() => setModalState(ModalState.DEFAULT_LANGUAGE)}
           value={{
             label: selectedLanguage?.name,
-            logo: selectedLanguage?.Icon,
+            logo: selectedLanguage?.Icon
           }}
           title="Default Language"
           hasLogo
@@ -103,12 +107,14 @@ export function General() {
           <Slider
             showValue
             title="Widget"
+            id="range1"
             value={borderRadius ?? DEFAULT_PRIMARY_RADIUS}
             max="50"
             onChange={handleBorderRadius}
           />
-          <Divider size={8} />
+          <Divider size={4} />
           <Slider
+            id="range2"
             showValue
             title="Button"
             value={secondaryBorderRadius ?? DEFAULT_SECONDARY_RADIUS}

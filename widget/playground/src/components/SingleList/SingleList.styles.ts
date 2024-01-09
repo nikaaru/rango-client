@@ -1,10 +1,10 @@
-import { Button, styled } from '@rango-dev/ui';
+import { Button, styled } from '@nikaru-dev/ui';
 
 export const HeaderContainer = styled('div', {
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
-
+  paddingTop: '$10',
   '& .header': {
     display: 'flex',
     alignItems: 'center',

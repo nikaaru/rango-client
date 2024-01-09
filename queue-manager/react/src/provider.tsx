@@ -2,11 +2,11 @@ import type { ManagerContext, ManagerState } from './types';
 import type {
   ManagerContext as Context,
   Events,
-  QueueDef,
-} from '@rango-dev/queue-manager-core';
+  QueueDef
+} from '@nikaru-dev/queue-manager-core';
 import type { PropsWithChildren } from 'react';
 
-import { Manager } from '@rango-dev/queue-manager-core';
+import { Manager } from '@nikaru-dev/queue-manager-core';
 import React, {
   createContext,
   useContext,
@@ -14,7 +14,7 @@ import React, {
   useLayoutEffect,
   useMemo,
   useRef,
-  useState,
+  useState
 } from 'react';
 
 import { initState as initManagerState, useManagerState } from './state';
@@ -24,7 +24,7 @@ const ManagerCtx = createContext<{
   state: ManagerState;
 }>({
   manager: undefined,
-  state: initManagerState,
+  state: initManagerState
 });
 
 interface PropTypes {
@@ -79,10 +79,10 @@ function Provider(props: PropsWithChildren<PropTypes>) {
         },
         onDeleteQueue: () => {
           forceRender({});
-        },
+        }
       },
       context: context || {},
-      isPaused: props.isPaused,
+      isPaused: props.isPaused
     });
   }, []);
 

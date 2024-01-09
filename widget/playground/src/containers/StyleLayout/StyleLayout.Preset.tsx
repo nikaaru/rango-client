@@ -1,7 +1,7 @@
 import type { ColorsTypes, PresetTypes } from './StyleLayout.types';
-import type { WidgetColors } from '@rango-dev/widget-embedded';
+import type { WidgetColors } from '@nikaru-dev/widget-embedded';
 
-import { Button, Divider, Switch, Typography } from '@rango-dev/ui';
+import { Button, Divider, Switch, Typography } from '@nikaru-dev/ui';
 import React, { useState } from 'react';
 
 import { DEFAULT_COLORS, PRESETS } from '../../constants';
@@ -14,9 +14,10 @@ import {
   ColoredCircle,
   ColorsContent,
   Line,
+  MoreButtonContent,
   PresetContent,
   PresetTheme,
-  Row,
+  Row
 } from './StyleLayout.styles';
 
 const Colors = (props: ColorsTypes) => {
@@ -43,14 +44,14 @@ export function Preset(props: PresetTypes) {
   const { tab } = props;
   const [showMore, setShowMore] = useState({
     tab,
-    value: false,
+    value: false
   });
   const [selectedPreset, setSelectedPreset] = useState<{
     light: WidgetColors;
     dark: WidgetColors;
   }>({
     light: theme?.colors?.light || {},
-    dark: theme?.colors?.dark || {},
+    dark: theme?.colors?.dark || {}
   });
   const isShowMore = showMore.value && tab === showMore.tab;
 
@@ -98,12 +99,12 @@ export function Preset(props: PresetTypes) {
               onChange={(checked) =>
                 onChangeTheme({
                   name: 'mode',
-                  value: checked ? 'dark' : 'light',
+                  value: checked ? 'dark' : 'light'
                 })
               }
             />
           </Row>
-          <Divider size={12} />
+          <Divider size={10} />
         </>
       )}
       <Collapse style={{ height }}>
@@ -121,7 +122,7 @@ export function Preset(props: PresetTypes) {
               onClick={() =>
                 onSelectPreset({
                   dark: preset.dark || {},
-                  light: preset.light || {},
+                  light: preset.light || {}
                 })
               }>
               {!isAutoTab ? (
@@ -149,7 +150,7 @@ export function Preset(props: PresetTypes) {
         </PresetContent>
       </Collapse>
       {more > 0 && (
-        <>
+        <MoreButtonContent>
           <Divider size={4} />
           <Button
             size={'small'}
@@ -157,17 +158,17 @@ export function Preset(props: PresetTypes) {
             onClick={() =>
               setShowMore((prev) => ({
                 value: tab === prev.tab ? !prev.value : true,
-                tab,
+                tab
               }))
             }>
             {!isShowMore ? `+${more} More` : 'See Less'}
           </Button>
-        </>
+        </MoreButtonContent>
       )}
-
       <Divider size={16} />
       <Line />
       <Divider size={4} />
+
       <CustomColorsSection
         tab={tab}
         selectedPreset={selectedPreset}

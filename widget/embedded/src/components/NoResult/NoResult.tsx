@@ -6,8 +6,8 @@ import {
   Divider,
   NoRouteIcon,
   RefreshIcon,
-  Typography,
-} from '@rango-dev/ui';
+  Typography
+} from '@nikaru-dev/ui';
 import React from 'react';
 
 import { errorMessages } from '../../constants/errors';

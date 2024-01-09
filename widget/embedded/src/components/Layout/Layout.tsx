@@ -1,10 +1,12 @@
 import type { PropTypes, Ref } from './Layout.types';
 import type { PropsWithChildren } from 'react';
 
-import { BottomLogo, Divider, Header } from '@rango-dev/ui';
+import { BottomLogo, Divider, Header } from '@nikaru-dev/ui';
 import React from 'react';
 
+import { RANGO_SWAP_BOX_ID } from '../../constants';
 import { useNavigateBack } from '../../hooks/useNavigateBack';
+import { useTheme } from '../../hooks/useTheme';
 import { useAppStore } from '../../store/AppStore';
 import { useUiStore } from '../../store/ui';
 import { useWalletsStore } from '../../store/wallets';
@@ -21,12 +23,13 @@ function LayoutComponent(props: PropsWithChildren<PropTypes>, ref: Ref) {
     footer,
     noPadding,
     hasLogo = true,
-    fixedHeight = true,
+    fixedHeight = true
   } = props;
   const connectedWallets = useWalletsStore.use.connectedWallets();
   const {
-    config: { features },
+    config: { features, theme }
   } = useAppStore();
+  const { activeTheme } = useTheme(theme || {});
 
   const isConnectWalletHidden = isFeatureHidden(
     'connectWalletButton',
@@ -47,7 +50,11 @@ function LayoutComponent(props: PropsWithChildren<PropTypes>, ref: Ref) {
     typeof header.hasBackButton === 'undefined' || header.hasBackButton;
 
   return (
-    <Container ref={ref} fixedHeight={fixedHeight} id="swap-box">
+    <Container
+      ref={ref}
+      fixedHeight={fixedHeight}
+      id={RANGO_SWAP_BOX_ID}
+      className={activeTheme()}>
       <Header
         prefix={<>{showBackButton && <BackButton onClick={navigateBack} />}</>}
         title={header.title}

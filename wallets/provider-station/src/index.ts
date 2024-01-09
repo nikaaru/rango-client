@@ -3,10 +3,10 @@ import type {
   Connect,
   Subscribe,
   WalletInfo,
-} from '@rango-dev/wallets-shared';
+} from '@nikaru-dev/wallets-shared';
 import type { BlockchainMeta, SignerFactory } from 'rango-types';
 
-import { WalletTypes } from '@rango-dev/wallets-shared';
+import { WalletTypes } from '@nikaru-dev/wallets-shared';
 import { ConnectType } from '@terra-money/wallet-controller';
 
 import { station as station_instance } from './helpers';
@@ -14,6 +14,8 @@ import signer from './signer';
 
 const WALLET = WalletTypes.STATION;
 const STATION_WALLET_ID = 'station';
+const INTERVAL_TIMEOUT = 3_000;
+const MAX_TRY_COUNT = 3;
 
 export const config = {
   type: WALLET,
@@ -30,11 +32,11 @@ async function waitInterval(instance: any) {
       } else {
         count++;
       }
-      if (count > 3) {
+      if (count > MAX_TRY_COUNT) {
         resolve(state);
         clearInterval(interval);
       }
-    }, 3000);
+    }, INTERVAL_TIMEOUT);
   });
 }
 

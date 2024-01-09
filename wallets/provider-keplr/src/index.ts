@@ -3,7 +3,7 @@ import type {
   Subscribe,
   Suggest,
   WalletInfo,
-} from '@rango-dev/wallets-shared';
+} from '@nikaru-dev/wallets-shared';
 import type { BlockchainMeta, SignerFactory } from 'rango-types';
 
 import {
@@ -11,7 +11,7 @@ import {
   Networks,
   suggestCosmosChain,
   WalletTypes,
-} from '@rango-dev/wallets-shared';
+} from '@nikaru-dev/wallets-shared';
 import { cosmosBlockchains } from 'rango-types';
 
 import { keplr as keplrInstance } from './helpers';
@@ -35,10 +35,14 @@ export const connect: Connect = async ({ instance, network, meta }) => {
 };
 
 export const subscribe: Subscribe = ({ connect, disconnect }) => {
-  window.addEventListener('keplr_keystorechange', () => {
+  const handleAccountsChanged = () => {
     disconnect();
     connect();
-  });
+  };
+  window.addEventListener('keplr_keystorechange', handleAccountsChanged);
+  return () => {
+    window.removeEventListener('keplr_keystorechange', handleAccountsChanged);
+  };
 };
 
 export const suggest: Suggest = suggestCosmosChain;

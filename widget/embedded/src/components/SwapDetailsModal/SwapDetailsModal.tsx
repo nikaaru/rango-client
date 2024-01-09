@@ -1,8 +1,10 @@
 import type { ModalPropTypes } from './SwapDetailsModal.types';
 
-import { Modal } from '@rango-dev/ui';
+import { Modal } from '@nikaru-dev/ui';
 import { PendingSwapNetworkStatus } from 'rango-types';
 import React from 'react';
+
+import { RANGO_SWAP_BOX_ID } from '../../constants';
 
 import { CancelContent } from './SwapDetailsModal.Cancel';
 import { DeleteContent } from './SwapDetailsModal.Delete';
@@ -22,7 +24,7 @@ export function SwapDetailsModal(props: ModalPropTypes) {
     <Modal
       open={!!state}
       onClose={onClose}
-      container={document.getElementById('swap-box') || document.body}>
+      container={document.getElementById(RANGO_SWAP_BOX_ID) || document.body}>
       {showWalletStateContent && (
         <WalletStateContent
           type={modalNetworkValues[state].type}

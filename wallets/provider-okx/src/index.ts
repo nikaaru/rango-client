@@ -6,7 +6,7 @@ import type {
   Subscribe,
   SwitchNetwork,
   WalletInfo,
-} from '@rango-dev/wallets-shared';
+} from '@nikaru-dev/wallets-shared';
 import type { BlockchainMeta, SignerFactory } from 'rango-types';
 
 import {
@@ -17,7 +17,7 @@ import {
   Networks,
   switchNetworkForEvm,
   WalletTypes,
-} from '@rango-dev/wallets-shared';
+} from '@nikaru-dev/wallets-shared';
 import { isEvmBlockchain } from 'rango-types';
 
 import {
@@ -54,8 +54,7 @@ export const connect: Connect = async ({ instance, meta }) => {
 
 export const subscribe: Subscribe = ({ instance, updateAccounts, meta }) => {
   const ethInstance = chooseInstance(instance, meta, Networks.ETHEREUM);
-
-  ethInstance?.on('accountsChanged', async (addresses: string[]) => {
+  const handleEvmAccountsChanged = async (addresses: string[]) => {
     const eth_chainId = meta
       .filter(isEvmBlockchain)
       .find((blockchain) => blockchain.name === Networks.ETHEREUM)?.chainId;
@@ -63,7 +62,12 @@ export const subscribe: Subscribe = ({ instance, updateAccounts, meta }) => {
     updateAccounts(addresses, eth_chainId);
     const [{ accounts, chainId }] = await getSolanaAccounts(instance);
     updateAccounts(accounts, chainId);
-  });
+  };
+  ethInstance?.on('accountsChanged', handleEvmAccountsChanged);
+
+  return () => {
+    ethInstance?.off('accountsChanged', handleEvmAccountsChanged);
+  };
 };
 
 export const switchNetwork: SwitchNetwork = async (options) => {

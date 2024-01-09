@@ -1,5 +1,5 @@
 import { i18n } from '@lingui/core';
-import { Typography } from '@rango-dev/ui';
+import { Typography } from '@nikaru-dev/ui';
 import React from 'react';
 
 import { SlippageTooltipContainer } from './Slippage.styles';
@@ -15,7 +15,7 @@ export function SlippageTooltipContent() {
         <br />
         <b>{i18n.t('Warning')}</b>:
         {i18n.t(
-          'This setting is applied per step, e.g. 1Inch, Thorchain, etc. and only that step will be reverted, not the whole transaction'
+          'This setting is applied per step (e.g. 1Inch, Thorchain, etc) which means only the step will be reverted, not the whole transaction.'
         )}
       </Typography>
     </SlippageTooltipContainer>

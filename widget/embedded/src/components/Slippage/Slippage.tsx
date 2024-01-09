@@ -4,14 +4,14 @@ import {
   InfoIcon,
   TextField,
   Tooltip,
-  Typography,
-} from '@rango-dev/ui';
+  Typography
+} from '@nikaru-dev/ui';
 import React from 'react';
 
 import {
   MAX_SLIPPAGE,
   MIN_SLIPPGAE,
-  SLIPPAGES,
+  SLIPPAGES
 } from '../../constants/swapSettings';
 import { useAppStore } from '../../store/AppStore';
 import { getContainer } from '../../utils/common';
@@ -20,7 +20,7 @@ import {
   BaseContainer,
   Head,
   SlippageChip,
-  SlippageChipsContainer,
+  SlippageChipsContainer
 } from './Slippage.styles';
 import { SlippageTooltipContent } from './SlippageTooltipContent';
 
@@ -72,12 +72,12 @@ export function Slippage() {
           value={customSlippage || ''}
           color="dark"
           onChange={(event) => {
-            const parsedValue = parseFloat(event.target.value);
-            if (
-              !parsedValue ||
-              (parsedValue >= MIN_SLIPPGAE && parsedValue <= MAX_SLIPPAGE)
-            ) {
+            const value = event.target.value;
+            const parsedValue = parseFloat(value);
+            if (parsedValue >= MIN_SLIPPGAE && parsedValue <= MAX_SLIPPAGE) {
               setCustomSlippage(parsedValue);
+            } else {
+              setCustomSlippage(null);
             }
           }}
           suffix={

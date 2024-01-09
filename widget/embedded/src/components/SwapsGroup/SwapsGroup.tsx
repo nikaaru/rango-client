@@ -1,10 +1,15 @@
 import type { PropTypes } from './SwapsGroup.types';
 
 import { i18n } from '@lingui/core';
-import { Divider, SwapListItem, Typography } from '@rango-dev/ui';
+import { Divider, SwapListItem, Typography } from '@nikaru-dev/ui';
 import React from 'react';
 
-import { limitDecimalPlaces } from '../../utils/numbers';
+import {
+  TOKEN_AMOUNT_MAX_DECIMALS,
+  TOKEN_AMOUNT_MIN_DECIMALS
+} from '../../constants/routing';
+import { getContainer } from '../../utils/common';
+import { formatTooltipNumbers, numberToString } from '../../utils/numbers';
 
 import { Group, groupStyles, SwapList, Time } from './SwapsGroup.styles';
 
@@ -17,13 +22,13 @@ export function SwapsGroup(props: PropTypes) {
 
     const loadingGroups = [
       {
-        title: 'Today',
-        swaps,
+        title: i18n.t('Today'),
+        swaps
       },
       {
-        title: 'Last month',
-        swaps,
-      },
+        title: i18n.t('This month'),
+        swaps
+      }
     ];
     return (
       <>
@@ -35,7 +40,7 @@ export function SwapsGroup(props: PropTypes) {
                   variant="label"
                   size="medium"
                   className={groupStyles()}>
-                  {i18n.t(group.title)}
+                  {group.title}
                 </Typography>
               </Time>
               <Divider size={4} />
@@ -68,13 +73,14 @@ export function SwapsGroup(props: PropTypes) {
                   variant="label"
                   size="medium"
                   className={groupStyles()}>
-                  {i18n.t(group.title)}
+                  {group.title}
                 </Typography>
               </Time>
               <Divider size={4} />
               <SwapList>
                 {group.swaps.map((swap) => {
                   const firstStep = swap.steps[0];
+
                   const lastStep = swap.steps[swap.steps.length - 1];
                   return (
                     <React.Fragment key={swap.requestId}>
@@ -83,33 +89,44 @@ export function SwapsGroup(props: PropTypes) {
                         creationTime={swap.creationTime}
                         status={swap.status}
                         onClick={onSwapClick}
-                        onlyShowTime={group.title === 'Today'}
+                        tooltipContainer={getContainer()}
+                        onlyShowTime={group.title === i18n.t('Today')}
                         swapTokenData={{
                           from: {
                             token: {
                               image: firstStep.fromLogo,
-                              displayName: firstStep.fromSymbol,
+                              displayName: firstStep.fromSymbol
                             },
                             blockchain: {
-                              image: firstStep.fromBlockchainLogo || '',
+                              image: firstStep.fromBlockchainLogo || ''
                             },
-                            amount: limitDecimalPlaces(swap.inputAmount),
+                            amount: numberToString(
+                              swap.inputAmount,
+                              TOKEN_AMOUNT_MIN_DECIMALS,
+                              TOKEN_AMOUNT_MAX_DECIMALS
+                            ),
+                            realAmount: formatTooltipNumbers(swap.inputAmount)
                           },
                           to: {
                             token: {
                               image: lastStep.toLogo,
-                              displayName: lastStep.toSymbol,
+                              displayName: lastStep.toSymbol
                             },
                             blockchain: {
-                              image: lastStep.toBlockchainLogo || '',
+                              image: lastStep.toBlockchainLogo || ''
                             },
-                            amount: limitDecimalPlaces(
-                              lastStep.outputAmount || ''
+                            amount: numberToString(
+                              lastStep.outputAmount ||
+                                lastStep.expectedOutputAmountHumanReadable ||
+                                '',
+                              TOKEN_AMOUNT_MIN_DECIMALS,
+                              TOKEN_AMOUNT_MAX_DECIMALS
                             ),
-                            estimatedAmount: limitDecimalPlaces(
-                              lastStep.expectedOutputAmountHumanReadable || ''
-                            ),
-                          },
+                            realAmount: formatTooltipNumbers(
+                              lastStep.outputAmount ||
+                                lastStep.expectedOutputAmountHumanReadable
+                            )
+                          }
                         }}
                       />
                     </React.Fragment>

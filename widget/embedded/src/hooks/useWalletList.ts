@@ -1,13 +1,14 @@
 import type { WidgetConfig } from '../types';
+import type { WalletInfo } from '@nikaru-dev/ui';
 import type { BlockchainMeta } from 'rango-sdk';
 
-import { WalletState } from '@rango-dev/ui';
-import { useWallets } from '@rango-dev/wallets-react';
+import { WalletState } from '@nikaru-dev/ui';
+import { useWallets } from '@nikaru-dev/wallets-react';
 import {
   KEPLR_COMPATIBLE_WALLETS,
   type WalletType,
   WalletTypes,
-} from '@rango-dev/wallets-shared';
+} from '@nikaru-dev/wallets-shared';
 import { useEffect, useState } from 'react';
 
 import { useAppStore } from '../store/AppStore';
@@ -101,15 +102,36 @@ export function useWalletList(params: Params) {
     };
   }, []);
 
+  /*
+   * Atm, we only support default injected wallet for the EVM
+   * so we show default wallet when there is no other evm wallet installed
+   * but we have ethereum injected
+   */
+  const shouldShowDefaultInjectedWallet = (wallets: WalletInfo[]) => {
+    const isEvmWalletInstalledExceptDefault = wallets.filter(
+      (wallet) =>
+        wallet.state != WalletState.NOT_INSTALLED &&
+        ![WalletTypes.DEFAULT, WalletTypes.WALLET_CONNECT_2].includes(
+          wallet.type as WalletTypes
+        ) &&
+        getWalletInfo(wallet.type).supportedChains.filter(
+          (blockchain) => blockchain.type == 'EVM'
+        ).length > 0
+    );
+    return isEvmWalletInstalledExceptDefault.length == 0;
+  };
+
   const shouldExcludeWallet = (
     walletType: string,
     chain: string,
     blockchains: BlockchainMeta[]
   ) => {
     return (
-      isExperimentalChain(blockchains, chain) &&
-      isExperimentalChainNotAdded(walletType) &&
-      !KEPLR_COMPATIBLE_WALLETS.includes(walletType)
+      (isExperimentalChain(blockchains, chain) &&
+        isExperimentalChainNotAdded(walletType) &&
+        !KEPLR_COMPATIBLE_WALLETS.includes(walletType)) ||
+      (walletType == WalletTypes.DEFAULT &&
+        !shouldShowDefaultInjectedWallet(wallets))
     );
   };
 

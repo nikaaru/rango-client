@@ -1,4 +1,4 @@
-import { Button, IconButton, styled } from '@rango-dev/ui';
+import { Button, IconButton, styled } from '@nikaru-dev/ui';
 
 export const Link = styled('a', {
   color: '$neutral700',
@@ -7,9 +7,9 @@ export const Link = styled('a', {
   '&:hover': {
     color: '$secondary500',
     '& .icon_container > svg': {
-      color: '$secondary500',
-    },
-  },
+      color: '$secondary500'
+    }
+  }
 });
 
 export const ButtonsContainer = styled('div', {
@@ -19,6 +19,7 @@ export const ButtonsContainer = styled('div', {
   justifyItems: 'center',
   alignItems: 'center',
   backgroundColor: '$neutral300',
+  position: 'relative'
 });
 
 export const ModalFlex = styled('div', {
@@ -26,8 +27,8 @@ export const ModalFlex = styled('div', {
   alignItems: 'center',
   justifyContent: 'end',
   [`& ${IconButton}`]: {
-    padding: '$5',
-  },
+    padding: '$5'
+  }
 });
 
 export const StyledButton = styled(Button, {
@@ -38,54 +39,75 @@ export const StyledButton = styled(Button, {
     variant: {
       contained: {
         color: '$neutral600',
+        fontSize: '$14',
         backgroundColor: '$neutral300',
         '&:hover, &:focus': {
           color: '$secondary500',
-          backgroundColor: '$info100',
-        },
-      },
+          backgroundColor: '$info100'
+        }
+      }
     },
     type: {
       secondary: {
+        zIndex: 10,
+        transition: 'color 0.8s linear',
         color: '$background',
+        fontSize: '$14',
         backgroundColor: '$secondary500',
         '&:hover, &:focus': {
           color: '$background',
-          backgroundColor: '$secondary500',
-        },
-      },
-    },
-  },
+          backgroundColor: 'transparent'
+        }
+      }
+    }
+  }
+});
+
+export const BackdropTab = styled('div', {
+  width: '362px',
+  height: '$40',
+  backgroundColor: '$secondary500',
+  position: 'absolute',
+  borderRadius: '$xm',
+  inset: 0,
+  transition: 'transform 0.5s ease-in-out'
 });
 
 export const LinkContainer = styled('div', {
-  padding: '$5',
+  padding: '$5'
 });
 
 export const Head = styled('div', {
   display: 'flex',
   padding: '$10 0',
   borderBottom: '1px solid $neutral300',
+  borderTop: '1px solid $neutral300'
 });
 
 export const APIKeyInputContainer = styled('div', {
   width: '350px',
+  backgroundColor: '$neutral100',
+  padding: '$5 $10',
+  borderRadius: '$sm'
 });
 
 export const HelpLinksContainer = styled('div', {
   margin: 'auto',
   marginBottom: 'inherit',
   marginRight: 'inherit',
-  display: 'flex',
+  display: 'flex'
 });
 
 export const ExternalLinkIconContainer = styled('span', {
   position: 'relative',
   display: 'inline-block',
-  top: '1px',
+  top: '1px'
 });
 
 export const StyledIconButton = styled(IconButton, {
   width: '48px',
-  height: '48px',
+  height: '48px'
+});
+export const Label = styled('span', {
+  display: 'flex'
 });

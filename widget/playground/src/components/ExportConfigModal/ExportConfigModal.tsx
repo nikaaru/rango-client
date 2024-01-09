@@ -1,21 +1,22 @@
 import type {
   ExportConfigModalProps,
-  ExportType,
+  ExportType
 } from './ExportConfigModal.types';
 
 import {
   CloseIcon,
   Divider,
   ExternalLinkIcon,
+  KeyIcon,
   Modal,
   ModalHeader,
   TextField,
-  Typography,
-} from '@rango-dev/ui';
+  Typography
+} from '@nikaru-dev/ui';
 import React, { Fragment, useState } from 'react';
 import {
   atomDark as dark,
-  prism,
+  prism
 } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 import { useTheme } from '../../hooks/useTheme';
@@ -25,23 +26,28 @@ import { filterConfig, formatConfig } from '../../utils/export';
 import { CodeBlock } from './CodeBlock';
 import {
   APIKeyInputContainer,
+  BackdropTab,
   ButtonsContainer,
   ExternalLinkIconContainer,
   Head,
   HelpLinksContainer,
+  Label,
   Link,
   LinkContainer,
   ModalFlex,
   StyledButton,
-  StyledIconButton,
+  StyledIconButton
 } from './ExportConfigModal.styles';
 import { typesOfCodeBlocks } from './ExportConfigModal.types';
+
+const TAB_WIDTH = 333;
 
 export function ExportConfigModal(props: ExportConfigModalProps) {
   const { open, onClose, config } = props;
 
   const { activeTheme } = useTheme();
   const [selected, setSelected] = useState<ExportType>('embedded');
+  const [selectedIndex, setSelectedIndex] = useState(0);
   const syntaxHighlighterTheme = activeTheme === 'dark' ? dark : prism;
   const { filteredConfigForExport } = filterConfig(config, initialConfig);
   const formatedConfig = formatConfig(filteredConfigForExport);
@@ -55,7 +61,7 @@ export function ExportConfigModal(props: ExportConfigModalProps) {
         width: '90%',
         maxHeight: '865px',
         height: '90%',
-        padding: '$20',
+        padding: '$20'
       }}
       hasLogo={false}
       header={
@@ -74,7 +80,7 @@ export function ExportConfigModal(props: ExportConfigModalProps) {
       onClose={onClose}
       title="Export Code"
       anchor="center">
-      <Divider size={32} />
+      <Divider size={30} />
       <Head>
         <APIKeyInputContainer>
           <TextField
@@ -86,7 +92,17 @@ export function ExportConfigModal(props: ExportConfigModalProps) {
             }}
             name="apiKey"
             value={apiKey}
-            label="Replace your key"
+            label={
+              <Label>
+                <KeyIcon /> <Divider direction="horizontal" size={'4'} />
+                Replace your key
+              </Label>
+            }
+            labelProps={{
+              color: '$neutral600',
+              size: 'medium',
+              variant: 'label'
+            }}
             type="string"
             placeholder="Enter API Key"
           />
@@ -118,7 +134,8 @@ export function ExportConfigModal(props: ExportConfigModalProps) {
           </LinkContainer>
         </HelpLinksContainer>
       </Head>
-      <Divider size={32} />
+      <Divider size={30} />
+
       <ButtonsContainer>
         {Object.keys(typesOfCodeBlocks).map((type, index) => {
           const key = `block-${index}`;
@@ -126,16 +143,25 @@ export function ExportConfigModal(props: ExportConfigModalProps) {
             <Fragment key={key}>
               <StyledButton
                 size="medium"
-                variant="contained"
+                disableRipple={true}
                 type={selected === type ? 'secondary' : undefined}
-                onClick={() => setSelected(type as ExportType)}>
+                variant={selected !== type ? 'contained' : undefined}
+                onClick={() => {
+                  setSelectedIndex(index);
+                  setSelected(type as ExportType);
+                }}>
                 {type}
               </StyledButton>
             </Fragment>
           );
         })}
+        <BackdropTab
+          css={{
+            transform: `translateX(${TAB_WIDTH * selectedIndex}px)`
+          }}
+        />
       </ButtonsContainer>
-      <Divider size={12} />
+      <Divider size={10} />
       <CodeBlock
         language={typesOfCodeBlocks[selected].language}
         theme={syntaxHighlighterTheme}>

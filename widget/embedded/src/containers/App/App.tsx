@@ -1,6 +1,6 @@
-import type { WalletType } from '@rango-dev/wallets-shared';
+import type { WalletType } from '@nikaru-dev/wallets-shared';
 
-import { I18nManager } from '@rango-dev/ui';
+import { I18nManager } from '@nikaru-dev/ui';
 import React, { useContext, useEffect, useState } from 'react';
 
 import { AppRouter } from '../../components/AppRouter';
@@ -20,7 +20,7 @@ export function Main() {
 
   const { config } = useAppStore();
   const { activeTheme } = useTheme(config?.theme || {});
-  const { activeLanguage, changeLanguage } = useLanguage();
+  const { activeLanguage } = useLanguage();
   const [lastConnectedWalletWithNetwork, setLastConnectedWalletWithNetwork] =
     useState<string>('');
   const [disconnectedWallet, setDisconnectedWallet] = useState<WalletType>();
@@ -30,9 +30,6 @@ export function Main() {
     void useNotificationStore.persist.rehydrate();
     widgetContext.onConnectWallet(setLastConnectedWalletWithNetwork);
   }, []);
-  useEffect(() => {
-    changeLanguage(config?.language);
-  }, [config?.language]);
 
   return (
     <I18nManager language={activeLanguage}>

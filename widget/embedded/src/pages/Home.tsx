@@ -1,5 +1,5 @@
 import { i18n } from '@lingui/core';
-import { Button, styled, SwapInput, WarningIcon } from '@rango-dev/ui';
+import { Button, styled, SwapInput, WarningIcon } from '@nikaru-dev/ui';
 import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -14,7 +14,7 @@ import {
   TOKEN_AMOUNT_MAX_DECIMALS,
   TOKEN_AMOUNT_MIN_DECIMALS,
   USD_VALUE_MAX_DECIMALS,
-  USD_VALUE_MIN_DECIMALS,
+  USD_VALUE_MIN_DECIMALS
 } from '../constants/routing';
 import { QuoteInfo } from '../containers/QuoteInfo';
 import { useSwapInput } from '../hooks/useSwapInput';
@@ -22,7 +22,8 @@ import { useAppStore } from '../store/AppStore';
 import { useQuoteStore } from '../store/quote';
 import { useUiStore } from '../store/ui';
 import { useWalletsStore } from '../store/wallets';
-import { numberToString } from '../utils/numbers';
+import { getContainer } from '../utils/common';
+import { formatTooltipNumbers, numberToString } from '../utils/numbers';
 import { getPriceImpact, getPriceImpactLevel } from '../utils/quote';
 import { canComputePriceImpact, getSwapButtonState } from '../utils/swap';
 import { formatBalance, isFetchingBalance } from '../utils/wallets';
@@ -32,19 +33,19 @@ const Container = styled('div', {
   flexDirection: 'column',
   overflowY: 'visible',
   '& .quote__container': {
-    paddingTop: '$2',
-  },
+    paddingTop: '$2'
+  }
 });
 
 const FromContainer = styled('div', {
-  position: 'relative',
+  position: 'relative'
 });
 
 const InputsContainer = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   gap: 5,
-  alignSelf: 'stretch',
+  alignSelf: 'stretch'
 });
 export function Home() {
   const navigate = useNavigate();
@@ -52,7 +53,7 @@ export function Home() {
     fetch: fetchQuote,
     loading: fetchingQuote,
     error: quoteError,
-    warning: quoteWarning,
+    warning: quoteWarning
   } = useSwapInput();
   const {
     fromToken,
@@ -66,7 +67,7 @@ export function Home() {
     outputUsdValue,
     quote,
     resetQuoteWallets,
-    setQuoteWarningsConfirmed,
+    setQuoteWarningsConfirmed
   } = useQuoteStore();
 
   const fetchMetaStatus = useAppStore().fetchStatus;
@@ -101,7 +102,7 @@ export function Home() {
     anyWalletConnected: connectedWallets.length > 0,
     error: quoteError,
     warning: quoteWarning,
-    needsToWarnEthOnPath,
+    needsToWarnEthOnPath
   });
 
   const fromTokenBalance = fromToken ? getBalanceFor(fromToken) : null;
@@ -160,11 +161,15 @@ export function Home() {
         suffix: (
           <HomeButtons
             layoutRef={layoutRef.current}
-            onClickRefresh={!!quote || quoteError ? fetchQuote : undefined}
+            onClickRefresh={
+              (!!quote || quoteError) && !showQuoteWarningModal
+                ? fetchQuote
+                : undefined
+            }
             onClickHistory={() => navigate(navigationRoutes.swaps)}
             onClickSettings={() => navigate(navigationRoutes.settings)}
           />
-        ),
+        )
       }}>
       <Container>
         <InputsContainer>
@@ -176,11 +181,11 @@ export function Home() {
               balance={fromTokenFormattedBalance}
               chain={{
                 displayName: fromBlockchain?.displayName || '',
-                image: fromBlockchain?.logo || '',
+                image: fromBlockchain?.logo || ''
               }}
               token={{
                 displayName: fromToken?.symbol || '',
-                image: fromToken?.image || '',
+                image: fromToken?.image || ''
               }}
               onClickToken={() => navigate(navigationRoutes.fromSwap)}
               price={{
@@ -192,13 +197,17 @@ export function Home() {
                       USD_VALUE_MIN_DECIMALS,
                       USD_VALUE_MAX_DECIMALS
                     ),
+                realUsdValue: priceImpactInputCanNotBeComputed
+                  ? undefined
+                  : formatTooltipNumbers(inputUsdValue),
                 error: priceImpactInputCanNotBeComputed
                   ? errorMessages().unknownPriceError.impactTitle
-                  : undefined,
+                  : undefined
               }}
               disabled={fetchMetaStatus === 'failed'}
               loading={fetchMetaStatus === 'loading'}
               loadingBalance={fetchingBalance}
+              tooltipContainer={getContainer()}
               onSelectMaxBalance={() => {
                 if (fromTokenFormattedBalance !== '0') {
                   setInputAmount(tokenBalanceReal.split(',').join(''));
@@ -214,11 +223,11 @@ export function Home() {
             fetchingQuote={fetchingQuote}
             chain={{
               displayName: toBlockchain?.displayName || '',
-              image: toBlockchain?.logo || '',
+              image: toBlockchain?.logo || ''
             }}
             token={{
               displayName: toToken?.symbol || '',
-              image: toToken?.image || '',
+              image: toToken?.image || ''
             }}
             percentageChange={numberToString(
               getPriceImpact(inputUsdValue, outputUsdValue),
@@ -239,13 +248,18 @@ export function Home() {
                     USD_VALUE_MIN_DECIMALS,
                     USD_VALUE_MAX_DECIMALS
                   ),
+              realValue: formatTooltipNumbers(outputAmount),
+              realUsdValue: priceImpactOutputCanNotBeComputed
+                ? undefined
+                : formatTooltipNumbers(outputUsdValue),
               error: priceImpactOutputCanNotBeComputed
                 ? errorMessages().unknownPriceError.impactTitle
-                : undefined,
+                : undefined
             }}
             onClickToken={() => navigate(navigationRoutes.toSwap)}
             disabled={fetchMetaStatus === 'failed'}
             loading={fetchMetaStatus === 'loading'}
+            tooltipContainer={getContainer()}
           />
         </InputsContainer>
         <div className="quote__container">

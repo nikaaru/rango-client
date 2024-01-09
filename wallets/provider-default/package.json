@@ -1,0 +1,31 @@
+{
+  "name": "@nikaru-dev/provider-default",
+  "version": "0.22.1-next.2",
+  "license": "MIT",
+  "type": "module",
+  "source": "./src/index.ts",
+  "main": "./dist/index.js",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "node ../../scripts/build/command.mjs --path wallets/provider-default",
+    "ts-check": "tsc --declaration --emitDeclarationOnly -p ./tsconfig.json",
+    "clean": "rimraf dist",
+    "format": "prettier --write '{.,src}/**/*.{ts,tsx}'",
+    "lint": "eslint \"**/*.{ts,tsx}\" --ignore-path ../../.eslintignore"
+  },
+  "dependencies": {
+    "@nikaru-dev/signer-evm": "^0.25.1-next.0",
+    "@nikaru-dev/wallets-shared": "^0.25.1-next.2",
+    "rango-types": "^0.1.57"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
