@@ -4,7 +4,7 @@ import {
   ListItemButton,
   Radio,
   RadioRoot,
-  Typography
+  Typography,
 } from '@nikaru-dev/ui';
 import React from 'react';
 
@@ -27,14 +27,14 @@ export function LanguagePage() {
       ),
       onClick: () => changeLanguage(languageItem.local),
       end: <Radio value={local} />,
-      start: <SVGFlag />
+      start: <SVGFlag />,
     };
   });
 
   return (
     <Layout
       header={{
-        title: i18n.t('Language')
+        title: i18n.t('Language2'),
       }}>
       <SettingsContainer>
         <RadioRoot value={activeLanguage}>
