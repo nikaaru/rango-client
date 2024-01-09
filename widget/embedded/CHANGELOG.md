@@ -1,3 +1,12 @@
+## [0.21.1](https://github.com/nikaaru/rango-client/compare/widget-embedded@0.21.0...widget-embedded@0.21.1) (2024-01-09)
+
+
+### Bug Fixes
+
+* update language page ([fb5515e](https://github.com/nikaaru/rango-client/commit/fb5515e5b39762cbeee147485f76f5729b3a9913))
+
+
+
 # 0.21.0 (2024-01-09)
 
 
