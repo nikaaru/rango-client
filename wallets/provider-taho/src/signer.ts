@@ -1,4 +1,4 @@
-import { DefaultEvmSigner } from '@rango-dev/signer-evm';
+import { DefaultEvmSigner } from '@nikaru-dev/signer-evm';
 import {
   DefaultSignerFactory,
   SignerFactory,

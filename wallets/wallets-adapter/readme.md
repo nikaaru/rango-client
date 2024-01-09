@@ -1,1 +1,1 @@
-# @rango-dev/provider-adapter
+# @nikaru-dev/provider-adapter

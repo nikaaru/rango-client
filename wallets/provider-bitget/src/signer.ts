@@ -1,8 +1,8 @@
 import type { SignerFactory } from 'rango-types';
 
-import { DefaultEvmSigner } from '@rango-dev/signer-evm';
-import { DefaultTronSigner } from '@rango-dev/signer-tron';
-import { getNetworkInstance, Networks } from '@rango-dev/wallets-shared';
+import { DefaultEvmSigner } from '@nikaru-dev/signer-evm';
+import { DefaultTronSigner } from '@nikaru-dev/signer-tron';
+import { getNetworkInstance, Networks } from '@nikaru-dev/wallets-shared';
 import { DefaultSignerFactory, TransactionType as TxType } from 'rango-types';
 
 export default function getSigners(provider: any): SignerFactory {

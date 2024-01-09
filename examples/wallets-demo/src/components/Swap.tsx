@@ -1,7 +1,7 @@
 import type { BlockchainMeta, Token } from 'rango-sdk';
 
-import { Image, styled, Typography } from '@rango-dev/ui';
-import { ArrowRightIcon } from '@rango-dev/ui/src/components/Icon';
+import { Image, styled, Typography } from '@nikaru-dev/ui';
+import { ArrowRightIcon } from '@nikaru-dev/ui/src/components/Icon';
 import React from 'react';
 
 interface swap {
@@ -21,14 +21,14 @@ const Box = styled('div', {
   display: 'flex',
   flexDirection: 'row',
   textAlign: 'center',
-  alignItems: 'center',
+  alignItems: 'center'
 });
 
 const Content = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  margin: '0 $10',
+  margin: '0 $10'
 });
 
 export function SwapComponent(props: PropTypes) {

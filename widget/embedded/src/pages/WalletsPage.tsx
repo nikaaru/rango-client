@@ -1,7 +1,7 @@
-import type { WalletType } from '@rango-dev/wallets-shared';
+import type { WalletType } from '@nikaru-dev/wallets-shared';
 
 import { i18n } from '@lingui/core';
-import { styled, Typography, Wallet, WalletState } from '@rango-dev/ui';
+import { styled, Typography, Wallet, WalletState } from '@nikaru-dev/ui';
 import React, { Fragment, useState } from 'react';
 
 import { Layout } from '../components/Layout';
@@ -17,11 +17,11 @@ const ListContainer = styled('div', {
   gap: '$10',
   flexWrap: 'wrap',
   paddingTop: '$5',
-  height: '100%',
+  height: '100%'
 });
 
 const Container = styled('div', {
-  textAlign: 'center',
+  textAlign: 'center'
 });
 
 export const TIME_TO_CLOSE_MODAL = 3_000;
@@ -48,7 +48,7 @@ export function WalletsPage() {
       setTimeout(() => {
         setOpenModal(false);
       }, TIME_TO_CLOSE_MODAL);
-    },
+    }
   });
 
   const selectedWallet = list.find(
@@ -61,7 +61,7 @@ export function WalletsPage() {
   return (
     <Layout
       header={{
-        title: i18n.t('Connect Wallets'),
+        title: i18n.t('Connect Wallets')
       }}>
       <Container>
         <Typography variant="title" size="xmedium" align="center">

@@ -1,1 +1,1 @@
-# @rango-dev/provider-safe
+# @nikaru-dev/provider-safe

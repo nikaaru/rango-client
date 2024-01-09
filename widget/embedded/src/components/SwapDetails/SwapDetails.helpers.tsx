@@ -1,16 +1,16 @@
 import type { GetStep } from '../SwapDetailsAlerts';
-import type { Step, StepDetailsProps } from '@rango-dev/ui';
+import type { Step, StepDetailsProps } from '@nikaru-dev/ui';
 import type { PendingSwapStep } from 'rango-types';
 
 import React from 'react';
 
 import {
   TOKEN_AMOUNT_MAX_DECIMALS,
-  TOKEN_AMOUNT_MIN_DECIMALS,
+  TOKEN_AMOUNT_MIN_DECIMALS
 } from '../../constants/routing';
 import {
   getBlockchainShortNameFor,
-  getSwapperDisplayName,
+  getSwapperDisplayName
 } from '../../utils/meta';
 import { numberToString } from '../../utils/numbers';
 import { isNetworkStatusInWarningState } from '../../utils/swap';
@@ -38,7 +38,7 @@ export const getSteps = ({
         chain: {
           displayName:
             getBlockchainShortNameFor(step.fromBlockchain, blockchains) ?? '',
-          image: step.fromBlockchainLogo ?? '',
+          image: step.fromBlockchainLogo ?? ''
         },
         price: {
           value: numberToString(
@@ -46,15 +46,15 @@ export const getSteps = ({
             TOKEN_AMOUNT_MIN_DECIMALS,
             TOKEN_AMOUNT_MAX_DECIMALS
           ),
-          realValue: amountToConvert,
-        },
+          realValue: amountToConvert
+        }
       },
       to: {
         token: { displayName: step.toSymbol, image: step.toLogo },
         chain: {
           displayName:
             getBlockchainShortNameFor(step.toBlockchain, blockchains) ?? '',
-          image: step.toBlockchainLogo ?? '',
+          image: step.toBlockchainLogo ?? ''
         },
         price: {
           value: numberToString(
@@ -62,14 +62,13 @@ export const getSteps = ({
             TOKEN_AMOUNT_MIN_DECIMALS,
             TOKEN_AMOUNT_MAX_DECIMALS
           ),
-          realValue:
-            step.outputAmount || step.expectedOutputAmountHumanReadable,
-        },
+          realValue: step.outputAmount || step.expectedOutputAmountHumanReadable
+        }
       },
       swapper: {
         displayName: getSwapperDisplayName(step.swapperId, swappers),
         image: step.swapperLogo ?? '',
-        type: step.swapperType,
+        type: step.swapperType
       },
       internalSwaps: step.internalSwaps
         ? step.internalSwaps.map((internalSwap) => {
@@ -79,14 +78,14 @@ export const getSteps = ({
                   getBlockchainShortNameFor(
                     internalSwap.fromBlockchain,
                     blockchains
-                  ) ?? '',
+                  ) ?? ''
               },
               to: {
                 blockchain:
                   getBlockchainShortNameFor(
                     internalSwap.toBlockchain,
                     blockchains
-                  ) ?? '',
+                  ) ?? ''
               },
               swapper: {
                 displayName: getSwapperDisplayName(
@@ -94,8 +93,8 @@ export const getSteps = ({
                   swappers
                 ),
                 image: internalSwap.swapperLogo ?? '',
-                type: internalSwap.swapperType,
-              },
+                type: internalSwap.swapperType
+              }
             };
           })
         : [],
@@ -105,7 +104,7 @@ export const getSteps = ({
           hasAlreadyProceededToSign={hasAlreadyProceededToSign}
           {...args}
         />
-      ),
+      )
     };
   });
 };

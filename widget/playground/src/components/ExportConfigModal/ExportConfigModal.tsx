@@ -1,6 +1,6 @@
 import type {
   ExportConfigModalProps,
-  ExportType,
+  ExportType
 } from './ExportConfigModal.types';
 
 import {
@@ -11,12 +11,12 @@ import {
   Modal,
   ModalHeader,
   TextField,
-  Typography,
-} from '@rango-dev/ui';
+  Typography
+} from '@nikaru-dev/ui';
 import React, { Fragment, useState } from 'react';
 import {
   atomDark as dark,
-  prism,
+  prism
 } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 import { useTheme } from '../../hooks/useTheme';
@@ -36,7 +36,7 @@ import {
   LinkContainer,
   ModalFlex,
   StyledButton,
-  StyledIconButton,
+  StyledIconButton
 } from './ExportConfigModal.styles';
 import { typesOfCodeBlocks } from './ExportConfigModal.types';
 
@@ -61,7 +61,7 @@ export function ExportConfigModal(props: ExportConfigModalProps) {
         width: '90%',
         maxHeight: '865px',
         height: '90%',
-        padding: '$20',
+        padding: '$20'
       }}
       hasLogo={false}
       header={
@@ -101,7 +101,7 @@ export function ExportConfigModal(props: ExportConfigModalProps) {
             labelProps={{
               color: '$neutral600',
               size: 'medium',
-              variant: 'label',
+              variant: 'label'
             }}
             type="string"
             placeholder="Enter API Key"
@@ -157,7 +157,7 @@ export function ExportConfigModal(props: ExportConfigModalProps) {
         })}
         <BackdropTab
           css={{
-            transform: `translateX(${TAB_WIDTH * selectedIndex}px)`,
+            transform: `translateX(${TAB_WIDTH * selectedIndex}px)`
           }}
         />
       </ButtonsContainer>

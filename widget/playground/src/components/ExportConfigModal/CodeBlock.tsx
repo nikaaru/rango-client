@@ -1,17 +1,17 @@
 import type { CodeBlockProps } from './CodeBlock.types';
 
-import { CopyIcon, Tooltip, useCopyToClipboard } from '@rango-dev/ui';
+import { CopyIcon, Tooltip, useCopyToClipboard } from '@nikaru-dev/ui';
 import React, { useState } from 'react';
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import {
   javascript,
-  jsx,
+  jsx
 } from 'react-syntax-highlighter/dist/esm/languages/prism';
 
 import {
   CodeBlockContainer,
   CopyCodeBlock,
-  CopyCodeBlockButton,
+  CopyCodeBlockButton
 } from './CodeBlock.styles';
 
 const RESET_INTERVAL = 2_000;

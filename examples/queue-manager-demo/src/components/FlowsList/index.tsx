@@ -1,8 +1,10 @@
-import { useManager } from '@rango-dev/queue-manager-react';
+import type { WalletType } from '@nikaru-dev/wallets-shared';
+
+import { useManager } from '@nikaru-dev/queue-manager-react';
 import React, { useEffect, useState } from 'react';
+
 import { requestSwap, urlToToken } from '../../flows/rango/helpers';
 import { FlowRunner } from '../FlowRunner';
-import { WalletType } from '@rango-dev/wallets-shared';
 
 interface PropTypes {
   connectedWallets: WalletType[];
@@ -35,7 +37,7 @@ function FlowsList(props: PropTypes) {
       onRun: () => {
         const qId = manager?.create('simpleSwap', {});
         console.debug(`[Queue] created. ID: ${qId}`, manager);
-      },
+      }
     },
     {
       title: 'Rango Swap (On-chain)',
@@ -51,10 +53,10 @@ function FlowsList(props: PropTypes) {
         const swap = await requestSwap('2', from, to);
         //   toast({ eventType: 'swap_started', swap: newSwap, step: newSwap.steps[0] });
         const qId = manager?.create('rango-swap', {
-          swapDetails: swap,
+          swapDetails: swap
         });
         console.debug(`[Queue] Swap created. ID: ${qId}`, manager);
-      },
+      }
     },
     {
       title: 'Rango Swap (Cross-chain)',
@@ -100,17 +102,17 @@ function FlowsList(props: PropTypes) {
         const swap = await requestSwap(input, from, to);
         //   toast({ eventType: 'swap_started', swap: newSwap, step: newSwap.steps[0] });
         const qId = manager?.create('rango-swap', {
-          swapDetails: swap,
+          swapDetails: swap
         });
         console.debug(`[Queue] Swap created. ID: ${qId}`, manager);
-      },
+      }
     },
     {
       title: 'Rango Parallel Swaps',
       description: 'Run multiple swaps at the same time using Rango flow.',
       requirements: [
         'Please use Metamask & Keplr (cosmos) for now.',
-        'FTM -> ATOM and USDC -> USDT on polygon',
+        'FTM -> ATOM and USDC -> USDT on polygon'
       ],
       onRun: async () => {
         const from1 = urlToToken(
@@ -131,8 +133,8 @@ function FlowsList(props: PropTypes) {
         const q2Id = manager?.create('rango-swap', { swapDetails: swap2 });
         console.debug(`[Queue] Swap created. ID: ${qId}`);
         console.debug(`[Queue] Swap created. ID: ${q2Id}`);
-      },
-    },
+      }
+    }
   ];
 
   return (

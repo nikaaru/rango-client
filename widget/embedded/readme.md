@@ -1,3 +1,3 @@
-# @rango-dev/widget-embedded
+# @nikaru-dev/widget-embedded
 
 Rango Embedded Widget

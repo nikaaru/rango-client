@@ -1,5 +1,5 @@
 import { i18n } from '@lingui/core';
-import { Button, styled, SwapInput, WarningIcon } from '@rango-dev/ui';
+import { Button, styled, SwapInput, WarningIcon } from '@nikaru-dev/ui';
 import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -14,7 +14,7 @@ import {
   TOKEN_AMOUNT_MAX_DECIMALS,
   TOKEN_AMOUNT_MIN_DECIMALS,
   USD_VALUE_MAX_DECIMALS,
-  USD_VALUE_MIN_DECIMALS,
+  USD_VALUE_MIN_DECIMALS
 } from '../constants/routing';
 import { QuoteInfo } from '../containers/QuoteInfo';
 import { useSwapInput } from '../hooks/useSwapInput';
@@ -33,19 +33,19 @@ const Container = styled('div', {
   flexDirection: 'column',
   overflowY: 'visible',
   '& .quote__container': {
-    paddingTop: '$2',
-  },
+    paddingTop: '$2'
+  }
 });
 
 const FromContainer = styled('div', {
-  position: 'relative',
+  position: 'relative'
 });
 
 const InputsContainer = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   gap: 5,
-  alignSelf: 'stretch',
+  alignSelf: 'stretch'
 });
 export function Home() {
   const navigate = useNavigate();
@@ -53,7 +53,7 @@ export function Home() {
     fetch: fetchQuote,
     loading: fetchingQuote,
     error: quoteError,
-    warning: quoteWarning,
+    warning: quoteWarning
   } = useSwapInput();
   const {
     fromToken,
@@ -67,7 +67,7 @@ export function Home() {
     outputUsdValue,
     quote,
     resetQuoteWallets,
-    setQuoteWarningsConfirmed,
+    setQuoteWarningsConfirmed
   } = useQuoteStore();
 
   const fetchMetaStatus = useAppStore().fetchStatus;
@@ -102,7 +102,7 @@ export function Home() {
     anyWalletConnected: connectedWallets.length > 0,
     error: quoteError,
     warning: quoteWarning,
-    needsToWarnEthOnPath,
+    needsToWarnEthOnPath
   });
 
   const fromTokenBalance = fromToken ? getBalanceFor(fromToken) : null;
@@ -169,7 +169,7 @@ export function Home() {
             onClickHistory={() => navigate(navigationRoutes.swaps)}
             onClickSettings={() => navigate(navigationRoutes.settings)}
           />
-        ),
+        )
       }}>
       <Container>
         <InputsContainer>
@@ -181,11 +181,11 @@ export function Home() {
               balance={fromTokenFormattedBalance}
               chain={{
                 displayName: fromBlockchain?.displayName || '',
-                image: fromBlockchain?.logo || '',
+                image: fromBlockchain?.logo || ''
               }}
               token={{
                 displayName: fromToken?.symbol || '',
-                image: fromToken?.image || '',
+                image: fromToken?.image || ''
               }}
               onClickToken={() => navigate(navigationRoutes.fromSwap)}
               price={{
@@ -202,7 +202,7 @@ export function Home() {
                   : formatTooltipNumbers(inputUsdValue),
                 error: priceImpactInputCanNotBeComputed
                   ? errorMessages().unknownPriceError.impactTitle
-                  : undefined,
+                  : undefined
               }}
               disabled={fetchMetaStatus === 'failed'}
               loading={fetchMetaStatus === 'loading'}
@@ -223,11 +223,11 @@ export function Home() {
             fetchingQuote={fetchingQuote}
             chain={{
               displayName: toBlockchain?.displayName || '',
-              image: toBlockchain?.logo || '',
+              image: toBlockchain?.logo || ''
             }}
             token={{
               displayName: toToken?.symbol || '',
-              image: toToken?.image || '',
+              image: toToken?.image || ''
             }}
             percentageChange={numberToString(
               getPriceImpact(inputUsdValue, outputUsdValue),
@@ -254,7 +254,7 @@ export function Home() {
                 : formatTooltipNumbers(outputUsdValue),
               error: priceImpactOutputCanNotBeComputed
                 ? errorMessages().unknownPriceError.impactTitle
-                : undefined,
+                : undefined
             }}
             onClickToken={() => navigate(navigationRoutes.toSwap)}
             disabled={fetchMetaStatus === 'failed'}

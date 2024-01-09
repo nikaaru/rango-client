@@ -1,1 +1,1 @@
-# @rango-dev/queue-manager-core
+# @nikaru-dev/queue-manager-core

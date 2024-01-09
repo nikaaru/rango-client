@@ -7,8 +7,8 @@ import {
   LogoWithTextIcon,
   Switch,
   Typography,
-  WidthIcon,
-} from '@rango-dev/ui';
+  WidthIcon
+} from '@nikaru-dev/ui';
 import React, { useState } from 'react';
 
 import { SideNavigation } from '../../components/SideNavigation';
@@ -29,7 +29,7 @@ import {
   LogoIcon,
   Main,
   MobileContent,
-  MobileSection,
+  MobileSection
 } from './ConfigContainer.styles';
 
 export function ConfigContainer(props: PropsWithChildren) {

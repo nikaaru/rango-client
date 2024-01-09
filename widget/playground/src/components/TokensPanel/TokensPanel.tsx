@@ -1,15 +1,15 @@
 import type { PropTypes, TokenType } from './TokensPanel.types';
-import type { Tokens } from '@rango-dev/widget-embedded';
+import type { Tokens } from '@nikaru-dev/widget-embedded';
 import type { Asset } from 'rango-sdk';
 
-import { ChainsIcon, Checkbox, Divider, Typography } from '@rango-dev/ui';
+import { ChainsIcon, Checkbox, Divider, Typography } from '@nikaru-dev/ui';
 import React, { useState } from 'react';
 
 import { tokensAreEqual } from '../../utils/common';
 import {
   HeaderContainer,
   SelectButton,
-  SelectDeselectText,
+  SelectDeselectText
 } from '../MultiList/MultiList.styles';
 import { StyledButton } from '../SingleList/SingleList.styles';
 
@@ -28,7 +28,7 @@ export function TokensPanel(props: PropTypes) {
     list: listProps,
     selectedBlockchains: selectedBlockchainsProps,
     onChange,
-    tokensConfig,
+    tokensConfig
   } = props;
   const [selectedBlockchain, setSelectedBlockchain] = useState(
     selectedBlockchainsProps[0]
@@ -54,12 +54,12 @@ export function TokensPanel(props: PropTypes) {
       return [
         ...supportedTokenList[blockchain].tokens.filter(
           (t) => !tokensAreEqual(t, token)
-        ),
+        )
       ];
     }
     return [
       ...supportedTokenList[blockchain].tokens,
-      { symbol, address, blockchain },
+      { symbol, address, blockchain }
     ];
   };
 
@@ -87,7 +87,7 @@ export function TokensPanel(props: PropTypes) {
       .map(({ symbol, blockchain, address }) => ({
         symbol,
         blockchain,
-        address,
+        address
       }));
     if (supportedTokenList[blockchain]) {
       const blockchainTokens = supportedTokenList[blockchain].tokens;
@@ -111,8 +111,8 @@ export function TokensPanel(props: PropTypes) {
         ...tokens,
         [blockchain]: {
           ...tokens[blockchain],
-          tokens: getTokens(selected, allTokensInBlockchain, token),
-        },
+          tokens: getTokens(selected, allTokensInBlockchain, token)
+        }
       };
     }
 
@@ -123,8 +123,8 @@ export function TokensPanel(props: PropTypes) {
         tokens:
           !token && !selected
             ? []
-            : allTokensInBlockchain.filter((t) => !tokensAreEqual(t, token)),
-      },
+            : allTokensInBlockchain.filter((t) => !tokensAreEqual(t, token))
+      }
     };
   };
 
@@ -157,7 +157,7 @@ export function TokensPanel(props: PropTypes) {
         selectedBlockchain,
         supportedTokenList,
         selected
-      ),
+      )
     };
 
     setSupportedTokenList(tokenList);
@@ -209,9 +209,9 @@ export function TokensPanel(props: PropTypes) {
           .map(({ symbol, blockchain, address }) => ({
             symbol,
             blockchain,
-            address,
-          })),
-      },
+            address
+          }))
+      }
     };
     setList((prev) =>
       prev.map((item) => {

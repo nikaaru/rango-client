@@ -10,8 +10,8 @@ import {
   Radio,
   RadioRoot,
   Typography,
-  VirtualizedList,
-} from '@rango-dev/ui';
+  VirtualizedList
+} from '@nikaru-dev/ui';
 import React, { forwardRef, useEffect, useState } from 'react';
 
 import { SearchInput } from '../SearchInput';
@@ -20,7 +20,7 @@ import {
   EmptyContainer,
   HeaderContainer,
   RadioList,
-  StyledButton,
+  StyledButton
 } from './SingleList.styles';
 
 const PAGE_SIZE = 30;
@@ -88,7 +88,7 @@ export function SingleList(props: PropTypes) {
           <RadioRoot
             value={item || defaultValue || undefined}
             style={{
-              height: '100%',
+              height: '100%'
             }}>
             <VirtualizedList
               Item={({ index, style }) => {
@@ -97,11 +97,11 @@ export function SingleList(props: PropTypes) {
                   <div
                     style={{
                       ...style,
-                      paddingRight: 5,
+                      paddingRight: 5
                     }}>
                     <ListItemButton
                       style={{
-                        height: style?.height,
+                        height: style?.height
                       }}
                       start={
                         virtualList[index].image ? (
@@ -162,7 +162,7 @@ export const InnerElementType: React.FC<CommonProps> = forwardRef(
           ...render.style,
           height: `${
             parseFloat(render.style?.height as string) + PADDING_SPACE * 2
-          }px`,
+          }px`
         }}
       />
     );

@@ -1,5 +1,5 @@
-import { cancelSwap } from '@rango-dev/queue-manager-rango-preset';
-import { useManager } from '@rango-dev/queue-manager-react';
+import { cancelSwap } from '@nikaru-dev/queue-manager-rango-preset';
+import { useManager } from '@nikaru-dev/queue-manager-react';
 import React from 'react';
 
 import { SwapDetails } from '../components/SwapDetails';

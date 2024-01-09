@@ -5,8 +5,8 @@ import { i18n } from '@lingui/core';
 import {
   getCurrentBlockchainOfOrNull,
   getCurrentStep,
-  getRelatedWalletOrNull,
-} from '@rango-dev/queue-manager-rango-preset';
+  getRelatedWalletOrNull
+} from '@nikaru-dev/queue-manager-rango-preset';
 import {
   Button,
   CopyIcon,
@@ -16,9 +16,9 @@ import {
   QuoteCost,
   StepDetails,
   Typography,
-  useCopyToClipboard,
-} from '@rango-dev/ui';
-import { useWallets } from '@rango-dev/wallets-react';
+  useCopyToClipboard
+} from '@nikaru-dev/ui';
+import { useWallets } from '@nikaru-dev/wallets-react';
 import BigNumber from 'bignumber.js';
 import { PendingSwapNetworkStatus } from 'rango-types';
 import React, { useEffect, useRef, useState } from 'react';
@@ -33,7 +33,7 @@ import {
   TOKEN_AMOUNT_MAX_DECIMALS,
   TOKEN_AMOUNT_MIN_DECIMALS,
   USD_VALUE_MAX_DECIMALS,
-  USD_VALUE_MIN_DECIMALS,
+  USD_VALUE_MIN_DECIMALS
 } from '../../constants/routing';
 import { useAppStore } from '../../store/AppStore';
 import { useNotificationStore } from '../../store/notification';
@@ -43,13 +43,13 @@ import {
   formatTooltipNumbers,
   numberToString,
   secondsToString,
-  totalArrivalTime,
+  totalArrivalTime
 } from '../../utils/numbers';
 import { getPriceImpact, getPriceImpactLevel } from '../../utils/quote';
 import {
   getLastConvertedTokenInFailedSwap,
   getSwapMessages,
-  shouldRetrySwap,
+  shouldRetrySwap
 } from '../../utils/swap';
 import { getSwapDate } from '../../utils/time';
 import { getConciseAddress } from '../../utils/wallets';
@@ -58,7 +58,7 @@ import { Layout } from '../Layout';
 import { QuoteSummary } from '../Quote';
 import {
   SwapDetailsCompleteModal,
-  SwapDetailsModal,
+  SwapDetailsModal
 } from '../SwapDetailsModal';
 
 import { getSteps, getStepState, RESET_INTERVAL } from './SwapDetails.helpers';
@@ -70,7 +70,7 @@ import {
   rowStyles,
   StepsList,
   StyledLink,
-  titleStepsStyles,
+  titleStepsStyles
 } from './SwapDetails.styles';
 
 export function SwapDetails(props: SwapDetailsProps) {
@@ -162,7 +162,7 @@ export function SwapDetails(props: SwapDetailsProps) {
     setNetworkModal: setModalState,
     message: stepMessage,
     blockchains: blockchains,
-    swappers: swappers,
+    swappers: swappers
   });
   const numberOfSteps = steps.length;
   const [firstStep, lastStep] = [swap.steps[0], swap.steps[numberOfSteps - 1]];
@@ -223,8 +223,8 @@ export function SwapDetails(props: SwapDetailsProps) {
               swap.wallets[steps[numberOfSteps - 1].to.chain.displayName]
                 ?.address || ''
             ),
-            chain: steps[numberOfSteps - 1].to.chain.displayName,
-          },
+            chain: steps[numberOfSteps - 1].to.chain.displayName
+          }
         })
       : `${i18n.t('Transaction was not sent.')} ${
           lastConvertedTokenInFailedSwap
@@ -233,8 +233,8 @@ export function SwapDetails(props: SwapDetailsProps) {
                 values: {
                   amount: lastConvertedTokenInFailedSwap.outputAmount,
                   symbol: lastConvertedTokenInFailedSwap.symbol,
-                  blockchain: lastConvertedTokenInFailedSwap.blockchain,
-                },
+                  blockchain: lastConvertedTokenInFailedSwap.blockchain
+                }
               })
             : ''
         }`;
@@ -258,7 +258,7 @@ export function SwapDetails(props: SwapDetailsProps) {
               </Typography>
             </Button>
           </SuffixContainer>
-        ),
+        )
       }}
       footer={
         shouldRetry &&
@@ -331,16 +331,16 @@ export function SwapDetails(props: SwapDetailsProps) {
                 ),
                 usdValue: inputUsdValue,
                 realUsdValue: realInputUsdValue,
-                realValue: swap.inputAmount,
+                realValue: swap.inputAmount
               },
               token: {
                 displayName: steps[0].from.token.displayName,
-                image: steps[0].from.token.image,
+                image: steps[0].from.token.image
               },
               chain: {
                 image: steps[0].from.chain.image,
-                displayName: steps[0].from.chain.displayName,
-              },
+                displayName: steps[0].from.chain.displayName
+              }
             }}
             to={{
               price: {
@@ -351,16 +351,16 @@ export function SwapDetails(props: SwapDetailsProps) {
                 ),
                 usdValue: outputUsdValue,
                 realUsdValue: realOutputUsdValue,
-                realValue: outputAmount,
+                realValue: outputAmount
               },
               token: {
                 displayName: steps[numberOfSteps - 1].to.token.displayName,
-                image: steps[numberOfSteps - 1].to.token.image,
+                image: steps[numberOfSteps - 1].to.token.image
               },
               chain: {
                 image: steps[numberOfSteps - 1].to.chain.image,
-                displayName: steps[numberOfSteps - 1].to.chain.displayName,
-              },
+                displayName: steps[numberOfSteps - 1].to.chain.displayName
+              }
             }}
             percentageChange={numberToString(
               percentageChange,
@@ -430,7 +430,7 @@ export function SwapDetails(props: SwapDetailsProps) {
         )}
         token={{
           displayName: steps[numberOfSteps - 1].to.token.displayName,
-          image: steps[numberOfSteps - 1].to.token.image,
+          image: steps[numberOfSteps - 1].to.token.image
         }}
         chain={{ image: steps[numberOfSteps - 1].to.chain.image }}
         description={completeModalDesc}

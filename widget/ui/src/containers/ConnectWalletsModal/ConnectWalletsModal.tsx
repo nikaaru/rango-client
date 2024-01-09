@@ -1,5 +1,5 @@
 import type { WalletInfo } from '../../components';
-import type { WalletType } from '@rango-dev/wallets-shared';
+import type { WalletType } from '@nikaru-dev/wallets-shared';
 
 import { i18n } from '@lingui/core';
 import React from 'react';
@@ -19,7 +19,7 @@ const ModalContent = styled('div', {
   display: 'grid',
   gap: '$8',
   gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
-  overflow: 'auto',
+  overflow: 'auto'
 });
 
 export function ConnectWalletsModal(props: PropTypes) {

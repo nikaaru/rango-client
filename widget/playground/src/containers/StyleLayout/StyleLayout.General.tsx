@@ -5,9 +5,9 @@ import {
   Divider,
   FontIcon,
   LanguageIcon,
-  Typography,
-} from '@rango-dev/ui';
-import { useWidget } from '@rango-dev/widget-embedded';
+  Typography
+} from '@nikaru-dev/ui';
+import { useWidget } from '@nikaru-dev/widget-embedded';
 import React, { useCallback, useState } from 'react';
 
 import { ItemPicker } from '../../components/ItemPicker';
@@ -18,7 +18,7 @@ import {
   DEFAULT_PRIMARY_RADIUS,
   DEFAULT_SECONDARY_RADIUS,
   FONTS,
-  LANGUAGES,
+  LANGUAGES
 } from '../../constants';
 import { useConfigStore } from '../../store/config';
 
@@ -44,7 +44,7 @@ export function General() {
     if (value) {
       onChangeTheme({
         name: 'fontFamily',
-        value: value === FONTS[0].value ? undefined : value,
+        value: value === FONTS[0].value ? undefined : value
       });
     }
     onBack();
@@ -62,7 +62,7 @@ export function General() {
       const value = parseInt(e.target.value);
       onChangeTheme({
         name: 'borderRadius',
-        value: value === DEFAULT_PRIMARY_RADIUS ? undefined : value,
+        value: value === DEFAULT_PRIMARY_RADIUS ? undefined : value
       });
     },
     [borderRadius]
@@ -73,7 +73,7 @@ export function General() {
       const value = parseInt(e.target.value);
       onChangeTheme({
         name: 'secondaryBorderRadius',
-        value: value === DEFAULT_SECONDARY_RADIUS ? undefined : value,
+        value: value === DEFAULT_SECONDARY_RADIUS ? undefined : value
       });
     },
     [secondaryBorderRadius]
@@ -88,7 +88,7 @@ export function General() {
           onClick={() => setModalState(ModalState.DEFAULT_LANGUAGE)}
           value={{
             label: selectedLanguage?.name,
-            logo: selectedLanguage?.Icon,
+            logo: selectedLanguage?.Icon
           }}
           title="Default Language"
           hasLogo

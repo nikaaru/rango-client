@@ -1,10 +1,10 @@
 import type {
   HighSlippageWarning,
-  InsufficientSlippageWarning,
+  InsufficientSlippageWarning
 } from '../../types';
 
 import { i18n } from '@lingui/core';
-import { Button, Divider, MessageBox, Modal, Typography } from '@rango-dev/ui';
+import { Button, Divider, MessageBox, Modal, Typography } from '@nikaru-dev/ui';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -52,13 +52,13 @@ export function SlippageWarningModal(props: PropsTypes) {
           warning.type === QuoteWarningType.HIGH_SLIPPAGE
             ? i18n.t({
                 id: ' Caution, your slippage is high (={userSlippage}). Your trade may be front run.',
-                values: { userSlippage },
+                values: { userSlippage }
               })
             : i18n.t({
                 id: 'We recommend you to increase slippage to at least {minRequiredSlippage} for this route.',
                 values: {
-                  minRequiredSlippage: warning.minRequiredSlippage,
-                },
+                  minRequiredSlippage: warning.minRequiredSlippage
+                }
               })
         }>
         <Divider size={18} />

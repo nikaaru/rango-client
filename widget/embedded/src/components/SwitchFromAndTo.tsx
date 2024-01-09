@@ -1,4 +1,4 @@
-import { ReverseIcon, styled } from '@rango-dev/ui';
+import { ReverseIcon, styled } from '@nikaru-dev/ui';
 import React from 'react';
 
 import { useQuoteStore } from '../store/quote';
@@ -8,7 +8,7 @@ const SwitchButtonContainer = styled('div', {
   bottom: '-12px',
   left: '50%',
   transform: 'translate(-50%, 10%)',
-  cursor: 'pointer',
+  cursor: 'pointer'
 });
 
 const StyledButton = styled('div', {
@@ -22,8 +22,8 @@ const StyledButton = styled('div', {
   alignItems: 'center',
   color: '$foreground',
   '&:hover': {
-    color: '$secondary500',
-  },
+    color: '$secondary500'
+  }
 });
 
 export function SwitchFromAndToButton() {

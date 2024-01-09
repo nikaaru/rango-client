@@ -1,5 +1,5 @@
-import { DefaultSolanaSigner } from '@rango-dev/signer-solana';
-import { Networks, getNetworkInstance } from '@rango-dev/wallets-shared';
+import { DefaultSolanaSigner } from '@nikaru-dev/signer-solana';
+import { Networks, getNetworkInstance } from '@nikaru-dev/wallets-shared';
 import {
   DefaultSignerFactory,
   SignerFactory,

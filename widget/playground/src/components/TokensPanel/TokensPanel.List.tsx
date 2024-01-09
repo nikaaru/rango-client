@@ -10,13 +10,13 @@ import {
   PinIcon,
   Switch,
   Typography,
-  VirtualizedList,
-} from '@rango-dev/ui';
+  VirtualizedList
+} from '@nikaru-dev/ui';
 import React, { useEffect, useLayoutEffect, useState } from 'react';
 
 import {
   SelectButton,
-  SelectDeselectText,
+  SelectDeselectText
 } from '../MultiList/MultiList.styles';
 import { SearchInput } from '../SearchInput';
 import { InnerElementType } from '../SingleList';
@@ -34,7 +34,7 @@ export function TokensList(props: TokensListProps) {
     showSelectedTokens,
     setShowSelectedTokens,
     isAllSelected,
-    isExcluded,
+    isExcluded
   } = props;
   const [searchValue, setSearchValue] = useState('');
   const [virtualList, setVirtualList] = useState(list);
@@ -127,11 +127,11 @@ export function TokensList(props: TokensListProps) {
                   <div
                     style={{
                       ...style,
-                      paddingRight: 5,
+                      paddingRight: 5
                     }}>
                     <ListItemButton
                       style={{
-                        height: style?.height,
+                        height: style?.height
                       }}
                       start={
                         virtualList[index].image ? (

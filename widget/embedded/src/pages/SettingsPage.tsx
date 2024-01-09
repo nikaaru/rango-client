@@ -8,8 +8,8 @@ import {
   Skeleton,
   Switch,
   Tooltip,
-  Typography,
-} from '@rango-dev/ui';
+  Typography
+} from '@nikaru-dev/ui';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -29,7 +29,7 @@ export function SettingsPage() {
   const swappers = useAppStore().swappers();
   const disabledLiquiditySources = useAppStore().disabledLiquiditySources;
   const {
-    config: { features },
+    config: { features }
   } = useAppStore();
   const isThemeHidden = isFeatureHidden('theme', features);
 
@@ -95,7 +95,7 @@ export function SettingsPage() {
         <ChevronRightIcon color="black" />
       </>
     ),
-    onClick: () => navigate(navigationRoutes.bridges),
+    onClick: () => navigate(navigationRoutes.bridges)
   };
 
   const exchangeItem = {
@@ -112,7 +112,7 @@ export function SettingsPage() {
         <ChevronRightIcon color="gray" />
       </>
     ),
-    onClick: () => navigate(navigationRoutes.exchanges),
+    onClick: () => navigate(navigationRoutes.exchanges)
   };
 
   /*
@@ -136,7 +136,7 @@ export function SettingsPage() {
       </Typography>
     ),
     end: <ChevronRightIcon color="gray" />,
-    onClick: () => navigate(navigationRoutes.themes),
+    onClick: () => navigate(navigationRoutes.themes)
   };
 
   const infiniteApprovalItem = {
@@ -165,7 +165,7 @@ export function SettingsPage() {
       </>
     ),
     end: <Switch checked={infiniteApprove} />,
-    onClick: toggleInfiniteApprove,
+    onClick: toggleInfiniteApprove
   };
 
   const settingItems = isLiquidityHidden ? [] : [bridgeItem, exchangeItem];
@@ -181,7 +181,7 @@ export function SettingsPage() {
   return (
     <Layout
       header={{
-        title: i18n.t('Settings'),
+        title: i18n.t('Settings')
       }}>
       <SettingsContainer>
         <Slippage />

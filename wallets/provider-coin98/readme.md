@@ -1,1 +1,1 @@
-# @rango-dev/provider-coin98
+# @nikaru-dev/provider-coin98

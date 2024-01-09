@@ -1,7 +1,7 @@
 import type { PropTypes, Ref } from './Layout.types';
 import type { PropsWithChildren } from 'react';
 
-import { BottomLogo, Divider, Header } from '@rango-dev/ui';
+import { BottomLogo, Divider, Header } from '@nikaru-dev/ui';
 import React from 'react';
 
 import { RANGO_SWAP_BOX_ID } from '../../constants';
@@ -23,11 +23,11 @@ function LayoutComponent(props: PropsWithChildren<PropTypes>, ref: Ref) {
     footer,
     noPadding,
     hasLogo = true,
-    fixedHeight = true,
+    fixedHeight = true
   } = props;
   const connectedWallets = useWalletsStore.use.connectedWallets();
   const {
-    config: { features, theme },
+    config: { features, theme }
   } = useAppStore();
   const { activeTheme } = useTheme(theme || {});
 

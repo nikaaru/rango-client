@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-magic-numbers */
 import type { PropTypes } from './WalletList.type';
 import type { Wallet } from '../../types';
-import type { WalletInfo } from '@rango-dev/ui';
-import type { WalletType } from '@rango-dev/wallets-shared';
+import type { WalletInfo } from '@nikaru-dev/ui';
+import type { WalletType } from '@nikaru-dev/wallets-shared';
 
 import { i18n } from '@lingui/core';
 import {
@@ -13,8 +13,8 @@ import {
   Modal,
   SelectableWallet,
   Typography,
-  WalletState,
-} from '@rango-dev/ui';
+  WalletState
+} from '@nikaru-dev/ui';
 import React, { useEffect, useState } from 'react';
 
 import { useWallets } from '../..';
@@ -22,7 +22,7 @@ import { RANGO_SWAP_BOX_ID } from '../../constants';
 import { useWalletList } from '../../hooks/useWalletList';
 import {
   TIME_TO_CLOSE_MODAL,
-  TIME_TO_IGNORE_MODAL,
+  TIME_TO_IGNORE_MODAL
 } from '../../pages/WalletsPage';
 import { useAppStore } from '../../store/AppStore';
 import { useWalletsStore } from '../../store/wallets';
@@ -30,7 +30,7 @@ import { getBlockchainDisplayNameFor } from '../../utils/meta';
 import {
   getAddress,
   getConciseAddress,
-  isExperimentalChain,
+  isExperimentalChain
 } from '../../utils/wallets';
 import { WalletModal } from '../WalletModal';
 
@@ -38,7 +38,7 @@ import { ShowMoreWallets } from './ConfirmWallets.styles';
 import {
   LogoContainer,
   Spinner,
-  WalletImageContainer,
+  WalletImageContainer
 } from './WalletList.styles';
 
 export function WalletList(props: PropTypes) {
@@ -72,7 +72,7 @@ export function WalletList(props: PropTypes) {
       setTimeout(() => {
         setOpenWalletStateModal('');
       }, TIME_TO_CLOSE_MODAL);
-    },
+    }
   });
   const [sortedList, setSortedList] = useState<WalletInfo[]>(list);
   const numberOfSupportedWallets = list.length;
@@ -137,7 +137,7 @@ export function WalletList(props: PropTypes) {
         const address = getAddress({
           connectedWallets,
           walletType: wallet.type,
-          chain,
+          chain
         });
         const conciseAddress = address ? getConciseAddress(address) : '';
 
@@ -157,7 +157,7 @@ export function WalletList(props: PropTypes) {
         const connectedWalletDescription = couldAddExperimentalChain
           ? i18n.t({
               id: 'Add {chain} chain',
-              values: { chain },
+              values: { chain }
             })
           : conciseAddress;
 
@@ -168,14 +168,14 @@ export function WalletList(props: PropTypes) {
             setExperimentalChainWallet({
               walletType: wallet.type,
               chain,
-              address: address ?? '',
+              address: address ?? ''
             });
             setShowExperimentalChainModal(true);
           } else {
             selectWallet({
               walletType: wallet.type,
               chain,
-              address: address ?? '',
+              address: address ?? ''
             });
           }
         };
@@ -206,12 +206,12 @@ export function WalletList(props: PropTypes) {
                 <MessageBox
                   title={i18n.t({
                     id: 'Add {blockchainDisplayName} Chain',
-                    values: { blockchainDisplayName },
+                    values: { blockchainDisplayName }
                   })}
                   type="warning"
                   description={i18n.t({
                     id: 'You should connect a {blockchainDisplayName} supported wallet or choose a different {blockchainDisplayName} address',
-                    values: { blockchainDisplayName },
+                    values: { blockchainDisplayName }
                   })}>
                   <Divider size={18} />
                   <Divider size={32} />
@@ -239,11 +239,11 @@ export function WalletList(props: PropTypes) {
                     type="loading"
                     title={i18n.t({
                       id: 'Add {blockchainDisplayName} Chain',
-                      values: { blockchainDisplayName },
+                      values: { blockchainDisplayName }
                     })}
                     description={i18n.t({
                       id: 'You should connect a {blockchainDisplayName} supported wallet or choose a different {blockchainDisplayName} address',
-                      values: { blockchainDisplayName },
+                      values: { blockchainDisplayName }
                     })}
                     icon={
                       <LogoContainer>
@@ -261,11 +261,11 @@ export function WalletList(props: PropTypes) {
                     type="success"
                     title={i18n.t({
                       id: '{blockchainDisplayName} Chain Added',
-                      values: { blockchainDisplayName },
+                      values: { blockchainDisplayName }
                     })}
                     description={i18n.t({
                       id: '{blockchainDisplayName} is added to your wallet, you can use it to swap.',
-                      values: { blockchainDisplayName },
+                      values: { blockchainDisplayName }
                     })}
                   />
                 )}
@@ -276,7 +276,7 @@ export function WalletList(props: PropTypes) {
                     title={i18n.t('Request Rejected')}
                     description={i18n.t({
                       id: "You've rejected adding {blockchainDisplayName} chain to your wallet.",
-                      values: { blockchainDisplayName },
+                      values: { blockchainDisplayName }
                     })}
                   />
                 )}

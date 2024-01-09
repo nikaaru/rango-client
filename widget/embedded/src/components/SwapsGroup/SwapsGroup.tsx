@@ -1,12 +1,12 @@
 import type { PropTypes } from './SwapsGroup.types';
 
 import { i18n } from '@lingui/core';
-import { Divider, SwapListItem, Typography } from '@rango-dev/ui';
+import { Divider, SwapListItem, Typography } from '@nikaru-dev/ui';
 import React from 'react';
 
 import {
   TOKEN_AMOUNT_MAX_DECIMALS,
-  TOKEN_AMOUNT_MIN_DECIMALS,
+  TOKEN_AMOUNT_MIN_DECIMALS
 } from '../../constants/routing';
 import { getContainer } from '../../utils/common';
 import { formatTooltipNumbers, numberToString } from '../../utils/numbers';
@@ -23,12 +23,12 @@ export function SwapsGroup(props: PropTypes) {
     const loadingGroups = [
       {
         title: i18n.t('Today'),
-        swaps,
+        swaps
       },
       {
         title: i18n.t('This month'),
-        swaps,
-      },
+        swaps
+      }
     ];
     return (
       <>
@@ -95,25 +95,25 @@ export function SwapsGroup(props: PropTypes) {
                           from: {
                             token: {
                               image: firstStep.fromLogo,
-                              displayName: firstStep.fromSymbol,
+                              displayName: firstStep.fromSymbol
                             },
                             blockchain: {
-                              image: firstStep.fromBlockchainLogo || '',
+                              image: firstStep.fromBlockchainLogo || ''
                             },
                             amount: numberToString(
                               swap.inputAmount,
                               TOKEN_AMOUNT_MIN_DECIMALS,
                               TOKEN_AMOUNT_MAX_DECIMALS
                             ),
-                            realAmount: formatTooltipNumbers(swap.inputAmount),
+                            realAmount: formatTooltipNumbers(swap.inputAmount)
                           },
                           to: {
                             token: {
                               image: lastStep.toLogo,
-                              displayName: lastStep.toSymbol,
+                              displayName: lastStep.toSymbol
                             },
                             blockchain: {
-                              image: lastStep.toBlockchainLogo || '',
+                              image: lastStep.toBlockchainLogo || ''
                             },
                             amount: numberToString(
                               lastStep.outputAmount ||
@@ -125,8 +125,8 @@ export function SwapsGroup(props: PropTypes) {
                             realAmount: formatTooltipNumbers(
                               lastStep.outputAmount ||
                                 lastStep.expectedOutputAmountHumanReadable
-                            ),
-                          },
+                            )
+                          }
                         }}
                       />
                     </React.Fragment>

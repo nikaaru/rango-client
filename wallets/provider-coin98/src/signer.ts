@@ -1,5 +1,5 @@
-import { DefaultEvmSigner } from '@rango-dev/signer-evm';
-import { Networks, getNetworkInstance } from '@rango-dev/wallets-shared';
+import { DefaultEvmSigner } from '@nikaru-dev/signer-evm';
+import { Networks, getNetworkInstance } from '@nikaru-dev/wallets-shared';
 import {
   DefaultSignerFactory,
   SignerFactory,

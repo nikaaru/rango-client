@@ -7,8 +7,8 @@ import {
   MessageBox,
   Modal,
   TokenAmount,
-  Typography,
-} from '@rango-dev/ui';
+  Typography
+} from '@nikaru-dev/ui';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -28,7 +28,7 @@ export function SwapDetailsCompleteModal(props: CompleteModalPropTypes) {
     chain,
     percentageChange,
     description,
-    diagnosisUrl,
+    diagnosisUrl
   } = props;
   const navigate = useNavigate();
 
@@ -48,7 +48,7 @@ export function SwapDetailsCompleteModal(props: CompleteModalPropTypes) {
               value: priceValue,
               usdValue,
               realUsdValue,
-              realValue,
+              realValue
             }}
             token={token}
             chain={chain}

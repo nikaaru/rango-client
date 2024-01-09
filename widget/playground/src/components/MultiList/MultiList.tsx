@@ -6,8 +6,8 @@ import {
   Image,
   NotFound,
   SelectableCategoryList,
-  Typography,
-} from '@rango-dev/ui';
+  Typography
+} from '@nikaru-dev/ui';
 import React, { useState } from 'react';
 
 import { useMetaStore } from '../../store/meta';
@@ -21,7 +21,7 @@ import {
   ItemDivider,
   SelectButton,
   SelectDeselectText,
-  StyledListItemButton,
+  StyledListItemButton
 } from './MultiList.styles';
 
 export function MultiList(props: MultiListPropTypes) {
@@ -32,7 +32,7 @@ export function MultiList(props: MultiListPropTypes) {
     label,
     type,
     onChange,
-    showCategory,
+    showCategory
   } = props;
   const [category, setCategory] = useState<string>('ALL');
   const [searchValue, setSearchValue] = useState('');
@@ -98,7 +98,7 @@ export function MultiList(props: MultiListPropTypes) {
           {title}
         </Typography>
       ),
-      id,
+      id
     };
   });
 

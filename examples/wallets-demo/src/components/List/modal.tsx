@@ -1,15 +1,15 @@
-import type { WalletType } from '@rango-dev/wallets-shared';
+import type { WalletType } from '@nikaru-dev/wallets-shared';
 import type {
   Asset,
   BestRouteRequest,
   BestRouteResponse,
   Token,
-  TransactionType,
+  TransactionType
 } from 'rango-sdk';
 
-import { Button, Divider, Modal, styled, Typography } from '@rango-dev/ui';
-import { useWallets } from '@rango-dev/wallets-react';
-import { isEvmAddress, Networks } from '@rango-dev/wallets-shared';
+import { Button, Divider, Modal, styled, Typography } from '@nikaru-dev/ui';
+import { useWallets } from '@nikaru-dev/wallets-react';
+import { isEvmAddress, Networks } from '@nikaru-dev/wallets-shared';
 import {
   isCosmosBlockchain,
   isEvmBlockchain,
@@ -17,7 +17,7 @@ import {
   isStarknetBlockchain,
   isTronBlockchain,
   RangoClient,
-  TransactionStatus,
+  TransactionStatus
 } from 'rango-sdk';
 import React, { useEffect, useRef, useState } from 'react';
 
@@ -37,7 +37,7 @@ const SwitchButtonContainer = styled('div', {
   justifyContent: 'center',
   alignItems: 'center',
   position: 'relative',
-  top: '11px',
+  top: '11px'
 });
 const INTERVAL_FOR_CHECK = 5_000;
 
@@ -81,7 +81,7 @@ function SignModal({ type, open, onClose, tokens }: Props) {
       const { status } = await client.checkStatus({
         requestId: bestRoute?.requestId || '',
         step,
-        txId: hash,
+        txId: hash
       });
       if (status === TransactionStatus.SUCCESS && !!bestRoute) {
         clearInterval(timer.current as any);
@@ -138,12 +138,12 @@ function SignModal({ type, open, onClose, tokens }: Props) {
     const from: Asset = {
       blockchain: fromToken[0],
       symbol: fromToken[1],
-      address: fromToken[2],
+      address: fromToken[2]
     };
     const to: Asset = {
       blockchain: toToken[0],
       symbol: toToken[1],
-      address: toToken[2],
+      address: toToken[2]
     };
     const amount: string = swap.amount;
     let selectedWallets = {};
@@ -159,7 +159,7 @@ function SignModal({ type, open, onClose, tokens }: Props) {
       swappersGroupsExclude: true,
       connectedWallets: [],
       selectedWallets,
-      checkPrerequisites: true,
+      checkPrerequisites: true
     };
 
     try {
@@ -195,12 +195,12 @@ function SignModal({ type, open, onClose, tokens }: Props) {
             step,
             userSettings: {
               slippage: '1.0',
-              infiniteApprove: false,
+              infiniteApprove: false
             },
             validations: {
               balance: false,
-              fee: false,
-            },
+              fee: false
+            }
           });
           if (!transaction) {
             setError(`Error requesting create transaction: try again`);
@@ -249,7 +249,7 @@ function SignModal({ type, open, onClose, tokens }: Props) {
         reason: 'Swap canceled by user.',
         requestId: bestRoute?.requestId || '',
         step,
-        tags: { wallet: type },
+        tags: { wallet: type }
       });
       resetStates();
       clearInterval(timer.current as any);
@@ -265,7 +265,7 @@ function SignModal({ type, open, onClose, tokens }: Props) {
       if (!!isEvmAddress(address)) {
         allAdresses = [
           ...allAdresses,
-          ...blockchains.map((chain) => `${chain.name}:${address}`),
+          ...blockchains.map((chain) => `${chain.name}:${address}`)
         ];
       } else {
         allAdresses = [...allAdresses, account];
@@ -310,7 +310,7 @@ function SignModal({ type, open, onClose, tokens }: Props) {
                 ),
                 token: swap.from.split('.')[1],
                 addresse: swap.from.split('.')[2],
-                amount: swap.amount,
+                amount: swap.amount
               }) ||
               undefined
             }
@@ -321,7 +321,7 @@ function SignModal({ type, open, onClose, tokens }: Props) {
                 ),
                 token: swap.to.split('.')[1],
                 addresse: swap.to.split('.')[2],
-                amount: swap.amount,
+                amount: swap.amount
               }) ||
               undefined
             }

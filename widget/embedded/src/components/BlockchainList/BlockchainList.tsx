@@ -7,8 +7,8 @@ import {
   Image,
   ListItemButton,
   NotFound,
-  Typography,
-} from '@rango-dev/ui';
+  Typography
+} from '@nikaru-dev/ui';
 import React, { useEffect, useState } from 'react';
 
 import { useAppStore } from '../../store/AppStore';
@@ -24,7 +24,7 @@ export function BlockchainList(props: PropTypes) {
 
   useEffect(() => {
     setBlockchains([
-      ...filterBlockchains(list, searchedFor, blockchainCategory),
+      ...filterBlockchains(list, searchedFor, blockchainCategory)
     ]);
   }, [list, searchedFor, blockchainCategory]);
 
