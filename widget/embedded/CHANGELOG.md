@@ -1,3 +1,16 @@
+## [0.21.2](https://github.com/nikaaru/rango-client/compare/widget-embedded@0.21.1...widget-embedded@0.21.2) (2024-01-13)
+
+
+### Bug Fixes
+
+* chagne column direction to row ([2cc66fa](https://github.com/nikaaru/rango-client/commit/2cc66fa54c8ede4e079b8c0a762dc6382965dad3))
+* check next release ([324c12c](https://github.com/nikaaru/rango-client/commit/324c12c6160e261727bb85a7c812498c6a858756))
+* feat1 ([b0208c8](https://github.com/nikaaru/rango-client/commit/b0208c8d8bc5f58fa7f8e00466de8b49d91d6a4f))
+* test next release ([887a16a](https://github.com/nikaaru/rango-client/commit/887a16a62d18587a8f4a8f3ea1eeeba50af78fe4))
+* update settin page title ([b243486](https://github.com/nikaaru/rango-client/commit/b243486c547e8d3694c3462ab995a50e3e9766ad))
+
+
+
 ## [0.21.1](https://github.com/nikaaru/rango-client/compare/widget-embedded@0.21.0...widget-embedded@0.21.1) (2024-01-09)
 
 
