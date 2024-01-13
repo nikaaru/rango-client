@@ -15,8 +15,8 @@ msgstr ""
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/pages/SettingsPage.tsx:184
-msgid "Settings check merge"
-msgstr "Settings check merge"
+msgid "Settings check next again"
+msgstr "Settings check next again"
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/components/BlockchainList/BlockchainList.tsx:37
