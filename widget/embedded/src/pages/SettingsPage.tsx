@@ -181,7 +181,7 @@ export function SettingsPage() {
   return (
     <Layout
       header={{
-        title: i18n.t('Settings check next again'),
+        title: i18n.t('Settings'),
       }}>
       <SettingsContainer>
         <Slippage />
