@@ -8,7 +8,7 @@ msgstr ""
 "Language: ja\n"
 "Project-Id-Version: nikaru3\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-01-13 16:08\n"
+"PO-Revision-Date: 2024-01-13 16:46\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -17,11 +17,6 @@ msgstr ""
 "X-Crowdin-Language: ja\n"
 "X-Crowdin-File: en.po\n"
 "X-Crowdin-File-ID: 6\n"
-
-#. js-lingui-explicit-id
-#: widget/embedded/src/pages/LanguagePage.tsx:37
-msgid "Language"
-msgstr ""
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/components/BlockchainList/BlockchainList.tsx:37
@@ -158,6 +153,7 @@ msgstr ""
 #. js-lingui-explicit-id
 #: widget/embedded/src/components/HeaderButtons/HomeButtons.tsx:63
 #: widget/embedded/src/pages/ConfirmSwapPage.tsx:278
+#: widget/embedded/src/pages/SettingsPage.tsx:184
 msgid "Settings"
 msgstr ""
 
@@ -652,6 +648,11 @@ msgid "To"
 msgstr ""
 
 #. js-lingui-explicit-id
+#: widget/embedded/src/pages/LanguagePage.tsx:37
+msgid "Language"
+msgstr ""
+
+#. js-lingui-explicit-id
 #: widget/embedded/src/pages/LanguagePage.tsx:44
 msgid "language"
 msgstr ""
@@ -738,11 +739,6 @@ msgstr ""
 #. js-lingui-explicit-id
 #: widget/embedded/src/pages/SettingsPage.tsx:157
 msgid "Enabling the 'Infinite approval' mode grants unrestricted access to smart contracts of DEXes/Bridges, allowing them to utilize the approved token amount without limitations."
-msgstr ""
-
-#. js-lingui-explicit-id
-#: widget/embedded/src/pages/SettingsPage.tsx:184
-msgid "Settings feat"
 msgstr ""
 
 #. js-lingui-explicit-id
