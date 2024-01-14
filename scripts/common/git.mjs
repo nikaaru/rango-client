@@ -156,14 +156,7 @@ export async function publishCommitAndTags(pkgs) {
   const message = subject + list;
   let body = `Affected packages: ${tags.join(',')}`;
 
-  /* 
-    When we are pushing a publish commit into main, it triggers a redundant workflow run,
-    To avoid this, by adding a [skip ci] the workflow run will be skipped.
-    We don't need it on `next` since the next workflow is running on `pullrequest.closed` event.
-  */
-  if (channel === 'prod') {
-    body += '\n[skip ci]';
-  }
+
 
   // Making a publish commit
   await execa('git', ['commit', '-m', message, '-m', body]).catch((error) => {
