@@ -2,12 +2,12 @@ name: Publish
 on:
   push:
     branches:
-      - main
+      - nikaru
   pull_request:
     types:
       - closed
     branches:
-      - 'next'
+      - 'nikaru'
 
 jobs:
   localization:
