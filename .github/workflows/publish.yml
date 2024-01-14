@@ -7,7 +7,7 @@ on:
 
 jobs:
   localization:
-    if: ${{ github.event_name == 'pull_request' && github.ref == 'refs/heads/next'}}
+    if: ${{ github.ref == 'refs/heads/next'}}
     uses: ./.github/workflows/crowdin.yml
     secrets:
       CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
