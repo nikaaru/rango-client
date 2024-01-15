@@ -15,8 +15,8 @@ msgstr ""
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/pages/LanguagePage.tsx:37
-msgid "Language feat2"
-msgstr "Language feat2"
+msgid "Language feat3"
+msgstr "Language feat3"
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/components/BlockchainList/BlockchainList.tsx:37
