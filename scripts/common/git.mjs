@@ -161,10 +161,7 @@ export async function publishCommitAndTags(pkgs) {
     To avoid this, by adding a [skip ci] the workflow run will be skipped.
     We don't need it on `next` since the next workflow is running on `pullrequest.closed` event.
   */
-  // if (channel === 'prod') {
-  //   body += '\n[skip ci]';
-  // }
-
+  
   body += '\n[skip ci]';
 
 
