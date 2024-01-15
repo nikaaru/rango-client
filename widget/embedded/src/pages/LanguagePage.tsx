@@ -34,7 +34,7 @@ export function LanguagePage() {
   return (
     <Layout
       header={{
-        title: i18n.t('Language feat2'),
+        title: i18n.t('Language feat3'),
       }}>
       <SettingsContainer>
         <RadioRoot value={activeLanguage}>
