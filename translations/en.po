@@ -14,9 +14,9 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. js-lingui-explicit-id
-#: widget/embedded/src/pages/SettingsPage.tsx:184
-msgid "Settings check next again"
-msgstr "Settings check next again"
+#: widget/embedded/src/pages/LanguagePage.tsx:37
+msgid "Language feat2"
+msgstr "Language feat2"
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/components/BlockchainList/BlockchainList.tsx:37
@@ -153,6 +153,7 @@ msgstr "Notifications"
 #. js-lingui-explicit-id
 #: widget/embedded/src/components/HeaderButtons/HomeButtons.tsx:63
 #: widget/embedded/src/pages/ConfirmSwapPage.tsx:278
+#: widget/embedded/src/pages/SettingsPage.tsx:184
 msgid "Settings"
 msgstr "Settings"
 
@@ -645,11 +646,6 @@ msgstr "From"
 #: widget/embedded/src/pages/Home.tsx:221
 msgid "To"
 msgstr "To"
-
-#. js-lingui-explicit-id
-#: widget/embedded/src/pages/LanguagePage.tsx:37
-msgid "Language"
-msgstr "Language"
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/pages/LanguagePage.tsx:44
