@@ -7,7 +7,7 @@ async function run() {
 
   // Get latest changes from `next`
   const pullNextOutput = await pull();
-  console.log(`Result for: checkout\n`, pullNextOutput);
+  console.log(`Result for: pull next\n`, pullNextOutput);
 
   // Checkout to `main`
   const checkoutOutput = await checkout('main');
@@ -15,10 +15,10 @@ async function run() {
 
   // Get latest changes from `main`
   const pullOutput = await pull();
-  console.log(`Result for: pull\n`, pullOutput);
+  console.log(`Result for: pull main\n`, pullOutput);
 
   // Merge `next` into `main`
-  const mergeOutput = await merge('next');
+  const mergeOutput = await merge('next',{ mergeStrategy: '--no-ff' });
   console.log(`Result for: merge\n`, mergeOutput);
 
   // Push merged commits to `main`
