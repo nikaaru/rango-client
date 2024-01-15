@@ -1,3 +1,13 @@
+## [0.21.4](https://github.com/nikaaru/rango-client/compare/widget-embedded@0.21.3...widget-embedded@0.21.4) (2024-01-15)
+
+
+### Bug Fixes
+
+* add feat to language for test release ([92cd95e](https://github.com/nikaaru/rango-client/commit/92cd95e34964989d546b3b04b867e569aede8281))
+* add feat2 ([81b5267](https://github.com/nikaaru/rango-client/commit/81b5267c5eb443f29b3c27dd2c5992a2d98dd914))
+
+
+
 ## [0.21.3](https://github.com/nikaaru/rango-client/compare/widget-embedded@0.21.2...widget-embedded@0.21.3) (2024-01-13)
 
 
