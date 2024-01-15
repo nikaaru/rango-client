@@ -1,6 +1,6 @@
 {
   "name": "@nikaru-dev/widget-embedded",
-  "version": "0.21.4-next.0",
+  "version": "0.21.4-next.1",
   "license": "MIT",
   "type": "module",
   "source": "./src/index.ts",
