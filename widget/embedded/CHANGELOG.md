@@ -1,3 +1,12 @@
+## [0.21.5](https://github.com/nikaaru/rango-client/compare/widget-embedded@0.21.4...widget-embedded@0.21.5) (2024-01-15)
+
+
+### Bug Fixes
+
+* remove ref_base and feat3 ([c7a5f71](https://github.com/nikaaru/rango-client/commit/c7a5f71f9f3b0bd322838d9092cbf742bbdced99))
+
+
+
 ## [0.21.4](https://github.com/nikaaru/rango-client/compare/widget-embedded@0.21.3...widget-embedded@0.21.4) (2024-01-15)
 
 
