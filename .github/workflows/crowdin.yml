@@ -34,12 +34,6 @@ jobs:
       - name: Extract new source
         run: yarn run i18n:extract
 
-      - name: print github.ref
-        run: echo "GitHub ref ${{ github.ref }}"
-
-      - name: print branch
-        run: echo "branch ${{ github.ref == 'refs/heads/main' && 'main' || 'next' }}"
-
       - name: Crowdin push & pull translations
         uses: crowdin/github-action@v1
         id: crowdin-download
