@@ -34,6 +34,12 @@ jobs:
       - name: Extract new source
         run: yarn run i18n:extract
 
+      - name: print github.ref
+        run: echo "GitHub ref ${{ github.ref }}"
+
+      - name: print branch
+        run: echo "branch ${{ github.ref == 'refs/heads/main' && 'main' || 'next' }}"
+
       - name: Crowdin push & pull translations
         uses: crowdin/github-action@v1
         id: crowdin-download
@@ -51,7 +57,7 @@ jobs:
           create_pull_request: true
           pull_request_title: '🤖chore(translation): update translations'
           pull_request_body: 'New Crowdin pull request with translations'
-          pull_request_base_branch_name: 'next'
+          pull_request_base_branch_name: ${{ github.ref == 'refs/heads/main' && 'main' || 'next' }}
         env:
           GITHUB_TOKEN: ${{ secrets.PAT }}
 
