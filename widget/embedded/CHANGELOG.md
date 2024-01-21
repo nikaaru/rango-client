@@ -1,3 +1,12 @@
+## [0.21.8](https://github.com/nikaaru/rango-client/compare/widget-embedded@0.21.7...widget-embedded@0.21.8) (2024-01-21)
+
+
+### Bug Fixes
+
+* change language title ([06c210d](https://github.com/nikaaru/rango-client/commit/06c210d25004b828fafac1cef580f45dd4c62cb1))
+
+
+
 ## [0.21.7](https://github.com/nikaaru/rango-client/compare/widget-embedded@0.21.6...widget-embedded@0.21.7) (2024-01-17)
 
 
