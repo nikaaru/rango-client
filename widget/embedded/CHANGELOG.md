@@ -1,3 +1,12 @@
+## [0.21.9](https://github.com/nikaaru/rango-client/compare/widget-embedded@0.21.8...widget-embedded@0.21.9) (2024-01-28)
+
+
+### Bug Fixes
+
+* release workflow ([a161544](https://github.com/nikaaru/rango-client/commit/a161544dbe058223dfb852b2bce93004dd3058e0))
+
+
+
 ## [0.21.8](https://github.com/nikaaru/rango-client/compare/widget-embedded@0.21.7...widget-embedded@0.21.8) (2024-01-21)
 
 
