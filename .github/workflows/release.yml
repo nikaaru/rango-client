@@ -1,21 +1,21 @@
-name: Publish
+name: Release
 on:
-  push:
-    branches:
-      - 'main'
-      - 'next'
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'to trigger the workflow manually'
+        required: false
+        type: string
 
 jobs:
   localization:
-    if: ${{ github.ref == 'refs/heads/next' }}
     uses: ./.github/workflows/crowdin.yml
     secrets:
       CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
       CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
       PAT: ${{ secrets.PAT }}
 
-  publish:
-    if: ${{ always() }}
+  release:
     runs-on: ubuntu-latest
     needs:
       - localization
@@ -24,22 +24,14 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.PAT }}
-      - run: git pull
 
       - name: Prepare
         uses: ./.github/actions/prepare
         with:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Build, Version & Publish packages
-        run: yarn run publish
-        env:
-          REF: ${{ github.ref }}
-          GH_TOKEN: ${{ github.token }}
-
-      - name: Creating PR on next
-        if: ${{ github.ref == 'refs/heads/main' }}
-        run: yarn run post-release-prod
+      - name: Release Production
+        run: yarn run release-prod
         env:
           REF: ${{ github.ref }}
           GH_TOKEN: ${{ github.token }}
