@@ -4,6 +4,10 @@ on:
     branches:
       - 'main'
       - 'next'
+  pull_request:
+    types: closed
+    branches:
+      - 'next'
 
 jobs:
   localization:
@@ -34,9 +38,6 @@ jobs:
 
       - name: Print github.event.pull_request
         run: 'echo "GitHub Event Name: ${{ github.event.pull_request }}"'
-
-      - name: Print github.event.push
-        run: 'echo "GitHub Event Name: ${{ github.event.push }}"'
 
       - name: Prepare
         uses: ./.github/actions/prepare
