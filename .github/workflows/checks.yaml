@@ -18,3 +18,36 @@ jobs:
         run: node ./scripts/check-conventional-commits/command.mjs
         env:
           REF: ${{ github.ref }}
+
+      - name: Print github.event.action
+        run: 'echo "github.event.action: ${{ github.event.action }}"'
+
+      - name: Print github.ref
+        run: 'echo "github.ref: ${{ github.ref }}"'
+
+      - name: Print head_ref
+        run: 'echo "head_ref: ${{ toJson(github.head_ref) }}"'
+
+      - name: Print base_ref
+        run: 'echo "base_ref: ${{ toJson(github.base_ref) }}"'
+
+      - name: Extract new source
+        run: yarn run i18n:extract
+
+      - name: Crowdin push & pull translations
+        if: ${{ github.ref == 'refs/heads/main' }}
+        uses: crowdin/github-action@v1
+        with:
+          upload_sources: true
+          upload_translations: false
+          download_translations: true
+          push_sources: true
+          source: translations/en.json
+          translation: translations/%two_letters_code%.json
+          create_pull_request: false
+          commit_message: 'chore(translation): update translations'
+          localization_branch_name: ${{github.head_ref}}
+          project_id: ${{ secrets.CROWDIN_PROJECT_ID }}
+          token: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT }}
