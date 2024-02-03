@@ -1,3 +1,12 @@
+## [0.21.10](https://github.com/nikaaru/rango-client/compare/widget-embedded@0.21.9...widget-embedded@0.21.10) (2024-02-03)
+
+
+### Bug Fixes
+
+* sqush commtis ([a22b5db](https://github.com/nikaaru/rango-client/commit/a22b5db4c33b1eb18d43ab7137d3dc0ab22a29dc))
+
+
+
 ## [0.21.9](https://github.com/nikaaru/rango-client/compare/widget-embedded@0.21.8...widget-embedded@0.21.9) (2024-01-28)
 
 
