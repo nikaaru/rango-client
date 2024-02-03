@@ -22,6 +22,9 @@ jobs:
       - name: Print github.event.action
         run: 'echo "github.event.action: ${{ github.event.action }}"'
 
+      - name: Print github.event
+        run: 'echo "github.event: ${{ github.event }}"'
+
       - name: Print github.ref
         run: 'echo "github.ref: ${{ github.ref }}"'
 
