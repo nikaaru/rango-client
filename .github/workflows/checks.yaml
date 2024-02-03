@@ -19,9 +19,6 @@ jobs:
         env:
           REF: ${{ github.ref }}
 
-      - name: Print github.event.action
-        run: 'echo "github.event.action: ${{ github.event.action }}"'
-
       - name: Print head_ref
         run: 'echo "head_ref: ${{ toJson(github.head_ref) }}"'
 
