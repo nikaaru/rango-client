@@ -644,8 +644,8 @@ msgstr "To"
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/pages/LanguagePage.tsx:37
-msgid "Language release workflow"
-msgstr "Language release workflow"
+msgid "Language Test Hotfix Workflow1"
+msgstr "Language Test Hotfix Workflow1"
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/pages/LanguagePage.tsx:44
