@@ -19,12 +19,6 @@ jobs:
         env:
           REF: ${{ github.ref }}
 
-      - name: Print head_ref
-        run: 'echo "head_ref: ${{ toJson(github.head_ref) }}"'
-
-      - name: Print base_ref
-        run: 'echo "base_ref: ${{ toJson(github.base_ref) }}"'
-
   localization:
     if: ${{ github.base_ref == 'main' }}
     runs-on: ubuntu-latest
