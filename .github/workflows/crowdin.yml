@@ -7,6 +7,7 @@ on:
         description: 'to trigger the workflow manually'
         required: false
         type: string
+
   workflow_call:
     secrets:
       CROWDIN_PROJECT_ID:
@@ -18,6 +19,17 @@ on:
       PAT:
         description: 'Add a PAT to secrets.'
         required: true
+    inputs:
+      localization_branch_name:
+        description: 'Target branch name for new commit'
+        required: false
+        default: 'l10n_crowdin_translations'
+        type: string
+      create_pull_request:
+        description: 'It requires pull request'
+        type: boolean
+        default: true
+        required: false
 
 jobs:
   crowdin:
@@ -27,6 +39,11 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.PAT }}
+
+      - name: Access inputs from workflow_dispatch
+        run: |
+          echo "Localization Branch Name: ${{ inputs.localization_branch_name }}"
+          echo "Create Pull Request: ${{ inputs.create_pull_request }}"
 
       - name: Prepare
         uses: ./.github/actions/prepare
@@ -47,8 +64,8 @@ jobs:
           token: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
           commit_message: 'chore(translation): update translations [skip ci]'
 
-          localization_branch_name: l10n_crowdin_translations
-          create_pull_request: true
+          localization_branch_name: ${{inputs.LOCALIZATION_BRANCH_NAME}}
+          create_pull_request: ${{inputs.create_pull_request}}
           pull_request_title: '🤖chore(translation): update translations'
           pull_request_body: 'New Crowdin pull request with translations'
           pull_request_base_branch_name: 'next'
@@ -56,7 +73,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.PAT }}
 
       - name: Enable auto-merge for the PR
-        if: steps.crowdin-download.outputs.pull_request_url
+        if: ${{inputs.create_pull_request && steps.crowdin-download.outputs.pull_request_url}}
         run: gh pr --repo $GITHUB_REPOSITORY merge ${{ steps.crowdin-download.outputs.pull_request_url }} --admin --rebase
         env:
           GITHUB_TOKEN: ${{secrets.PAT}}
