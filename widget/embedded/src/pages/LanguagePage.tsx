@@ -34,7 +34,7 @@ export function LanguagePage() {
   return (
     <Layout
       header={{
-        title: i18n.t('Language hotfix crowdin workflow as module'),
+        title: i18n.t('Language hotfix crowdin workflow as module 2'),
       }}>
       <SettingsContainer>
         <RadioRoot value={activeLanguage}>
