@@ -22,6 +22,8 @@ jobs:
   localization:
     if: ${{ github.base_ref == 'main' }}
     uses: ./.github/workflows/crowdin.yml
+    needs:
+      - check
     with:
       create_pull_request: false
       localization_branch_name: ${{github.head_ref}}
