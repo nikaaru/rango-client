@@ -1,12 +1,15 @@
 name: Sync translations using Crowdin
+env:
+  LOCALIZATION_BRANCH_NAME: 'l10n_crowdin_translations'
 
 on:
   workflow_dispatch:
     inputs:
-      branch:
-        description: 'to trigger the workflow manually'
+      create_pull_request:
+        description: 'It requires pull request'
         required: false
-        type: string
+        default: true
+        type: boolean
 
   workflow_call:
     secrets:
@@ -23,13 +26,11 @@ on:
       localization_branch_name:
         description: 'Target branch name for new commit'
         required: false
-        default: 'l10n_crowdin_translations'
         type: string
       create_pull_request:
         description: 'It requires pull request'
         type: boolean
-        default: true
-        required: false
+        required: true
 
 jobs:
   crowdin:
@@ -40,7 +41,11 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.PAT }}
 
-      - name: Access inputs from workflow_dispatch
+      - name: Env Access inputs from workflow_dispatch
+        run: |
+          echo "Localization Branch Name: ${{ env.LOCALIZATION_BRANCH_NAME }}"
+
+      - name: Input Access inputs from workflow_dispatch
         run: |
           echo "Localization Branch Name: ${{ inputs.localization_branch_name }}"
           echo "Create Pull Request: ${{ inputs.create_pull_request }}"
@@ -64,7 +69,7 @@ jobs:
           token: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
           commit_message: 'chore(translation): update translations [skip ci]'
 
-          localization_branch_name: ${{inputs.LOCALIZATION_BRANCH_NAME}}
+          localization_branch_name: ${{inputs.localization_branch_name || env.LOCALIZATION_BRANCH_NAME}}
           create_pull_request: ${{inputs.create_pull_request}}
           pull_request_title: '🤖chore(translation): update translations'
           pull_request_body: 'New Crowdin pull request with translations'
@@ -73,7 +78,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.PAT }}
 
       - name: Enable auto-merge for the PR
-        if: ${{inputs.create_pull_request && steps.crowdin-download.outputs.pull_request_url}}
+        if: steps.crowdin-download.outputs.pull_request_url
         run: gh pr --repo $GITHUB_REPOSITORY merge ${{ steps.crowdin-download.outputs.pull_request_url }} --admin --rebase
         env:
           GITHUB_TOKEN: ${{secrets.PAT}}
