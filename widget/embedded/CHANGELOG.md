@@ -1,3 +1,14 @@
+## [0.21.13](https://github.com/nikaaru/rango-client/compare/widget-embedded@0.21.12...widget-embedded@0.21.13) (2024-02-04)
+
+
+### Bug Fixes
+
+* change language title ([2627233](https://github.com/nikaaru/rango-client/commit/2627233203b9b030faf1bdd851a21e6cabf5f670))
+* fix envs and inpust in crowdin workflow ([95d4a6d](https://github.com/nikaaru/rango-client/commit/95d4a6d4d48623ab6b558d3a60a85002dafbee96))
+* test crowdin in next branch ([a867c3c](https://github.com/nikaaru/rango-client/commit/a867c3cea45bca3a6c7d9e07442dd65259a2d712))
+
+
+
 ## [0.21.12](https://github.com/nikaaru/rango-client/compare/widget-embedded@0.21.11...widget-embedded@0.21.12) (2024-02-04)
 
 
