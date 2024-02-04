@@ -8,7 +8,7 @@ msgstr ""
 "Language: es\n"
 "Project-Id-Version: nikaru3\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-02-04 12:19\n"
+"PO-Revision-Date: 2024-02-04 12:45\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -17,11 +17,6 @@ msgstr ""
 "X-Crowdin-Language: es-ES\n"
 "X-Crowdin-File: en.po\n"
 "X-Crowdin-File-ID: 6\n"
-
-#. js-lingui-explicit-id
-#: widget/embedded/src/pages/LanguagePage.tsx:37
-msgid "Language hotfix crowdin workflow as module"
-msgstr ""
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/components/BlockchainList/BlockchainList.tsx:37
