@@ -1,3 +1,12 @@
+## [0.21.11](https://github.com/nikaaru/rango-client/compare/widget-embedded@0.21.10...widget-embedded@0.21.11) (2024-02-04)
+
+
+### Bug Fixes
+
+* revert utils.mjs ([4ce71fd](https://github.com/nikaaru/rango-client/commit/4ce71fd11705756d7278d33b61e24c2b9efcdcc9))
+
+
+
 ## [0.21.10](https://github.com/nikaaru/rango-client/compare/widget-embedded@0.21.9...widget-embedded@0.21.10) (2024-02-03)
 
 
