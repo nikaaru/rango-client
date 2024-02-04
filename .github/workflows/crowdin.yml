@@ -38,10 +38,15 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.PAT }}
 
-      - name: Access inputs from workflow_dispatch
+      - name: Env Access inputs from workflow_dispatch
         run: |
           echo "Localization Branch Name: ${{ env.LOCALIZATION_BRANCH_NAME }}"
           echo "Create Pull Request: ${{ env.CREATE_PULL_REQUEST }}"
+
+      - name: Input Access inputs from workflow_dispatch
+        run: |
+          echo "Localization Branch Name: ${{ inputs.LOCALIZATION_BRANCH_NAME }}"
+          echo "Create Pull Request: ${{ inputs.CREATE_PULL_REQUEST }}"
 
       - name: Prepare
         uses: ./.github/actions/prepare
