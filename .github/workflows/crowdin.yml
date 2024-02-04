@@ -9,6 +9,16 @@ on:
         type: string
 
   workflow_call:
+    secrets:
+      CROWDIN_PROJECT_ID:
+        description: 'You need a crowdin project id to be set.'
+        required: true
+      CROWDIN_PERSONAL_TOKEN:
+        description: 'You need a crowdin token to be set.'
+        required: true
+      PAT:
+        description: 'Add a PAT to secrets.'
+        required: true
     inputs:
       localization_branch_name:
         description: 'Target branch name for new commit'
