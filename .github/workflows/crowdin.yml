@@ -1,10 +1,15 @@
 name: Sync translations using Crowdin
 env:
-  LOCALIZATION_BRANCH_NAME: ${{ github.event.inputs.localization_branch_name || 'l10n_crowdin_translations' }}
-  CREATE_PULL_REQUEST: ${{github.event.inputs.create_pull_request || true}}
+  LOCALIZATION_BRANCH_NAME: 'l10n_crowdin_translations'
 
 on:
   workflow_dispatch:
+    inputs:
+      create_pull_request:
+        description: 'It requires pull request'
+        required: false
+        default: true
+        type: boolean
 
   workflow_call:
     secrets:
@@ -21,13 +26,11 @@ on:
       localization_branch_name:
         description: 'Target branch name for new commit'
         required: false
-        default: 'l10n_crowdin_translations'
         type: string
       create_pull_request:
         description: 'It requires pull request'
         type: boolean
-        default: true
-        required: false
+        required: true
 
 jobs:
   crowdin:
@@ -38,10 +41,14 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.PAT }}
 
-      - name: Access inputs from workflow_dispatch
+      - name: Env Access inputs from workflow_dispatch
         run: |
           echo "Localization Branch Name: ${{ env.LOCALIZATION_BRANCH_NAME }}"
-          echo "Create Pull Request: ${{ env.CREATE_PULL_REQUEST }}"
+
+      - name: Input Access inputs from workflow_dispatch
+        run: |
+          echo "Localization Branch Name: ${{ inputs.localization_branch_name }}"
+          echo "Create Pull Request: ${{ inputs.create_pull_request }}"
 
       - name: Prepare
         uses: ./.github/actions/prepare
@@ -62,8 +69,8 @@ jobs:
           token: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
           commit_message: 'chore(translation): update translations [skip ci]'
 
-          localization_branch_name: ${{env.LOCALIZATION_BRANCH_NAME}}
-          create_pull_request: ${{env.CREATE_PULL_REQUEST}}
+          localization_branch_name: ${{inputs.localization_branch_name || env.LOCALIZATION_BRANCH_NAME}}
+          create_pull_request: ${{inputs.create_pull_request}}
           pull_request_title: '🤖chore(translation): update translations'
           pull_request_body: 'New Crowdin pull request with translations'
           pull_request_base_branch_name: 'next'
@@ -71,7 +78,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.PAT }}
 
       - name: Enable auto-merge for the PR
-        if: ${{env.CREATE_PULL_REQUEST && steps.crowdin-download.outputs.pull_request_url}}
+        if: steps.crowdin-download.outputs.pull_request_url
         run: gh pr --repo $GITHUB_REPOSITORY merge ${{ steps.crowdin-download.outputs.pull_request_url }} --admin --rebase
         env:
           GITHUB_TOKEN: ${{secrets.PAT}}

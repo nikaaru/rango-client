@@ -1,11 +1,6 @@
 name: Release
 on:
   workflow_dispatch:
-    inputs:
-      branch:
-        description: 'to trigger the workflow manually'
-        required: false
-        type: string
 
 jobs:
   localization:
@@ -14,6 +9,8 @@ jobs:
       CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
       CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
       PAT: ${{ secrets.PAT }}
+    with:
+      create_pull_request: true
 
   release:
     runs-on: ubuntu-latest
