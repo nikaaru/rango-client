@@ -648,14 +648,6 @@ msgid "To"
 msgstr "To"
 
 #. js-lingui-explicit-id
-<<<<<<< HEAD
-#: widget/embedded/src/pages/LanguagePage.tsx:37
-msgid "Language test split crowdin to pull and push"
-msgstr "Language test split crowdin to pull and push"
-
-#. js-lingui-explicit-id
-=======
->>>>>>> 4db60ee1 (fix: add skip untranslated string)
 #: widget/embedded/src/pages/LanguagePage.tsx:44
 msgid "language"
 msgstr "language"

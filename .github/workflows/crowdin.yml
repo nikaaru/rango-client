@@ -57,21 +57,6 @@ jobs:
         run: yarn run i18n:extract
 
       - name: Crowdin push translations
-<<<<<<< HEAD
-        uses: crowdin/github-action@v1
-        with:
-          upload_sources: true
-          upload_translations: false
-          download_translations: false
-          push_sources: true
-          source: translations/en.po
-          translation: translations/%two_letters_code%.po
-          project_id: ${{ secrets.CROWDIN_PROJECT_ID }}
-          token: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
-
-      - name: Crowdin pull translations
-=======
->>>>>>> 4db60ee1 (fix: add skip untranslated string)
         uses: crowdin/github-action@v1
         with:
           upload_sources: false
