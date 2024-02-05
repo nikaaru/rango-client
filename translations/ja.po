@@ -8,7 +8,11 @@ msgstr ""
 "Language: ja\n"
 "Project-Id-Version: nikaru3\n"
 "Report-Msgid-Bugs-To: \n"
+<<<<<<< HEAD
 "PO-Revision-Date: 2024-02-05 15:27\n"
+=======
+"PO-Revision-Date: 2024-02-05 16:22\n"
+>>>>>>> 4db60ee1 (fix: add skip untranslated string)
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -17,6 +21,11 @@ msgstr ""
 "X-Crowdin-Language: ja\n"
 "X-Crowdin-File: en.po\n"
 "X-Crowdin-File-ID: 6\n"
+
+#. js-lingui-explicit-id
+#: widget/embedded/src/pages/LanguagePage.tsx:37
+msgid "Language test skip untranslated strings"
+msgstr ""
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/components/BlockchainList/BlockchainList.tsx:37
@@ -648,11 +657,14 @@ msgid "To"
 msgstr ""
 
 #. js-lingui-explicit-id
+<<<<<<< HEAD
 #: widget/embedded/src/pages/LanguagePage.tsx:37
 msgid "Language test split crowdin to pull and push"
 msgstr ""
 
 #. js-lingui-explicit-id
+=======
+>>>>>>> 4db60ee1 (fix: add skip untranslated string)
 #: widget/embedded/src/pages/LanguagePage.tsx:44
 msgid "language"
 msgstr ""

@@ -34,7 +34,11 @@ export function LanguagePage() {
   return (
     <Layout
       header={{
+<<<<<<< HEAD
         title: i18n.t('Language test split crowdin to pull and push'),
+=======
+        title: i18n.t('Language test skip untranslated strings'),
+>>>>>>> 4db60ee1 (fix: add skip untranslated string)
       }}>
       <SettingsContainer>
         <RadioRoot value={activeLanguage}>
