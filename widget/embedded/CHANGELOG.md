@@ -1,3 +1,12 @@
+## [0.21.14](https://github.com/nikaaru/rango-client/compare/widget-embedded@0.21.13...widget-embedded@0.21.14) (2024-02-05)
+
+
+### Bug Fixes
+
+* split crowdin to push and pull ([22350e8](https://github.com/nikaaru/rango-client/commit/22350e8debe82a3b55ce156cf447aaef6b0570be))
+
+
+
 ## [0.21.13](https://github.com/nikaaru/rango-client/compare/widget-embedded@0.21.12...widget-embedded@0.21.13) (2024-02-04)
 
 
