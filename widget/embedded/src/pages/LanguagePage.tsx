@@ -34,7 +34,7 @@ export function LanguagePage() {
   return (
     <Layout
       header={{
-        title: i18n.t('Language test crowdin in next branch'),
+        title: i18n.t('Language test split crowdin to pull and push'),
       }}>
       <SettingsContainer>
         <RadioRoot value={activeLanguage}>
