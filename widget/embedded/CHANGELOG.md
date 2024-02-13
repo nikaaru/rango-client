@@ -1,3 +1,13 @@
+## [0.21.15](https://github.com/nikaaru/rango-client/compare/widget-embedded@0.21.14...widget-embedded@0.21.15) (2024-02-13)
+
+
+### Bug Fixes
+
+* upate theme title ([2ca0d27](https://github.com/nikaaru/rango-client/commit/2ca0d27e6194a96db4b57bc4edffb5e7c97187e5))
+* update language page title ([1be6f61](https://github.com/nikaaru/rango-client/commit/1be6f61e8945555b169e3c90d121305874565028))
+
+
+
 ## [0.21.14](https://github.com/nikaaru/rango-client/compare/widget-embedded@0.21.13...widget-embedded@0.21.14) (2024-02-05)
 
 
