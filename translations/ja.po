@@ -8,7 +8,7 @@ msgstr ""
 "Language: ja\n"
 "Project-Id-Version: test-nikaru5\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-02-13 20:06\n"
+"PO-Revision-Date: 2024-02-13 20:31\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -17,6 +17,16 @@ msgstr ""
 "X-Crowdin-Language: ja\n"
 "X-Crowdin-File: en.po\n"
 "X-Crowdin-File-ID: 2\n"
+
+#. js-lingui-explicit-id
+#: widget/embedded/src/pages/LanguagePage.tsx:37
+msgid "Language update 1"
+msgstr "言語更新1"
+
+#. js-lingui-explicit-id
+#: widget/embedded/src/pages/ThemePage.tsx:71
+msgid "Theme update 1"
+msgstr "テーマアップデート1"
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/components/BlockchainList/BlockchainList.tsx:37
@@ -648,11 +658,6 @@ msgid "To"
 msgstr "終了日"
 
 #. js-lingui-explicit-id
-#: widget/embedded/src/pages/LanguagePage.tsx:37
-msgid "Language test split crowdin to pull and push"
-msgstr "言語テストでクラウドインを分割して引っ張ったりプッシュしたりします"
-
-#. js-lingui-explicit-id
 #: widget/embedded/src/pages/LanguagePage.tsx:44
 msgid "language"
 msgstr "言語"
@@ -726,7 +731,6 @@ msgstr "有効な取引所"
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/pages/SettingsPage.tsx:135
-#: widget/embedded/src/pages/ThemePage.tsx:71
 #: widget/embedded/src/pages/ThemePage.tsx:80
 msgid "Theme"
 msgstr "テーマ"
