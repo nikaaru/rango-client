@@ -88,7 +88,7 @@ const getSourceFileId = async () => {
 
 const sendPreTranslateRequest = async ({ sourceFileId, languageIds }) => {
   try {
-    const engineId =  getMachineTranslationEngineID();
+    const engineId = await getMachineTranslationEngineID();
     console.log('engineId', engineId);
     requestData.engineId = engineId ;
     const response = await fetch(preTranslateURL, {
