@@ -14,16 +14,6 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. js-lingui-explicit-id
-#: widget/embedded/src/pages/LanguagePage.tsx:37
-msgid "Language update 1"
-msgstr "Language update 1"
-
-#. js-lingui-explicit-id
-#: widget/embedded/src/pages/ThemePage.tsx:71
-msgid "Theme update 1"
-msgstr "Theme update 1"
-
-#. js-lingui-explicit-id
 #: widget/embedded/src/components/BlockchainList/BlockchainList.tsx:37
 #: widget/embedded/src/components/TokenList/TokenList.tsx:135
 #: widget/embedded/src/pages/HistoryPage.tsx:94
@@ -653,6 +643,11 @@ msgid "To"
 msgstr "To"
 
 #. js-lingui-explicit-id
+#: widget/embedded/src/pages/LanguagePage.tsx:37
+msgid "Language update 1"
+msgstr "Language update 1"
+
+#. js-lingui-explicit-id
 #: widget/embedded/src/pages/LanguagePage.tsx:44
 msgid "language"
 msgstr "language"
@@ -754,6 +749,11 @@ msgstr "Dark"
 #: widget/embedded/src/pages/ThemePage.tsx:59
 msgid "Auto"
 msgstr "Auto"
+
+#. js-lingui-explicit-id
+#: widget/embedded/src/pages/ThemePage.tsx:71
+msgid "Theme update 1"
+msgstr "Theme update 1"
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/pages/WalletsPage.tsx:64
