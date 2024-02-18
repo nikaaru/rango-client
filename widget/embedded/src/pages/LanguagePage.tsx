@@ -34,7 +34,7 @@ export function LanguagePage() {
   return (
     <Layout
       header={{
-        title: i18n.t('Language update 1'),
+        title: i18n.t('Language test new language pt'),
       }}>
       <SettingsContainer>
         <RadioRoot value={activeLanguage}>
