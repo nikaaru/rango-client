@@ -8,7 +8,7 @@ msgstr ""
 "Language: es\n"
 "Project-Id-Version: test-nikaru5\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-02-18 10:53\n"
+"PO-Revision-Date: 2024-02-18 11:05\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -17,11 +17,6 @@ msgstr ""
 "X-Crowdin-Language: es-ES\n"
 "X-Crowdin-File: en.po\n"
 "X-Crowdin-File-ID: 2\n"
-
-#. js-lingui-explicit-id
-#: widget/embedded/src/pages/LanguagePage.tsx:37
-msgid "Language test new language pt"
-msgstr ""
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/components/BlockchainList/BlockchainList.tsx:37
@@ -651,6 +646,11 @@ msgstr "De"
 #: widget/embedded/src/pages/Home.tsx:221
 msgid "To"
 msgstr "A"
+
+#. js-lingui-explicit-id
+#: widget/embedded/src/pages/LanguagePage.tsx:37
+msgid "Language test new language pt"
+msgstr "Prueba de idioma nuevo pt"
 
 #. js-lingui-explicit-id
 #: widget/embedded/src/pages/LanguagePage.tsx:44
