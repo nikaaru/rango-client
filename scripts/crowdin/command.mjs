@@ -27,7 +27,7 @@ async function run() {
   console.log('[1/5]', 'Get source file id');
   const sourceFileId = await getSourceFileId();
 
-  console.log('[2/5]', 'Get target languages id');
+  console.log('[2/5]', 'Get target languages ids');
   const languageIds = await  getLanguageIds();
   
   console.log('[3/5]', 'Get machine translation engine id');

@@ -13,7 +13,7 @@ import {
 
 export const getMachineTranslationEngineID = async () =>{
   const responseData = await fetchDataWithAuthorization(MACHINE_TRANSLATE_API);
-  if(!response.data || !response.data.length){
+  if(!responseData.data || !responseData.data.length){
     throw new CrowdinError('No data received for machine translation');
   }
   return responseData.data[0].data.id;
