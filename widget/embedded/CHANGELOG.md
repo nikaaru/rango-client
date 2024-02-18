@@ -1,3 +1,7 @@
+## [0.21.16](https://github.com/nikaaru/rango-client/compare/widget-embedded@0.21.15...widget-embedded@0.21.16) (2024-02-18)
+
+
+
 ## [0.21.15](https://github.com/nikaaru/rango-client/compare/widget-embedded@0.21.14...widget-embedded@0.21.15) (2024-02-13)
 
 

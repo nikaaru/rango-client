@@ -1,3 +1,12 @@
+## [0.27.1](https://github.com/nikaaru/rango-client/compare/ui@0.27.0...ui@0.27.1) (2024-02-18)
+
+
+### Bug Fixes
+
+* add pt language ([ccb7c41](https://github.com/nikaaru/rango-client/commit/ccb7c419c95e0e9dc613cc826c9597edf5485f10))
+
+
+
 # 0.27.0 (2024-01-09)
 
 
