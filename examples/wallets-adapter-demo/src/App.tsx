@@ -1,5 +1,5 @@
-import { allProviders } from '@rango-dev/provider-all';
-import { AdapterProvider } from '@rango-dev/wallets-adapter';
+import { allProviders } from '@nikaru-dev/provider-all';
+import { AdapterProvider } from '@nikaru-dev/wallets-adapter';
 import { RangoClient } from 'rango-sdk';
 import React, { useEffect, useState } from 'react';
 

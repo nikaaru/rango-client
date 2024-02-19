@@ -1,4 +1,6 @@
-import { Networks, ProviderConnectResult } from '@rango-dev/wallets-shared';
+import type { ProviderConnectResult } from '@nikaru-dev/wallets-shared';
+
+import { Networks } from '@nikaru-dev/wallets-shared';
 
 export async function getSolanaAccounts(
   instance: any

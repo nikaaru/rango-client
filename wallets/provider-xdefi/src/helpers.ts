@@ -1,33 +1,55 @@
-import {
+import type {
   Network,
-  Networks,
   ProviderConnectResult,
-} from '@rango-dev/wallets-shared';
-import { SUPPORTED_ETH_CHAINS, SUPPORTED_NETWORKS } from './constants';
+} from '@nikaru-dev/wallets-shared';
+
+import { Networks } from '@nikaru-dev/wallets-shared';
 import { SignerError, SignerErrorCode } from 'rango-types';
+
+import { SUPPORTED_ETH_CHAINS, SUPPORTED_NETWORKS } from './constants';
 
 type Provider = Map<Network, any>;
 
 export function xdefi() {
   const { xfi, ethereum } = window;
 
-  if (!xfi) return null;
+  if (!xfi) {
+    return null;
+  }
 
   const instances = new Map();
-  if (xfi.bitcoin) instances.set(Networks.BTC, xfi.bitcoin);
-  if (xfi.litecoin) instances.set(Networks.LTC, xfi.litecoin);
-  if (xfi.thorchain) instances.set(Networks.THORCHAIN, xfi.thorchain);
-  if (xfi.bitcoincash) instances.set(Networks.BCH, xfi.bitcoincash);
-  if (xfi.binance) instances.set(Networks.BINANCE, xfi.binance);
-  if (ethereum?.__XDEFI) instances.set(Networks.ETHEREUM, ethereum);
-  if (xfi.dogecoin) instances.set(Networks.DOGE, xfi.dogecoin);
-  if (xfi.solana) instances.set(Networks.SOLANA, xfi.solana);
+  if (xfi.bitcoin) {
+    instances.set(Networks.BTC, xfi.bitcoin);
+  }
+  if (xfi.litecoin) {
+    instances.set(Networks.LTC, xfi.litecoin);
+  }
+  if (xfi.thorchain) {
+    instances.set(Networks.THORCHAIN, xfi.thorchain);
+  }
+  if (xfi.bitcoincash) {
+    instances.set(Networks.BCH, xfi.bitcoincash);
+  }
+  if (xfi.binance) {
+    instances.set(Networks.BINANCE, xfi.binance);
+  }
+  if (ethereum?.__XDEFI) {
+    instances.set(Networks.ETHEREUM, ethereum);
+  }
+  if (xfi.dogecoin) {
+    instances.set(Networks.DOGE, xfi.dogecoin);
+  }
+  if (xfi.solana) {
+    instances.set(Networks.SOLANA, xfi.solana);
+  }
 
   return instances;
 }
 
 export function getEthChainsInstance(netowrk: Network | null): Network | null {
-  if (!netowrk) return null;
+  if (!netowrk) {
+    return null;
+  }
   return SUPPORTED_ETH_CHAINS.includes(netowrk as Networks)
     ? Networks.ETHEREUM
     : null;
@@ -40,7 +62,7 @@ export async function getNonEvmAccounts(
     (net: Network) => net !== Networks.ETHEREUM
   );
   const promises: Promise<ProviderConnectResult>[] = nonEvmNetworks.map(
-    (network: Network) => {
+    async (network: Network) => {
       return new Promise((resolve, reject) => {
         const instance = instances.get(network);
         instance.request(
@@ -71,7 +93,7 @@ export async function getNonEvmAccounts(
   return results;
 }
 
-export function xdefiTransfer(
+export async function xdefiTransfer(
   blockchain: string,
   ticker: string,
   from: string,
@@ -90,16 +112,20 @@ export function xdefiTransfer(
       memo: memo,
       // recipient: to,
     } as any;
-    if (recipientAddress) params.recipient = recipientAddress;
+    if (recipientAddress) {
+      params.recipient = recipientAddress;
+    }
 
     provider.request(
       { method: method, params: [params] },
       (error: any, result: any) => {
-        if (error)
+        if (error) {
           reject(
             new SignerError(SignerErrorCode.SEND_TX_ERROR, undefined, error)
           );
-        else resolve(result);
+        } else {
+          resolve(result);
+        }
       }
     );
   });

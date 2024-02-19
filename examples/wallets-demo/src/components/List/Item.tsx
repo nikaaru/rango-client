@@ -2,7 +2,7 @@ import type {
   Network,
   WalletInfo,
   WalletType,
-} from '@rango-dev/wallets-shared';
+} from '@nikaru-dev/wallets-shared';
 import type { Token } from 'rango-sdk';
 
 import {
@@ -13,10 +13,10 @@ import {
   Spinner,
   Tooltip,
   Typography,
-} from '@rango-dev/ui';
-import { InfoCircleIcon } from '@rango-dev/ui/src/components/Icon';
-import { readAccountAddress, useWallets } from '@rango-dev/wallets-react';
-import { detectInstallLink, Networks } from '@rango-dev/wallets-shared';
+} from '@nikaru-dev/ui';
+import { InfoCircleIcon } from '@nikaru-dev/ui/src/components/Icon';
+import { readAccountAddress, useWallets } from '@nikaru-dev/wallets-react';
+import { detectInstallLink, Networks } from '@nikaru-dev/wallets-shared';
 import React, { useState } from 'react';
 import './styles.css';
 

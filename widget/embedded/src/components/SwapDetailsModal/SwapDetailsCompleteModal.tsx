@@ -7,7 +7,7 @@ import {
   MessageBox,
   TokenAmount,
   Typography,
-} from '@rango-dev/ui';
+} from '@nikaru-dev/ui';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 

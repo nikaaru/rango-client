@@ -1,8 +1,8 @@
 import type { ProviderContext } from './types';
-import type { WalletType } from '@rango-dev/wallets-shared';
+import type { WalletType } from '@nikaru-dev/wallets-shared';
 import type { PropsWithChildren } from 'react';
 
-import { useWallets } from '@rango-dev/wallets-react';
+import { useWallets } from '@nikaru-dev/wallets-react';
 import React, { createContext, useContext, useMemo, useReducer } from 'react';
 
 import { defaultState, state_reducer } from './helpers';

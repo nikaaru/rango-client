@@ -5,7 +5,7 @@ import {
   TextField,
   Tooltip,
   Typography,
-} from '@rango-dev/ui';
+} from '@nikaru-dev/ui';
 import React from 'react';
 
 import {

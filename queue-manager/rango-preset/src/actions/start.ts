@@ -1,6 +1,8 @@
-import { ExecuterActions } from '@rango-dev/queue-manager-core';
-import { StepEventType, SwapActionTypes, SwapStorage } from '../types';
+import type { SwapStorage } from '../types';
+import type { ExecuterActions } from '@nikaru-dev/queue-manager-core';
+
 import { notifier } from '../services/eventEmitter';
+import { StepEventType, SwapActionTypes } from '../types';
 
 export function start({
   schedule,

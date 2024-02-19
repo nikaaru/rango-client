@@ -1,10 +1,12 @@
+import type { WalletType } from '@nikaru-dev/wallets-shared';
+
+import { allProviders } from '@nikaru-dev/provider-all';
+import { Events, Provider } from '@nikaru-dev/wallets-react';
+import { RangoClient } from 'rango-sdk';
 import React, { useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import { Events, Provider } from '@rango-dev/wallets-react';
-import { allProviders } from '@rango-dev/provider-all';
-import { RangoClient } from 'rango-sdk';
+
 import { App } from './App';
-import { WalletType } from '@rango-dev/wallets-shared';
 import { WC_PROJECT_ID } from './configs';
 
 const providers = allProviders({

@@ -1,8 +1,9 @@
-import {
+import type {
   Network,
-  Networks,
   ProviderConnectResult,
-} from '@rango-dev/wallets-shared';
+} from '@nikaru-dev/wallets-shared';
+
+import { Networks } from '@nikaru-dev/wallets-shared';
 
 type Provider = Map<Network, any>;
 
@@ -10,15 +11,21 @@ export function safepal() {
   const instances = new Map();
   const { isSafePal, safepal, safepalProvider } = window;
 
-  if (!isSafePal) return null;
+  if (!isSafePal) {
+    return null;
+  }
 
-  if (!!safepal && safepal.isSafePalWallet)
+  if (!!safepal && safepal.isSafePalWallet) {
     instances.set(Networks.SOLANA, safepal);
+  }
 
-  if (safepalProvider && safepalProvider)
+  if (safepalProvider && safepalProvider) {
     instances.set(Networks.ETHEREUM, safepalProvider);
+  }
 
-  if (instances.size === 0) return null;
+  if (instances.size === 0) {
+    return null;
+  }
 
   return instances;
 }

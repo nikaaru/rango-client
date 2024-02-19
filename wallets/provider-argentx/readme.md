@@ -1,1 +1,1 @@
-# @rango-dev/provider-argentx
+# @nikaru-dev/provider-argentx

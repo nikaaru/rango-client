@@ -1,3 +1,3 @@
-# @rango-dev/provider-mytonwallet
+# @nikaru-dev/provider-mytonwallet
 
 Mytonwallet

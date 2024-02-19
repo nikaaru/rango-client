@@ -1,7 +1,7 @@
 import type { PropTypes } from './WalletList.type';
 import type { Wallet } from '../../types';
-import type { WalletInfo } from '@rango-dev/ui';
-import type { WalletType } from '@rango-dev/wallets-shared';
+import type { WalletInfo } from '@nikaru-dev/ui';
+import type { WalletType } from '@nikaru-dev/wallets-shared';
 
 import { i18n } from '@lingui/core';
 import {
@@ -12,7 +12,7 @@ import {
   SelectableWallet,
   Typography,
   WalletState,
-} from '@rango-dev/ui';
+} from '@nikaru-dev/ui';
 import React, { useEffect, useState } from 'react';
 
 import { useWallets } from '../..';

@@ -1,9 +1,7 @@
-import { DefaultTronSigner } from '@rango-dev/signer-tron';
-import {
-  DefaultSignerFactory,
-  SignerFactory,
-  TransactionType as TxType,
-} from 'rango-types';
+import type { SignerFactory } from 'rango-types';
+
+import { DefaultTronSigner } from '@nikaru-dev/signer-tron';
+import { DefaultSignerFactory, TransactionType as TxType } from 'rango-types';
 
 export default function getSigners(provider: any): SignerFactory {
   const signers = new DefaultSignerFactory();

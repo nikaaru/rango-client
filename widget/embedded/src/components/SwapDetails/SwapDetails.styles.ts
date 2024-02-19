@@ -1,4 +1,4 @@
-import { css, darkTheme, styled } from '@rango-dev/ui';
+import { css, darkTheme, styled } from '@nikaru-dev/ui';
 
 import { ScrollableArea } from '../Layout';
 

@@ -1,8 +1,8 @@
 import type { BlockchainMeta, Token } from 'rango-sdk';
 
-import { allProviders } from '@rango-dev/provider-all';
-import { ErrorIcon, Spinner, Typography } from '@rango-dev/ui';
-import { Provider } from '@rango-dev/wallets-react';
+import { allProviders } from '@nikaru-dev/provider-all';
+import { ErrorIcon, Spinner, Typography } from '@nikaru-dev/ui';
+import { Provider } from '@nikaru-dev/wallets-react';
 import { RangoClient } from 'rango-sdk';
 import React, { useEffect, useState } from 'react';
 

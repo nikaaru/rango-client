@@ -1,11 +1,19 @@
-import { Networks, ProviderConnectResult } from '@rango-dev/wallets-shared';
+import type { ProviderConnectResult } from '@nikaru-dev/wallets-shared';
+
+import { Networks } from '@nikaru-dev/wallets-shared';
 
 export function okx_instance() {
   const { okxwallet } = window;
-  if (!okxwallet) return null;
+  if (!okxwallet) {
+    return null;
+  }
   const instances = new Map();
-  if (okxwallet) instances.set(Networks.ETHEREUM, okxwallet);
-  if (okxwallet.solana) instances.set(Networks.SOLANA, okxwallet.solana);
+  if (okxwallet) {
+    instances.set(Networks.ETHEREUM, okxwallet);
+  }
+  if (okxwallet.solana) {
+    instances.set(Networks.SOLANA, okxwallet.solana);
+  }
 
   return instances;
 }

@@ -1,1 +1,1 @@
-# @rango-dev/wallets-demo
+# @nikaru-dev/wallets-demo

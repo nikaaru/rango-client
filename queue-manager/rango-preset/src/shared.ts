@@ -1,4 +1,4 @@
-import type { Network, WalletType } from '@rango-dev/wallets-shared';
+import type { Network, WalletType } from '@nikaru-dev/wallets-shared';
 import type {
   BestRouteResponse,
   BlockchainMeta,

@@ -1,4 +1,4 @@
-# @rango-dev/ui
+# @nikaru-dev/ui
 
 Rango UI design system components
 

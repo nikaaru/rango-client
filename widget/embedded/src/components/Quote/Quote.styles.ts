@@ -1,4 +1,3 @@
-import * as Collapsible from '@radix-ui/react-collapsible';
 import {
   Button,
   css,
@@ -6,7 +5,8 @@ import {
   Image,
   styled,
   Typography,
-} from '@rango-dev/ui';
+} from '@nikaru-dev/ui';
+import * as Collapsible from '@radix-ui/react-collapsible';
 
 import { CollapsibleContent } from '../CustomCollapsible/CustomCollapsible.styles';
 

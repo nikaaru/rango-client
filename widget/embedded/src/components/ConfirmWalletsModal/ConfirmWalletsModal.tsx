@@ -13,7 +13,7 @@ import {
   MessageBox,
   Typography,
   WalletIcon,
-} from '@rango-dev/ui';
+} from '@nikaru-dev/ui';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 

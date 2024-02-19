@@ -1,17 +1,24 @@
-import {
+import type {
   Network,
-  Networks,
   ProviderConnectResult,
-} from '@rango-dev/wallets-shared';
+} from '@nikaru-dev/wallets-shared';
+
+import { Networks } from '@nikaru-dev/wallets-shared';
 
 export function clover() {
   const { clover, clover_solana } = window;
 
-  if (!clover) return null;
+  if (!clover) {
+    return null;
+  }
 
   const instances = new Map();
-  if (clover) instances.set(Networks.ETHEREUM, clover);
-  if (clover_solana) instances.set(Networks.SOLANA, clover_solana);
+  if (clover) {
+    instances.set(Networks.ETHEREUM, clover);
+  }
+  if (clover_solana) {
+    instances.set(Networks.SOLANA, clover_solana);
+  }
 
   return instances;
 }

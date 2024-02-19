@@ -1,6 +1,6 @@
-import type { FlagPropTypes, Language } from '@rango-dev/ui';
+import type { FlagPropTypes, Language } from '@nikaru-dev/ui';
 
-import { English, French, Japanese, Portuguese, Spanish } from '@rango-dev/ui';
+import { English, French, Japanese, Portuguese, Spanish } from '@nikaru-dev/ui';
 
 export type LanguageItem = {
   title: string;

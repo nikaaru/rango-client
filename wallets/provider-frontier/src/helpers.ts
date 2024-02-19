@@ -1,12 +1,20 @@
-import { Networks, ProviderConnectResult } from '@rango-dev/wallets-shared';
+import type { ProviderConnectResult } from '@nikaru-dev/wallets-shared';
+
+import { Networks } from '@nikaru-dev/wallets-shared';
 
 export function frontier() {
   const { frontier } = window;
-  if (!frontier) return null;
+  if (!frontier) {
+    return null;
+  }
 
   const instances = new Map();
-  if (frontier?.ethereum) instances.set(Networks.ETHEREUM, frontier?.ethereum);
-  if (frontier?.solana) instances.set(Networks.SOLANA, frontier?.solana);
+  if (frontier?.ethereum) {
+    instances.set(Networks.ETHEREUM, frontier?.ethereum);
+  }
+  if (frontier?.solana) {
+    instances.set(Networks.SOLANA, frontier?.solana);
+  }
 
   return instances;
 }
