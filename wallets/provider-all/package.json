@@ -1,6 +1,6 @@
 {
   "name": "@nikaru-dev/provider-all",
-  "version": "0.26.1-next.0",
+  "version": "0.26.1-next.1",
   "license": "MIT",
   "type": "module",
   "source": "./src/index.ts",
@@ -36,7 +36,7 @@
     "@nikaru-dev/provider-halo": "^0.26.1-next.0",
     "@nikaru-dev/provider-keplr": "^0.26.1-next.0",
     "@nikaru-dev/provider-leap-cosmos": "^0.26.1-next.0",
-    "@nikaru-dev/provider-math-wallet": "^0.26.1-next.0",
+    "@nikaru-dev/provider-math-wallet": "^0.26.1-next.1",
     "@nikaru-dev/provider-metamask": "^0.26.1-next.0",
     "@nikaru-dev/provider-okx": "^0.26.1-next.0",
     "@nikaru-dev/provider-phantom": "^0.26.1-next.0",
