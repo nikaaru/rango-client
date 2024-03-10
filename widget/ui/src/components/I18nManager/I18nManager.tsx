@@ -23,9 +23,9 @@ import { messages as nlMessages } from '../../../../../translations/nl';
 import { messages as plMessages } from '../../../../../translations/pl';
 import { messages as ptMessages } from '../../../../../translations/pt';
 import { messages as ruMessages } from '../../../../../translations/ru';
-import { messages as svMessages } from '../../../../../translations/sv-SE';
+import { messages as svMessages } from '../../../../../translations/sv';
 import { messages as ukMessages } from '../../../../../translations/uk';
-import { messages as zhMessages } from '../../../../../translations/zh-CN';
+import { messages as zhMessages } from '../../../../../translations/zh';
 
 const messages = {
   en: enMessages,
@@ -33,11 +33,11 @@ const messages = {
   ja: jaMessages,
   fr: frMessages,
   pt: ptMessages,
-  'zh-CN': zhMessages,
+  zh: zhMessages,
   ru: ruMessages,
   de: deMessages,
   uk: ukMessages,
-  'sv-SE': svMessages,
+  sv: svMessages,
   fi: fiMessages,
   nl: nlMessages,
   el: elMessages,
