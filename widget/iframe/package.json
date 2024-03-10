@@ -13,6 +13,6 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "@nikaru-dev/widget-embedded": "^0.21.17-next.1"
+    "@nikaru-dev/widget-embedded": "^0.21.17-next.2"
   }
 }
