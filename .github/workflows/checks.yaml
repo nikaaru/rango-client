@@ -20,7 +20,13 @@ jobs:
           REF: ${{ github.ref }}
 
       - name: Preview Deployment
-        run: yarn run deploy
+        id: preview
+        run: |
+          output=$(yarn run deploy)
+          app_url=$(echo "$output" | grep '@nikaru-dev/widget-app-url-preview' | awk -F ': ' '{print $2}')
+          playground_url=$(echo "$output" | grep '@nikaru-dev/widget-playground-url-preview' | awk -F ': ' '{print $2}')
+          echo "app_url=$app_url" >> $GITHUB_ENV
+          echo "playground_url=$playground_url" >> $GITHUB_ENV
         env:
           REF: ${{ github.ref }}
           GH_TOKEN: ${{ github.token }}
@@ -43,8 +49,9 @@ jobs:
               pull_number: context.payload.pull_request.number
             });
 
-            const { app_url, playground_url } = context.payload.workflow_run.outputs;
-            const commentBody = `Preview URLs:\n\n- [Widget App Preview](${app_url})\n- [Widget Playground Preview](${playground_url})`;
+            const app_url = process.env.app_url;
+            const playground_url = process.env.playground_url;
+            const commentBody = `App Preview URL: ${app_url}\nPlayground Preview URL: ${playground_url}`;
             await github.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
