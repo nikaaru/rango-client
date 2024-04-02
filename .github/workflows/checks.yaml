@@ -20,14 +20,7 @@ jobs:
           REF: ${{ github.ref }}
 
       - name: Preview Deployment
-        run: |
-          # Parse the output from the deployment step
-          output=$(yarn run deploy)
-          app_url=$(echo "$output" | grep '@nikaru-dev/widget-app-url-preview' | awk -F ': ' '{print $2}')
-          playground_url=$(echo "$output" | grep '@nikaru-dev/widget-playground-url-preview' | awk -F ': ' '{print $2}')
-          echo "::set-output name=app_url::$app_url"
-          echo "::set-output name=playground_url::$playground_url"
-
+        run: yarn run deploy
         env:
           REF: ${{ github.ref }}
           GH_TOKEN: ${{ github.token }}
@@ -38,3 +31,23 @@ jobs:
           # VERCEL_PROJECT_WALLETS: ${{ secrets.VERCEL_PROJECT_WALLETS }}
           # VERCEL_PROJECT_Q: ${{ secrets.VERCEL_PROJECT_Q }}
           # VERCEL_PROJECT_WALLET_ADAPTER: ${{ secrets.VERCEL_PROJECT_WALLET_ADAPTER }}
+
+      - name: Add Preview URLs to PR
+        uses: actions/github-script@v5
+        with:
+          github-token: ${{ github.token }}
+          script: |
+            const { data: { html_url: prUrl } } = await github.pulls.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.payload.pull_request.number
+            });
+
+            const { app_url, playground_url } = context.payload.workflow_run.outputs;
+            const commentBody = `Preview URLs:\n\n- [Widget App Preview](${app_url})\n- [Widget Playground Preview](${playground_url})`;
+            await github.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.pull_request.number,
+              body: commentBody
+            });
