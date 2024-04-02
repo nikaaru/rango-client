@@ -20,13 +20,7 @@ jobs:
           REF: ${{ github.ref }}
 
       - name: Preview Deployment
-        id: preview
-        run: |
-          output=$(yarn run deploy)
-          app_url=$(echo "$output" | grep '@nikaru-dev/widget-app-url-preview' | awk -F ': ' '{print $2}')
-          playground_url=$(echo "$output" | grep '@nikaru-dev/widget-playground-url-preview' | awk -F ': ' '{print $2}')
-          echo "app_url=$app_url" >> $GITHUB_ENV
-          echo "playground_url=$playground_url" >> $GITHUB_ENV
+        run: yarn run deploy | tee deploy.log
         env:
           REF: ${{ github.ref }}
           GH_TOKEN: ${{ github.token }}
@@ -38,23 +32,37 @@ jobs:
           # VERCEL_PROJECT_Q: ${{ secrets.VERCEL_PROJECT_Q }}
           # VERCEL_PROJECT_WALLET_ADAPTER: ${{ secrets.VERCEL_PROJECT_WALLET_ADAPTER }}
 
-      - name: Add Preview URLs to PR
+      - name: Extract Preview URLs
+        run: |
+          app_url=$(grep '@nikaru-dev/widget-app-url-preview' deploy.log | awk -F ': ' '{print $2}')
+          playground_url=$(grep '@nikaru-dev/widget-playground-url-preview' deploy.log | awk -F ': ' '{print $2}')
+          echo "app_url=$app_url" >> $GITHUB_ENV
+          echo "playground_url=$playground_url" >> $GITHUB_ENV
+
+      - name: Add Comment to PR
         uses: actions/github-script@v5
         with:
-          github-token: ${{ github.token }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const { data: { html_url: prUrl } } = await github.pulls.get({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              pull_number: context.payload.pull_request.number
-            });
-
-            const app_url = process.env.app_url;
-            const playground_url = process.env.playground_url;
-            const commentBody = `App Preview URL: ${app_url}\nPlayground Preview URL: ${playground_url}`;
-            await github.issues.createComment({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: context.payload.pull_request.number,
-              body: commentBody
-            });
+            const prNumber = context.payload.pull_request.number;
+            if (!prNumber) {
+              console.error("Unable to find pull request number.");
+              process.exit(1);
+            }
+            
+            const appUrl = process.env.app_url;
+            const playgroundUrl = process.env.playground_url;
+            const commentBody = `App Preview URL: ${appUrl}\nPlayground Preview URL: ${playgroundUrl}`;
+            
+            try {
+              await github.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: prNumber,
+                body: commentBody
+              });
+              console.log("Comment added successfully.");
+            } catch (error) {
+              console.error("Error adding comment:", error);
+              process.exit(1);
+            }
