@@ -20,14 +20,21 @@ jobs:
           REF: ${{ github.ref }}
 
       - name: Preview Deployment
-        run: yarn run deploy
+        run: |
+          # Parse the output from the deployment step
+          output=$(yarn run deploy)
+          app_url=$(echo "$output" | grep '@nikaru-dev/widget-app-url-preview' | awk -F ': ' '{print $2}')
+          playground_url=$(echo "$output" | grep '@nikaru-dev/widget-playground-url-preview' | awk -F ': ' '{print $2}')
+          echo "::set-output name=app_url::$app_url"
+          echo "::set-output name=playground_url::$playground_url"
+
         env:
           REF: ${{ github.ref }}
           GH_TOKEN: ${{ github.token }}
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_PROJECT_WIDGET_CONFIG: ${{ secrets.VERCEL_PROJECT_WIDGET_CONFIG }}
-          VERCEL_PROJECT_WIDGET_APP: ${{ secrets.VERCEL_PROJECT_WIDGET_APP }}    
+          VERCEL_PROJECT_WIDGET_APP: ${{ secrets.VERCEL_PROJECT_WIDGET_APP }}
           # VERCEL_PROJECT_WALLETS: ${{ secrets.VERCEL_PROJECT_WALLETS }}
           # VERCEL_PROJECT_Q: ${{ secrets.VERCEL_PROJECT_Q }}
           # VERCEL_PROJECT_WALLET_ADAPTER: ${{ secrets.VERCEL_PROJECT_WALLET_ADAPTER }}

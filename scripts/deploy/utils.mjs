@@ -22,7 +22,7 @@ export async function deploySingleProjectToVercel(pkg) {
     console.log(`::warning::Couldn't find PROJECT_ID env for ${pkg.name}`);
   }
 
-  console.log(`start deplyoing ${pkg.name}...`);
+  console.log(`start deploying ${pkg.name}...`);
 
   await execa(
     'yarn',
@@ -39,13 +39,14 @@ export async function deploySingleProjectToVercel(pkg) {
     ],
     { env }
   );
+  
   await execa(
     'yarn',
     ['vercel', 'build', '--cwd', pkg.location, '--token', VERCEL_TOKEN],
     { env }
   );
-  
-  const result = await execa(
+
+  const vercelResult = await execa(
     'yarn',
     ['vercel', pkg.location, '--prebuilt', '--token', VERCEL_TOKEN],
     { env }
@@ -56,9 +57,17 @@ export async function deploySingleProjectToVercel(pkg) {
     );
   });
 
-  console.log(`${pkg.name} deployed.`);
-  console.log(`${pkg.name}-deployment-url:`, result);
+  // Run tail -1 on the stdout for get last line
+  const URLPreview = await execa('tail', ['-1'], { input: vercelResult })
+    .then(result => result.stdout)
+    .catch((err) => {
+      throw new VercelError(
+        `An error occurred on get url preview for ${pkg.name} package \n ${err.message} \n ${err.stderr}`
+      );
+    });
 
+  console.log(`${pkg.name}-url-preview:`, URLPreview);
+  console.log(`${pkg.name} deployed.`);
 }
 
 export function groupPackagesForDeploy(packages) {
