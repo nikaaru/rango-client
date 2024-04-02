@@ -18,3 +18,16 @@ jobs:
         run: node ./scripts/check-conventional-commits/command.mjs
         env:
           REF: ${{ github.ref }}
+
+      - name: Preview Deployment
+        run: yarn run deploy
+        env:
+          REF: ${{ github.ref }}
+          GH_TOKEN: ${{ github.token }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_PROJECT_WIDGET_CONFIG: ${{ secrets.VERCEL_PROJECT_WIDGET_CONFIG }}
+          VERCEL_PROJECT_WIDGET_APP: ${{ secrets.VERCEL_PROJECT_WIDGET_APP }}    
+          # VERCEL_PROJECT_WALLETS: ${{ secrets.VERCEL_PROJECT_WALLETS }}
+          # VERCEL_PROJECT_Q: ${{ secrets.VERCEL_PROJECT_Q }}
+          # VERCEL_PROJECT_WALLET_ADAPTER: ${{ secrets.VERCEL_PROJECT_WALLET_ADAPTER }}
