@@ -44,21 +44,15 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const prNumber = context.payload.pull_request.number;
-            if (!prNumber) {
-              console.error("Unable to find pull request number.");
-              process.exit(1);
-            }
-            
             const appUrl = process.env.app_url;
             const playgroundUrl = process.env.playground_url;
             const commentBody = `App Preview URL: ${appUrl}\nPlayground Preview URL: ${playgroundUrl}`;
-            
+
             try {
-              await github.issues.createComment({
+              await github.rest.issues.createComment({
+                issue_number: context.issue.number,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                issue_number: prNumber,
                 body: commentBody
               });
               console.log("Comment added successfully.");
