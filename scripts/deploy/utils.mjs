@@ -1,6 +1,7 @@
 import { execa } from 'execa';
 import { detectChannel } from '../common/github.mjs';
 import { VERCEL_ORG_ID, VERCEL_PACKAGES, VERCEL_TOKEN } from './config.mjs';
+import { VercelError } from '../common/errors.mjs';
 
 export function getVercelProjectId(packageName) {
   return VERCEL_PACKAGES[packageName];
@@ -43,13 +44,21 @@ export async function deploySingleProjectToVercel(pkg) {
     ['vercel', 'build', '--cwd', pkg.location, '--token', VERCEL_TOKEN],
     { env }
   );
-  await execa(
+  
+  const result = await execa(
     'yarn',
     ['vercel', pkg.location, '--prebuilt', '--token', VERCEL_TOKEN],
     { env }
-  );
+  ).then((result) => result.stdout)
+  .catch((err) => {
+    throw new VercelError(
+      `An error occurred on deploy ${pkg.name} package \n ${err.message} \n ${err.stderr}`
+    );
+  });
 
   console.log(`${pkg.name} deployed.`);
+  console.log(`${pkg.name}-deployment-url:`, result);
+
 }
 
 export function groupPackagesForDeploy(packages) {
