@@ -34,6 +34,9 @@ jobs:
           # VERCEL_PROJECT_WALLETS: ${{ secrets.VERCEL_PROJECT_WALLETS }}
           # VERCEL_PROJECT_Q: ${{ secrets.VERCEL_PROJECT_Q }}
           # VERCEL_PROJECT_WALLET_ADAPTER: ${{ secrets.VERCEL_PROJECT_WALLET_ADAPTER }}
+          GITHUB_ISSUE_NUMBER: ${{ github.event.pull_request.number }}
+          GITHUB_OWNER: ${{ github.repository_owner }}
+          GITHUB_REPO: ${{ github.repository }}
 
           # TODO add gitub repo and owner and other to env
 
@@ -46,25 +49,5 @@ jobs:
           echo "playground_url=$playground_url" >> $GITHUB_ENV
           echo "url=$app_url" >> $GITHUB_OUTPUT
           echo "url=$playground_url" >> $GITHUB_OUTPUT
-
-      - name: Add Comment to PR
-        uses: actions/github-script@v6
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const appUrl = process.env.app_url;
-            const playgroundUrl = process.env.playground_url;
-            const commentBody = `App Preview URL: ${appUrl}\nPlayground Preview URL: ${playgroundUrl}`;
-
-            try {
-              await github.rest.issues.createComment({
-                issue_number: context.issue.number,
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                body: commentBody
-              });
-              console.log("Comment added successfully.");
-            } catch (error) {
-              console.error("Error adding comment:", error);
-              process.exit(1);
-            }
+          echo ${{github.repository}}
+          echo ${{github.repository_owner}}

@@ -1,6 +1,14 @@
 import { execa } from 'execa';
-import { detectChannel } from '../common/github.mjs';
-import { VERCEL_ORG_ID, VERCEL_PACKAGES, VERCEL_TOKEN } from './config.mjs';
+import { createComment, detectChannel } from '../common/github.mjs';
+import { 
+  VERCEL_ORG_ID,
+  VERCEL_PACKAGES, 
+  VERCEL_TOKEN,
+  GITHUB_ISSUE_NUMBER, 
+  GITHUB_OWNER, 
+  GITHUB_REPO 
+} from './config.mjs';
+
 import { VercelError } from '../common/errors.mjs';
 
 export function getVercelProjectId(packageName) {
@@ -8,8 +16,33 @@ export function getVercelProjectId(packageName) {
 }
 
 export async function deployProjectsToVercel(pkgs) {
-  await Promise.all(pkgs.map((pkg) => deploySingleProjectToVercel(pkg)));
+  const result = await Promise.all(pkgs.map((pkg) => deploySingleProjectToVercel(pkg)));
+
+
+  if(GITHUB_ISSUE_NUMBER && GITHUB_OWNER && GITHUB_REPO){
+    let commentBody = 'preview URLs:\n';
+    result.forEach(element => {
+      if(element.pkg.preview){
+        commentBody += `${element.URLPreview}\n`
+      }
+    });
+  
+    const commentResult = await createComment({
+      commentBody,
+      issueNumber:GITHUB_ISSUE_NUMBER,
+      owner:GITHUB_OWNER,
+      repo:GITHUB_REPO
+    });
+
+    if(commentResult){
+      console.log('Comment added successfully.');
+    }else{
+      console.error('Error adding comment:', error);
+    }
+  }
+
 }
+
 export async function deploySingleProjectToVercel(pkg) {
   const deployTo = detectChannel() === 'prod' ? 'production' : 'preview';
 
@@ -68,6 +101,7 @@ export async function deploySingleProjectToVercel(pkg) {
 
   console.log(`${pkg.name}-url-preview:`, URLPreview);
   console.log(`${pkg.name} deployed.`);
+  return {pkg, URLPreview};
 }
 
 export function groupPackagesForDeploy(packages) {

@@ -11,8 +11,7 @@ async function run() {
   // Detect last relase and what packages has changed since then.
   const packages = await workspacePackages();
   const privatePackages = packages.filter((pkg) => {
-
-    return  pkg.location === 'widget/app' || pkg.location === 'widget/playground'
+    return  pkg.preview
   });
 
   await build(privatePackages).catch((e) => {

@@ -126,7 +126,9 @@ export async function createPullRequest(pr) {
 }
 
 
-export async function createComment(issueNumber, commentBody, owner, repo) {
+export async function createComment(comment) {
+  const {commentBody, issueNumber, owner, repo} = comment;
+
   if (!issueNumber || !commentBody || !owner || !repo) {
     throw new GithubCommandError(
       'Creating comment cannot proceed without required parameters. \n',
@@ -142,7 +144,6 @@ export async function createComment(issueNumber, commentBody, owner, repo) {
       );
     });
 
-    console.log('Comment added successfully.');
     return output;
 }
 

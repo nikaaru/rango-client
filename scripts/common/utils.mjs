@@ -30,6 +30,7 @@ export async function workspacePackages() {
       location: result[name].location,
       version: pkgJson.version,
       private: pkgJson.private || false,
+      preview: pkgJson.preview || false,
     };
   });
   return output;
