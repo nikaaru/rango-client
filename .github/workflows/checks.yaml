@@ -7,8 +7,7 @@ jobs:
   check:
     runs-on: ubuntu-latest
     environment:
-      name: reza
-      url: https//google.com
+      - name: reza
     steps:
       - uses: actions/checkout@v4
         with:
@@ -43,6 +42,8 @@ jobs:
           playground_url=$(grep '@nikaru-dev/widget-playground-url-preview' deploy.log | awk -F ': ' '{print $2}')
           echo "app_url=$app_url" >> $GITHUB_ENV
           echo "playground_url=$playground_url" >> $GITHUB_ENV
+          echo "app_url=$app_url" >> $GITHUB_OUTPUT
+
 
       - name: Add Comment to PR
         uses: actions/github-script@v6
