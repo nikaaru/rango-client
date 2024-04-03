@@ -136,7 +136,7 @@ export async function createComment(comment) {
     );
   }
 
-    const output = await execa('gh', ['issue', 'comment', issueNumber, '--body', commentBody, '-R', `${owner}/${repo}`])
+    const output = await execa('gh', ['issue', 'comment', issueNumber, '--body', commentBody, '-R', repo])
     .then(({ stdout }) => stdout)
     .catch((err) => {
       throw new GithubCommandError(
