@@ -8,43 +8,24 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: preview
-      url: ${{ steps.extract.outputs.url }}
+      url: ${{ steps.extract.outputs.url1 }}
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Prepare
-        uses: ./.github/actions/prepare
-
-      - name: Checking Conventional Commits
-        run: node ./scripts/check-conventional-commits/command.mjs
-        env:
-          REF: ${{ github.ref }}
-
-      - name: Preview Deployment
-        run: yarn run deploy | tee deploy.log
-        env:
-          REF: ${{ github.ref }}
-          GH_TOKEN: ${{ github.token }}
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-          VERCEL_PROJECT_WIDGET_CONFIG: ${{ secrets.VERCEL_PROJECT_WIDGET_CONFIG }}
-          VERCEL_PROJECT_WIDGET_APP: ${{ secrets.VERCEL_PROJECT_WIDGET_APP }}
-          # VERCEL_PROJECT_WALLETS: ${{ secrets.VERCEL_PROJECT_WALLETS }}
-          # VERCEL_PROJECT_Q: ${{ secrets.VERCEL_PROJECT_Q }}
-          # VERCEL_PROJECT_WALLET_ADAPTER: ${{ secrets.VERCEL_PROJECT_WALLET_ADAPTER }}
-          GITHUB_ISSUE_NUMBER: ${{ github.event.pull_request.number }}
-
-          # TODO packages name with comma sperator
-
       - name: Extract Preview URLs
         id: extract
         run: |
-          playground_url=$(grep '@nikaru-dev/widget-playground-url-preview' deploy.log | awk -F ': ' '{print $2}')
-          echo "url=$playground_url" >> $GITHUB_OUTPUT
+          echo "::set-output name=url1::https://example1.com" 
+          echo "::set-output name=url2::https://example2.com"
+    outputs:
+      url1: ${{ steps.extract.outputs.url1 }}
+      url2: ${{ steps.extract.outputs.url2 }}
+
   nikaru:
     runs-on: ubuntu-latest
+    needs: check
     environment:
       name: nikaru
       url: https://google.com
@@ -55,5 +36,4 @@ jobs:
 
       - name: Extract Preview URLs
         run: |
-          playground_url=$(grep '@nikaru-dev/widget-playground-url-preview' deploy.log | awk -F ': ' '{print $2}')
-          echo "url=$playground_url" >> $GITHUB_OUTPUT
+          echo "Staging URL: ${{ needs.check.outputs.url1 }}, Production URL: ${{ needs.check.outputs.url2 }}"
