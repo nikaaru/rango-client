@@ -47,4 +47,3 @@ jobs:
           echo "app_url=$app_url" >> $GITHUB_ENV
           echo "playground_url=$playground_url" >> $GITHUB_ENV
           echo "$app_url" >> $GITHUB_OUTPUT
-          echo "$playground_url" >> $GITHUB_OUTPUT
