@@ -5,7 +5,13 @@ on:
 
 jobs:
   check:
-    runs-on: ubuntu-latest     
+    runs-on: ubuntu-latest
+    environment:
+      - name: app preview
+        url: ${{ steps.seturl.outputs.url }}
+
+      - name: play preview
+        url: https://google.com
     steps:
       - uses: actions/checkout@v4
         with:
@@ -34,7 +40,7 @@ jobs:
 
           # TODO add gitub repo and owner and other to env
 
-      - name: Extract App Preview URLs
+      - name: Extract Preview URLs
         id: seturl
         run: |
           app_url=$(grep '@nikaru-dev/widget-app-url-preview' deploy.log | awk -F ': ' '{print $2}')
@@ -43,20 +49,6 @@ jobs:
           echo "playground_url=$playground_url" >> $GITHUB_ENV
           echo "url=$app_url" >> $GITHUB_OUTPUT
           echo "url=$playground_url" >> $GITHUB_OUTPUT
-
-      - name: Extract Playground Preview URLs
-        environment:
-          name: another-environment
-          url: https://example.com
-        run: |
-          echo "This is another environment deployment"    
-
-      - name: Extract Playground2 Preview URLs
-          environment:
-            name: another-environment2
-            url: https://google.com
-          run: |
-            echo "This is another environment deployment"    
 
       - name: Add Comment to PR
         uses: actions/github-script@v6
