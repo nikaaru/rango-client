@@ -5,7 +5,6 @@ const scope = `@nikaru-dev`;
 export const VERCEL_ORG_ID = process.env.VERCEL_ORG_ID;
 export const VERCEL_TOKEN = process.env.VERCEL_TOKEN;
 export const GITHUB_ISSUE_NUMBER = process.env.GITHUB_ISSUE_NUMBER;
-export const GITHUB_OWNER = process.env.GITHUB_OWNER;
 export const GITHUB_REPO = process.env.GITHUB_REPO;
 
 export const VERCEL_PACKAGES = {

@@ -127,12 +127,12 @@ export async function createPullRequest(pr) {
 
 
 export async function createComment(comment) {
-  const {commentBody, issueNumber, owner, repo} = comment;
+  const {commentBody, issueNumber, repo} = comment;
 
-  if (!issueNumber || !commentBody || !owner || !repo) {
+  if (!issueNumber || !commentBody || !repo) {
     throw new GithubCommandError(
       'Creating comment cannot proceed without required parameters. \n',
-      JSON.stringify({ issueNumber, commentBody, owner, repo })
+      JSON.stringify({ issueNumber, commentBody, repo })
     );
   }
 
