@@ -10,9 +10,6 @@ import { EOL } from 'node:os';
 // TODO: Working directory should be empty.
 async function run() {
 
-  process.stdout.write("::set-output name=url3::https://example3.com" + EOL)
-
-  return;
   // Detect last relase and what packages has changed since then.
   const packages = await workspacePackages();
   const privatePackages = packages.filter((pkg) => {
