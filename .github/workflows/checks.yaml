@@ -7,7 +7,7 @@ jobs:
   check:
     runs-on: ubuntu-latest
     environment:
-      name: preview
+      name: reza
       url: https//google.com
     steps:
       - uses: actions/checkout@v4
