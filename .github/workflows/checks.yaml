@@ -36,8 +36,24 @@ jobs:
           # VERCEL_PROJECT_WALLET_ADAPTER: ${{ secrets.VERCEL_PROJECT_WALLET_ADAPTER }}
           GITHUB_ISSUE_NUMBER: ${{ github.event.pull_request.number }}
 
+          # TODO packages name with comma sperator
+
       - name: Extract Preview URLs
         id: extract
+        run: |
+          playground_url=$(grep '@nikaru-dev/widget-playground-url-preview' deploy.log | awk -F ': ' '{print $2}')
+          echo "url=$playground_url" >> $GITHUB_OUTPUT
+  nikaru:
+    runs-on: ubuntu-latest
+    environment:
+      name: nikaru
+      url: https://google.com
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Extract Preview URLs
         run: |
           playground_url=$(grep '@nikaru-dev/widget-playground-url-preview' deploy.log | awk -F ': ' '{print $2}')
           echo "url=$playground_url" >> $GITHUB_OUTPUT
