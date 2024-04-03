@@ -20,6 +20,7 @@ jobs:
           REF: ${{ github.ref }}
 
       - name: Preview Deployment
+        id: deploy
         run: yarn run deploy | tee deploy.log
         env:
           REF: ${{ github.ref }}
@@ -41,7 +42,7 @@ jobs:
     outputs:
       url1: ${{ steps.extract.outputs.url1 }}
       url2: ${{ steps.extract.outputs.url2 }}
-      url3: ${{ steps.extract.outputs.url3 }}
+      url3: ${{ steps.deploy.outputs.url3 }}
 
   app-preview:
     runs-on: ubuntu-latest
