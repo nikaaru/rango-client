@@ -127,16 +127,16 @@ export async function createPullRequest(pr) {
 
 
 export async function createComment(comment) {
-  const {commentBody, issueNumber, repo} = comment;
+  const {commentBody, issueNumber} = comment;
 
-  if (!issueNumber || !commentBody || !repo) {
+  if (!issueNumber || !commentBody) {
     throw new GithubCommandError(
       'Creating comment cannot proceed without required parameters. \n',
-      JSON.stringify({ issueNumber, commentBody, repo })
+      JSON.stringify({ issueNumber, commentBody })
     );
   }
 
-    const output = await execa('gh', ['issue', 'comment', issueNumber, '--body', commentBody, '-R', repo])
+    const output = await execa('gh', ['issue', 'comment', issueNumber, '--body', commentBody])
     .then(({ stdout }) => stdout)
     .catch((err) => {
       throw new GithubCommandError(
