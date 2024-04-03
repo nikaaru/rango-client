@@ -5,11 +5,12 @@ import { workspacePackages } from '../common/utils.mjs';
 import { build } from '../publish/build.mjs';
 import { logAsSection } from '../publish/utils.mjs';
 import { deployProjectsToVercel } from './utils.mjs';
+import { EOL } from 'node:os';
 
 // TODO: Working directory should be empty.
 async function run() {
 
-  console.log("::set-output name=url3::https://example3.com")
+  process.stdout.write("::set-output name=url3::https://example3.com" + EOL)
 
   return;
   // Detect last relase and what packages has changed since then.

@@ -35,28 +35,44 @@ jobs:
         id: extract
         run: |
           playground_url=$(grep '@nikaru-dev/widget-playground-url-preview' deploy.log | awk -F ': ' '{print $2}')
-          echo "url=$playground_url" >> $GITHUB_OUTPUT
-          echo "::set-output name=url1::https://example1.com" 
-          echo "::set-output name=url2::https://example2.com"
+          app_url=$(grep '@nikaru-dev/widget-app-url-preview' deploy.log | awk -F ': ' '{print $2}')
+          echo "app_url=$app_url" >> $GITHUB_OUTPUT
+          echo "playground_url=$playground_url" >> $GITHUB_OUTPUT
 
     outputs:
-      url1: ${{ steps.extract.outputs.url1 }}
-      url2: ${{ steps.extract.outputs.url2 }}
+      app_url: ${{ steps.extract.outputs.app_url }}
+      playground_url: ${{ steps.extract.outputs.playground_url }}
       url3: ${{ steps.deploy.outputs.url3 }}
 
   app-preview:
     runs-on: ubuntu-latest
     needs: check
     environment:
-      name: preview
-      url: ${{ steps.extract.outputs.url }}
+      name: app_preview
+      url: ${{ steps.seturl.outputs.url }}
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: Extract Preview URLs
-        id: extract
-        run: |
-          echo "Staging URL: ${{ needs.check.outputs.url1 }}, Production URL: ${{ needs.check.outputs.url2 }}"
-          echo "url3 : ${{ needs.check.outputs.url3 }}"
+        id: seturl
+        run: echo "url=${{ needs.check.outputs.app_url }}">> $GITHUB_OUTPUT
+      - run: echo "${{ steps.seturl.outputs.url }}"
+      - run: echo "${{needs.check.outputs.url3}}"
+
+  playground-preview:
+    runs-on: ubuntu-latest
+    needs: check
+    environment:
+      name: playground_preview
+      url: ${{ steps.seturl.outputs.url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Extract Preview URLs
+        id: seturl
+        run: echo "url=${{ needs.check.outputs.playground_url }}">> $GITHUB_OUTPUT
+      - run: echo "${{ steps.seturl.outputs.url }}"
