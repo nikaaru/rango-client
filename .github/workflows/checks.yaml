@@ -46,5 +46,4 @@ jobs:
           playground_url=$(grep '@nikaru-dev/widget-playground-url-preview' deploy.log | awk -F ': ' '{print $2}')
           echo "app_url=$app_url" >> $GITHUB_ENV
           echo "playground_url=$playground_url" >> $GITHUB_ENV
-          echo "url=$app_url \n" >> $GITHUB_OUTPUT
-          echo "url=$playground_url" >> $GITHUB_OUTPUT
+          echo "url=$app_url\n$playground_url" >> $GITHUB_OUTPUT
