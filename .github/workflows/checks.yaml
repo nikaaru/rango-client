@@ -7,11 +7,8 @@ jobs:
   check:
     runs-on: ubuntu-latest
     environment:
-      - name: app preview
+        name: preview
         url: ${{ steps.seturl.outputs.url }}
-
-      - name: play preview
-        url: https://google.com
     steps:
       - uses: actions/checkout@v4
         with:
