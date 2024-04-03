@@ -35,7 +35,6 @@ jobs:
           # VERCEL_PROJECT_Q: ${{ secrets.VERCEL_PROJECT_Q }}
           # VERCEL_PROJECT_WALLET_ADAPTER: ${{ secrets.VERCEL_PROJECT_WALLET_ADAPTER }}
           GITHUB_ISSUE_NUMBER: ${{ github.event.pull_request.number }}
-          GITHUB_REPO: ${{ github.repository }}
 
       - name: Extract Preview URLs
         id: extract

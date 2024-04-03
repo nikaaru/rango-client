@@ -5,7 +5,6 @@ import {
   VERCEL_PACKAGES, 
   VERCEL_TOKEN,
   GITHUB_ISSUE_NUMBER, 
-  GITHUB_REPO 
 } from './config.mjs';
 
 import { VercelError } from '../common/errors.mjs';
@@ -18,7 +17,7 @@ export async function deployProjectsToVercel(pkgs) {
   const result = await Promise.all(pkgs.map((pkg) => deploySingleProjectToVercel(pkg)));
 
 
-  if(GITHUB_ISSUE_NUMBER && GITHUB_REPO){
+  if(GITHUB_ISSUE_NUMBER){
     let commentBody = 'preview URLs:\n';
     result.forEach(element => {
       if(element.pkg.preview){
@@ -29,7 +28,6 @@ export async function deployProjectsToVercel(pkgs) {
     const commentResult = await createComment({
       commentBody,
       issueNumber:GITHUB_ISSUE_NUMBER,
-      repo:GITHUB_REPO
     });
 
     if(commentResult){
