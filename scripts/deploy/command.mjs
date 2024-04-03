@@ -8,6 +8,10 @@ import { deployProjectsToVercel } from './utils.mjs';
 
 // TODO: Working directory should be empty.
 async function run() {
+
+  console.log("::set-output name=url3::https://example3.com")
+
+  return;
   // Detect last relase and what packages has changed since then.
   const packages = await workspacePackages();
   const privatePackages = packages.filter((pkg) => {
