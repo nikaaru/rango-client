@@ -6,7 +6,7 @@ import { build } from '../publish/build.mjs';
 import { logAsSection } from '../publish/utils.mjs';
 import { deployProjectsToVercel, getVercelProjectId } from './utils.mjs';
 import { ENABLE_PREVIEW_DEPLOY } from './config.mjs';
-import { execa } from 'execa';
+import * as githubCore from '@actions/core';
 
 // TODO: Working directory should be empty.
 async function run() {
@@ -23,8 +23,9 @@ async function run() {
     const value1 = 'https://nik1.com';
     const value2 = 'https://nik2.com';
 
-    await execa('echo', [`"${name1}=${value1}" >> $GITHUB_OUTPUT`]);
-    await execa('echo', [`"${name2}=${value2}" >> $GITHUB_OUTPUT`]);
+
+    githubCore.setOutput(name1, value1);
+    githubCore.setOutput(name2, value2);
 
     return;
 
