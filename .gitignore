@@ -2,6 +2,7 @@
 dist/
 lerna-debug.log
 .vercel
+/**/.vercel
 .npmrc
 
 # i18n
