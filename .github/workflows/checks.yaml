@@ -18,7 +18,7 @@ jobs:
         run: node ./scripts/check-conventional-commits/command.mjs
         env:
           REF: ${{ github.ref }}
-      
+
       # add document
       - name: Preview Deployment
         id: deploy
@@ -28,13 +28,13 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-          VERCEL_PROJECT_WIDGET_CONFIG: ${{ secrets.VERCEL_PROJECT_WIDGET_CONFIG }}  # widget playground
-          VERCEL_PROJECT_WIDGET_APP: ${{ secrets.VERCEL_PROJECT_WIDGET_APP }}  # widget app
+          VERCEL_PROJECT_WIDGET_CONFIG: ${{ secrets.VERCEL_PROJECT_WIDGET_CONFIG }} # widget playground
+          VERCEL_PROJECT_WIDGET_APP: ${{ secrets.VERCEL_PROJECT_WIDGET_APP }} # widget app
           ENABLE_PREVIEW_DEPLOY: true
 
     outputs:
-      app_url: ${{ steps.deploy.outputs.app_url }}
-      playground_url: ${{ steps.deploy.outputs.playground_url }}
+      app_url: ${{ steps.deploy.outputs.widget-app-url }}
+      playground_url: ${{ steps.deploy.outputs.widget-playground-url }}
 
   app-preview:
     runs-on: ubuntu-latest

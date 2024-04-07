@@ -6,7 +6,6 @@ import { build } from '../publish/build.mjs';
 import { logAsSection } from '../publish/utils.mjs';
 import { deployProjectsToVercel, getVercelProjectId } from './utils.mjs';
 import { ENABLE_PREVIEW_DEPLOY } from './config.mjs';
-import * as githubCore from '@actions/core';
 
 // TODO: Working directory should be empty.
 async function run() {
@@ -16,18 +15,6 @@ async function run() {
     if ENABLE_PREVIEW_DEPLOY is enabled only packages that has project id in workflow environments will be deployed.
     else private packages will be deployed.
  */
-
-
-    const name1 = 'app_url';
-    const name2 = 'playground_url';
-    const value1 = 'https://nik1.com';
-    const value2 = 'https://nik2.com';
-
-
-    githubCore.setOutput(name1, value1);
-    githubCore.setOutput(name2, value2);
-
-    return;
 
   // Detect last relase and what packages has changed since then.
   const packages = await workspacePackages();
@@ -42,6 +29,7 @@ async function run() {
     }
   });
 
+  return;
 
   if(ENABLE_PREVIEW_DEPLOY){
     console.log('preview deployment is enabled.');

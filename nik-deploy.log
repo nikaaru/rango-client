@@ -1,7 +1,0 @@
-yarn run v1.22.21
-$ node ./scripts/deploy/command.mjs
-
-::set-output name=app_url::https://nik1.com
-
-::set-output name=playground_url::https://nik2.com
-Done in 0.11s.

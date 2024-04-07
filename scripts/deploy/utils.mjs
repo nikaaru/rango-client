@@ -1,5 +1,6 @@
 import { execa } from 'execa';
-import { createComment, detectChannel } from '../common/github.mjs';
+import { detectChannel } from '../common/github.mjs';
+import * as actionCore from '@actions/core';
 import { 
   VERCEL_ORG_ID,
   VERCEL_PACKAGES, 
@@ -8,6 +9,7 @@ import {
 } from './config.mjs';
 
 import { VercelError } from '../common/errors.mjs';
+import { packageNameWithoutScope } from '../common/utils.mjs';
 
 export function getVercelProjectId(packageName) {
   return VERCEL_PACKAGES[packageName];
@@ -72,6 +74,10 @@ export async function deploySingleProjectToVercel(pkg) {
         `An error occurred on get url preview for ${pkg.name} package \n ${err.message} \n ${err.stderr}`
       );
     });
+
+  // set package name and url preview to github output for use in workflow
+  const tagName = packageNameWithoutScope(pkg.name);
+  actionCore.setOutput(`${tagName}-url`, URLPreview);
 
   console.log(`${pkg.name}-url-preview:`, URLPreview);
   console.log(`${pkg.name} deployed.`);
