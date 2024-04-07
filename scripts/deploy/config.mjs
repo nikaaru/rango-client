@@ -1,9 +1,12 @@
 import { getEnvWithFallback } from '../common/utils.mjs';
 import process from 'node:process';
 
-const scope = `@rango-dev`;
+const scope = `@nikaru-dev`;
 export const VERCEL_ORG_ID = process.env.VERCEL_ORG_ID;
 export const VERCEL_TOKEN = process.env.VERCEL_TOKEN;
+export const GITHUB_ISSUE_NUMBER = process.env.GITHUB_ISSUE_NUMBER;
+export const ENABLE_PREVIEW_DEPLOY = process.env.ENABLE_PREVIEW_DEPLOY;
+
 export const VERCEL_PACKAGES = {
   [`${scope}/wallets-demo`]: getEnvWithFallback('VERCEL_PROJECT_WALLETS'),
   [`${scope}/queue-manager-demo`]: getEnvWithFallback('VERCEL_PROJECT_Q'),
