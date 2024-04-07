@@ -29,7 +29,6 @@ async function run() {
     }
   });
 
-  return;
 
   if(ENABLE_PREVIEW_DEPLOY){
     console.log('preview deployment is enabled.');
