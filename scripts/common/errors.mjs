@@ -104,3 +104,11 @@ export class CrowdinError extends Error {
     super(msg);
   }
 }
+
+export class VercelError extends Error {
+  name = 'VercelError';
+
+  constructor(msg) {
+    super(msg);
+  }
+}
