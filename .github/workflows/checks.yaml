@@ -33,6 +33,7 @@ jobs:
           ENABLE_PREVIEW_DEPLOY: true
 
     outputs:
+      # the structure of output variable is {packageNameWithoutScope}-url like: widget-app-url
       app_url: ${{ steps.deploy.outputs.widget-app-url }}
       playground_url: ${{ steps.deploy.outputs.widget-playground-url }}
 

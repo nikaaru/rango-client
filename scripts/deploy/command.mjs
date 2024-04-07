@@ -12,7 +12,7 @@ async function run() {
 
   /*
     Deploys packages based on the state of the `ENABLE_PREVIEW_DEPLOY` environment variable.
-    if ENABLE_PREVIEW_DEPLOY is enabled only packages that has project id in workflow environments will be deployed.
+    if ENABLE_PREVIEW_DEPLOY is true, only packages that has project id in workflow environments will be deployed.
     else private packages will be deployed.
  */
 

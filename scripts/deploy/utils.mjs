@@ -79,7 +79,7 @@ export async function deploySingleProjectToVercel(pkg) {
   const tagName = packageNameWithoutScope(pkg.name);
   actionCore.setOutput(`${tagName}-url`, URLPreview);
 
-  console.log(`${pkg.name}-url-preview:`, URLPreview);
+  console.log(`${tagName}-url:`, URLPreview);
   console.log(`${pkg.name} deployed.`);
 }
 
