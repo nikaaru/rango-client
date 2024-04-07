@@ -35,7 +35,7 @@ export function LanguagePage() {
   return (
     <Layout
       header={{
-        title: i18n.t('Language test preview1'),
+        title: i18n.t('Language'),
       }}>
       <PageContainer>
         <Alert
