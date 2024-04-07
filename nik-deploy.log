@@ -1,0 +1,47 @@
+yarn run v1.22.21
+$ node ./scripts/deploy/command.mjs
+privatePackages [
+  {
+    name: '@nikaru-dev/queue-manager-demo',
+    location: 'examples/queue-manager-demo',
+    version: '0.13.1-next.14',
+    private: true,
+    preview: false
+  },
+  {
+    name: '@nikaru-dev/wallets-adapter-demo',
+    location: 'examples/wallets-adapter-demo',
+    version: '0.14.1-next.22',
+    private: true,
+    preview: false
+  },
+  {
+    name: '@nikaru-dev/wallets-demo',
+    location: 'examples/wallets-demo',
+    version: '0.13.1-next.22',
+    private: true,
+    preview: false
+  },
+  {
+    name: '@nikaru-dev/widget-app',
+    location: 'widget/app',
+    version: '0.13.1-next.34',
+    private: true,
+    preview: true
+  },
+  {
+    name: '@nikaru-dev/widget-iframe',
+    location: 'widget/iframe',
+    version: '0.13.1-next.33',
+    private: true,
+    preview: false
+  },
+  {
+    name: '@nikaru-dev/widget-playground',
+    location: 'widget/playground',
+    version: '0.13.1-next.34',
+    private: true,
+    preview: true
+  }
+]
+Done in 0.21s.

@@ -14,29 +14,7 @@ export function getVercelProjectId(packageName) {
 }
 
 export async function deployProjectsToVercel(pkgs) {
-  const result = await Promise.all(pkgs.map((pkg) => deploySingleProjectToVercel(pkg)));
-
-
-  if(GITHUB_ISSUE_NUMBER){
-    let commentBody = 'preview URLs:\n';
-    result.forEach(element => {
-      if(element.pkg.preview){
-        commentBody += `${element.URLPreview}\n`
-      }
-    });
-  
-    const commentResult = await createComment({
-      commentBody,
-      issueNumber:GITHUB_ISSUE_NUMBER,
-    });
-
-    if(commentResult){
-      console.log('Comment added successfully.');
-    }else{
-      console.error('Error adding comment:', error);
-    }
-  }
-
+  await Promise.all(pkgs.map((pkg) => deploySingleProjectToVercel(pkg)));
 }
 
 export async function deploySingleProjectToVercel(pkg) {
@@ -97,7 +75,6 @@ export async function deploySingleProjectToVercel(pkg) {
 
   console.log(`${pkg.name}-url-preview:`, URLPreview);
   console.log(`${pkg.name} deployed.`);
-  return {pkg, URLPreview};
 }
 
 export function groupPackagesForDeploy(packages) {
