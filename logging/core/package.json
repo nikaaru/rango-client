@@ -1,6 +1,6 @@
 {
   "name": "@nikaru-dev/logging-core",
-  "version": "0.10.0",
+  "version": "0.10.1-next.0",
   "license": "MIT",
   "type": "module",
   "source": "./src/index.ts",
@@ -14,7 +14,7 @@
     "src"
   ],
   "dependencies": {
-    "@nikaru-dev/logging-types": "^0.10.0"
+    "@nikaru-dev/logging-types": "^0.10.1-next.0"
   },
   "scripts": {
     "build": "node ../../scripts/build/command.mjs --path logging/core",

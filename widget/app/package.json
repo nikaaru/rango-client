@@ -19,9 +19,9 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "@nikaru-dev/logging-console": "^0.10.0",
-    "@nikaru-dev/logging-subscriber": "^0.10.0",
-    "@nikaru-dev/widget-embedded": "^0.21.17-next.2",
+    "@nikaru-dev/logging-console": "^0.10.1-next.0",
+    "@nikaru-dev/logging-subscriber": "^0.10.1-next.0",
+    "@nikaru-dev/widget-embedded": "^0.21.17-next.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.8.0"

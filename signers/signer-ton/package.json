@@ -1,6 +1,6 @@
 {
   "name": "@nikaru-dev/signer-ton",
-  "version": "0.24.0",
+  "version": "0.24.1-next.0",
   "license": "MIT",
   "type": "module",
   "source": "./src/index.ts",
