@@ -22,11 +22,11 @@
     "@types/stringify-object": "^4.0.2"
   },
   "dependencies": {
-    "@nikaru-dev/provider-all": "^0.27.0",
-    "@nikaru-dev/ui": "^0.28.0",
-    "@nikaru-dev/wallets-react": "^0.13.0",
-    "@nikaru-dev/wallets-shared": "^0.27.0",
-    "@nikaru-dev/widget-embedded": "^0.22.0",
+    "@nikaru-dev/provider-all": "^0.27.1-next.0",
+    "@nikaru-dev/ui": "^0.28.1-next.0",
+    "@nikaru-dev/wallets-react": "^0.13.1-next.0",
+    "@nikaru-dev/wallets-shared": "^0.27.1-next.0",
+    "@nikaru-dev/widget-embedded": "^0.22.1-next.0",
     "rango-sdk": "^0.1.69",
     "react": "^18.2.0",
     "react-color": "^2.19.3",

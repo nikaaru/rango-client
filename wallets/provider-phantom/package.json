@@ -1,6 +1,6 @@
 {
   "name": "@nikaru-dev/provider-phantom",
-  "version": "0.27.0",
+  "version": "0.27.1-next.0",
   "license": "MIT",
   "type": "module",
   "source": "./src/mod.ts",
@@ -26,7 +26,7 @@
     "@mysten/wallet-standard": "^0.13.26",
     "@nikaru-dev/signer-solana": "^0.27.0",
     "@nikaru-dev/signer-sui": "^0.7.0",
-    "@nikaru-dev/wallets-shared": "^0.27.0",
+    "@nikaru-dev/wallets-shared": "^0.27.1-next.0",
     "bitcoinjs-lib": "^6.1.7",
     "rango-types": "^0.1.88"
   },
