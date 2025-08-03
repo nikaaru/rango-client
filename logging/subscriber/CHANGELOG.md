@@ -1,3 +1,7 @@
+# [0.12.0](https://github.com/nikaaru/rango-client/compare/logging-subscriber@0.11.0...logging-subscriber@0.12.0) (2025-08-03)
+
+
+
 # 0.11.0 (2025-08-03)
 
 

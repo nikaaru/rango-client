@@ -1,3 +1,7 @@
+# [0.5.0](https://github.com/nikaaru/rango-client/compare/provider-unisat@0.4.0...provider-unisat@0.5.0) (2025-08-03)
+
+
+
 # 0.4.0 (2025-08-03)
 
 

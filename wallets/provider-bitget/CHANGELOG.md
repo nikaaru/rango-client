@@ -1,3 +1,7 @@
+# [0.25.0](https://github.com/nikaaru/rango-client/compare/provider-bitget@0.24.0...provider-bitget@0.25.0) (2025-08-03)
+
+
+
 # 0.24.0 (2025-08-03)
 
 

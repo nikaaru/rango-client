@@ -1,6 +1,6 @@
 {
   "name": "@nikaru-dev/provider-trustwallet",
-  "version": "0.27.1-next.0",
+  "version": "0.28.0",
   "license": "MIT",
   "type": "module",
   "source": "./src/mod.ts",
@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@nikaru-dev/signer-evm": "^0.27.0",
-    "@nikaru-dev/wallets-shared": "^0.27.1-next.0",
+    "@nikaru-dev/wallets-shared": "^0.28.0",
     "bs58": "^5.0.0",
     "rango-types": "^0.1.88"
   },

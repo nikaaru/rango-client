@@ -1,3 +1,7 @@
+# [0.48.0](https://github.com/nikaaru/rango-client/compare/provider-station@0.47.0...provider-station@0.48.0) (2025-08-03)
+
+
+
 # 0.47.0 (2025-08-03)
 
 

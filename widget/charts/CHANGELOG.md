@@ -1,3 +1,7 @@
+# [0.13.0](https://github.com/nikaaru/rango-client/compare/charts@0.12.0...charts@0.13.0) (2025-08-03)
+
+
+
 # 0.12.0 (2025-08-03)
 
 

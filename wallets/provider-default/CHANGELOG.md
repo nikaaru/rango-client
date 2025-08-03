@@ -1,3 +1,7 @@
+# [0.25.0](https://github.com/nikaaru/rango-client/compare/provider-default@0.24.0...provider-default@0.25.0) (2025-08-03)
+
+
+
 # 0.24.0 (2025-08-03)
 
 
