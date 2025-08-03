@@ -1,3 +1,22 @@
+# 0.13.0 (2025-08-03)
+
+
+### Bug Fixes
+
+* rename to nikaru-dev ([1c9d861](https://github.com/nikaaru/rango-client/commit/1c9d861b66efc4f58fca6c6b5ea240339e86ffe8))
+
+
+### Features
+
+* logging packages to be able to create log records and capture them. ([cd0b710](https://github.com/nikaaru/rango-client/commit/cd0b710aa9917d55e27419c5e6e0e17b2422bfd9))
+
+
+### Reverts
+
+* Revert "chore(release): publish" ([064ce15](https://github.com/nikaaru/rango-client/commit/064ce157a2f819856f647f83aeb1c0410542e8d7))
+
+
+
 # [0.12.0](https://github.com/rango-exchange/rango-client/compare/logging-sentry@0.11.0...logging-sentry@0.12.0) (2025-07-22)
 
 

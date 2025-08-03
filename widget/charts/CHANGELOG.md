@@ -1,3 +1,27 @@
+# 0.12.0 (2025-08-03)
+
+
+### Bug Fixes
+
+* add chart icon and handle dark theme in BarChart component ([9018351](https://github.com/nikaaru/rango-client/commit/901835162f5dd75f9ed211d59499ebb5999f1148))
+* add prepare data function for chart package ([5790c7f](https://github.com/nikaaru/rango-client/commit/5790c7f8182f10f85e699d98e9398a8b9c95545a))
+* if data exceed 90 days, bottom axis should be shown correctly ([ba6c420](https://github.com/nikaaru/rango-client/commit/ba6c4203601c901bde7bad48eb68432e1b9fd69b))
+* improve y-axis display for bar charts with smaller data sets ([4c2a56a](https://github.com/nikaaru/rango-client/commit/4c2a56acb8c207d107427eafc6b0d05864ae510b))
+* rename to nikaru-dev ([1c9d861](https://github.com/nikaaru/rango-client/commit/1c9d861b66efc4f58fca6c6b5ea240339e86ffe8))
+* upgrade versions ([d882467](https://github.com/nikaaru/rango-client/commit/d8824673529745ad7e7f3c959a45b0192d91962f))
+
+
+### Features
+
+* add chart package ([9a18e23](https://github.com/nikaaru/rango-client/commit/9a18e2331fee1638ce865af30479b0bae927d507))
+
+
+### Reverts
+
+* Revert "chore(release): publish" ([064ce15](https://github.com/nikaaru/rango-client/commit/064ce157a2f819856f647f83aeb1c0410542e8d7))
+
+
+
 # [0.11.0](https://github.com/rango-exchange/rango-client/compare/charts@0.10.0...charts@0.11.0) (2025-07-22)
 
 

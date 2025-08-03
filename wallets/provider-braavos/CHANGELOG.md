@@ -1,3 +1,34 @@
+# 0.21.0 (2025-08-03)
+
+
+### Bug Fixes
+
+* bump sdk and fix type issues ([c297c46](https://github.com/nikaaru/rango-client/commit/c297c46620f853b6317664dae04061af3dfbbd71))
+* cleanup wallets' subscriber when setProvider get null ([a05dfba](https://github.com/nikaaru/rango-client/commit/a05dfba623facc20debeee3d149fddc779e66278))
+* fix HMR for widget and playground ([71c15da](https://github.com/nikaaru/rango-client/commit/71c15dadab4d161006b9f05a77c286b05c931528))
+* fix the connection problem that happens when another wallet takes over the requested one ([e262f4c](https://github.com/nikaaru/rango-client/commit/e262f4c03b7dbf486dbffb91cfea26f44f915953))
+* rename pbt to ptb for sui ([6023ef8](https://github.com/nikaaru/rango-client/commit/6023ef84340b25430001d5efd0e005bdd96ff2ae))
+* rename to nikaru-dev ([1c9d861](https://github.com/nikaaru/rango-client/commit/1c9d861b66efc4f58fca6c6b5ea240339e86ffe8))
+* upgrade versions ([d882467](https://github.com/nikaaru/rango-client/commit/d8824673529745ad7e7f3c959a45b0192d91962f))
+
+
+### Features
+
+* support braavos wallet ([c0c2e44](https://github.com/nikaaru/rango-client/commit/c0c2e446e30ae3f73c3771bafa98ee7a310dc2ad))
+* update sui to consider recent api changes ([265ff47](https://github.com/nikaaru/rango-client/commit/265ff47fc90db86fd3c94183b3e48105241e6ae6))
+
+
+### Performance Improvements
+
+* lazy load signer packages ([bc6fa14](https://github.com/nikaaru/rango-client/commit/bc6fa141c2281cb202294e8df5a78b11d1cdabfb))
+
+
+### Reverts
+
+* Revert "chore(release): publish" ([064ce15](https://github.com/nikaaru/rango-client/commit/064ce157a2f819856f647f83aeb1c0410542e8d7))
+
+
+
 # [0.41.0](https://github.com/rango-exchange/rango-client/compare/provider-braavos@0.40.0...provider-braavos@0.41.0) (2025-07-22)
 
 

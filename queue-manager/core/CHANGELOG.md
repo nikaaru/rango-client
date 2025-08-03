@@ -1,3 +1,27 @@
+# 0.27.0 (2025-08-03)
+
+
+### Bug Fixes
+
+* fix HMR for widget and playground ([71c15da](https://github.com/nikaaru/rango-client/commit/71c15dadab4d161006b9f05a77c286b05c931528))
+* rename to nikaru-dev ([1c9d861](https://github.com/nikaaru/rango-client/commit/1c9d861b66efc4f58fca6c6b5ea240339e86ffe8))
+* seems npm needs a bit time to update the cdn and return the correct version ([ac6199a](https://github.com/nikaaru/rango-client/commit/ac6199a4996e858af69c8f3ec0f35d865a29a96e))
+* upgrade versions ([d882467](https://github.com/nikaaru/rango-client/commit/d8824673529745ad7e7f3c959a45b0192d91962f))
+
+
+### Features
+
+* add delete action to queue manager ([d65fca9](https://github.com/nikaaru/rango-client/commit/d65fca9be7547097cb0a84e2848cbddfe37991be))
+* add filter and clear to widget history ([580bfa4](https://github.com/nikaaru/rango-client/commit/580bfa49ef0e015c6fd7a4e9153eaad877ecbfe0))
+* Support for WalletConnect 2 ([9abf37a](https://github.com/nikaaru/rango-client/commit/9abf37a201e1435ef53b0b31e6c911d3c6fed17a))
+
+
+### Reverts
+
+* Revert "chore(release): publish" ([064ce15](https://github.com/nikaaru/rango-client/commit/064ce157a2f819856f647f83aeb1c0410542e8d7))
+
+
+
 # [0.31.0](https://github.com/rango-exchange/rango-client/compare/queue-manager-core@0.30.0...queue-manager-core@0.31.0) (2025-07-22)
 
 
