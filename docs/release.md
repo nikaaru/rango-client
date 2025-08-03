@@ -95,4 +95,4 @@ Ensure you send a highlight note on Telegram [like this](https://t.me/c/17972298
 
 **NOTE 2:**
 
-Ensure you update widget-examples using `yarn add @rango-dev/widget-embedded@latest`. Then open a new PR on the repo to ensure all examples are on the latest version.
+Ensure you update widget-examples using `yarn add @nikaru-dev/widget-embedded@latest`. Then open a new PR on the repo to ensure all examples are on the latest version.

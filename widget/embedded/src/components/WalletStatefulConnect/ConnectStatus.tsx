@@ -1,8 +1,8 @@
 import type { ConnectStatusProps } from './ConnectStatus.types';
 
 import { i18n } from '@lingui/core';
-import { Image, MessageBox, WalletState } from '@rango-dev/ui';
-import { useWallets } from '@rango-dev/wallets-react';
+import { Image, MessageBox, WalletState } from '@nikaru-dev/ui';
+import { useWallets } from '@nikaru-dev/wallets-react';
 import React from 'react';
 
 import { mapStatusToWalletState } from '../../utils/wallets';

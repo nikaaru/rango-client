@@ -1,5 +1,5 @@
 {
-  "name": "@rango-dev/provider-xdefi",
+  "name": "@nikaru-dev/provider-xdefi",
   "version": "0.49.0",
   "license": "MIT",
   "type": "module",
@@ -21,10 +21,10 @@
     "lint": "eslint \"**/*.{ts,tsx}\""
   },
   "dependencies": {
-    "@rango-dev/signer-cosmos": "^0.36.0",
-    "@rango-dev/signer-evm": "^0.38.0",
-    "@rango-dev/signer-solana": "^0.42.0",
-    "@rango-dev/wallets-shared": "^0.47.0",
+    "@nikaru-dev/signer-cosmos": "^0.36.0",
+    "@nikaru-dev/signer-evm": "^0.38.0",
+    "@nikaru-dev/signer-solana": "^0.42.0",
+    "@nikaru-dev/wallets-shared": "^0.47.0",
     "bs58": "^5.0.0",
     "rango-types": "^0.1.88"
   },

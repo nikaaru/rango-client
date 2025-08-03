@@ -1,7 +1,7 @@
-import type { LegacyProviderInterface } from '@rango-dev/wallets-core/legacy';
-import type { Connect, WalletInfo } from '@rango-dev/wallets-shared';
+import type { LegacyProviderInterface } from '@nikaru-dev/wallets-core/legacy';
+import type { Connect, WalletInfo } from '@nikaru-dev/wallets-shared';
 
-import { WalletTypes } from '@rango-dev/wallets-shared';
+import { WalletTypes } from '@nikaru-dev/wallets-shared';
 import { type BlockchainMeta, type SignerFactory } from 'rango-types';
 
 import { suiWalletInstance } from '../utils.js';

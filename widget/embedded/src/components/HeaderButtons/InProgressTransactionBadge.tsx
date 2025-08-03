@@ -1,7 +1,7 @@
 import type { PendingSwap } from 'rango-types';
 
-import { useManager } from '@rango-dev/queue-manager-react';
-import { InProgressIcon } from '@rango-dev/ui';
+import { useManager } from '@nikaru-dev/queue-manager-react';
+import { InProgressIcon } from '@nikaru-dev/ui';
 import React from 'react';
 
 import { getPendingSwaps } from '../../utils/queue';

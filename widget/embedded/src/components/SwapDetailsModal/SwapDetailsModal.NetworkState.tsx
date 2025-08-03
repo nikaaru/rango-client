@@ -1,7 +1,7 @@
 import type { NetworkStateContentProps } from './SwapDetailsModal.types';
 
 import { i18n } from '@lingui/core';
-import { MessageBox } from '@rango-dev/ui';
+import { MessageBox } from '@nikaru-dev/ui';
 import React from 'react';
 
 export const NetworkStateContent = (props: NetworkStateContentProps) => {

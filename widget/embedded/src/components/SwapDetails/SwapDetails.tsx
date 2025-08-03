@@ -6,15 +6,15 @@ import {
   getCurrentNamespaceOfOrNull,
   getCurrentStep,
   getRelatedWalletOrNull,
-} from '@rango-dev/queue-manager-rango-preset';
+} from '@nikaru-dev/queue-manager-rango-preset';
 import {
   Button,
   Divider,
   QuoteCost,
   StepDetails,
   Typography,
-} from '@rango-dev/ui';
-import { useWallets } from '@rango-dev/wallets-react';
+} from '@nikaru-dev/ui';
+import { useWallets } from '@nikaru-dev/wallets-react';
 import BigNumber from 'bignumber.js';
 import { PendingSwapNetworkStatus } from 'rango-types';
 import React, { useEffect, useRef, useState } from 'react';

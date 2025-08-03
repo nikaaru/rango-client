@@ -1,19 +1,19 @@
 import type { AllProxiedNamespaces } from './types.js';
-import type { Hub, Provider } from '@rango-dev/wallets-core';
+import type { Hub, Provider } from '@nikaru-dev/wallets-core';
 import type {
   LegacyNamespaceInputForConnect,
   LegacyProviderInterface,
   LegacyEventHandler as WalletEventHandler,
-} from '@rango-dev/wallets-core/legacy';
-import type { Event } from '@rango-dev/wallets-core/store';
+} from '@nikaru-dev/wallets-core/legacy';
+import type { Event } from '@nikaru-dev/wallets-core/store';
 
-import { LegacyEvents as Events } from '@rango-dev/wallets-core/legacy';
-import { type VersionedProviders } from '@rango-dev/wallets-core/utils';
-import { pickVersion } from '@rango-dev/wallets-core/utils';
+import { LegacyEvents as Events } from '@nikaru-dev/wallets-core/legacy';
+import { type VersionedProviders } from '@nikaru-dev/wallets-core/utils';
+import { pickVersion } from '@nikaru-dev/wallets-core/utils';
 import {
   type AddEthereumChainParameter,
   convertEvmBlockchainMetaToEvmChainInfo,
-} from '@rango-dev/wallets-shared';
+} from '@nikaru-dev/wallets-shared';
 import { type BlockchainMeta, isEvmBlockchain } from 'rango-types';
 
 import {

@@ -1,10 +1,10 @@
 import type { NamespaceDetachedItemPropTypes } from './Namespaces.types';
-import type { NamespaceData } from '@rango-dev/wallets-core/dist/hub/store/namespaces';
-import type { Namespace } from '@rango-dev/wallets-core/namespaces/common';
+import type { NamespaceData } from '@nikaru-dev/wallets-core/dist/hub/store/namespaces';
+import type { Namespace } from '@nikaru-dev/wallets-core/namespaces/common';
 
 import { i18n } from '@lingui/core';
-import { Button, Spinner } from '@rango-dev/ui';
-import { useWallets } from '@rango-dev/wallets-react';
+import { Button, Spinner } from '@nikaru-dev/ui';
+import { useWallets } from '@nikaru-dev/wallets-react';
 import React, { useLayoutEffect, useRef, useState } from 'react';
 
 import { getConciseAddress } from '../../utils/wallets';

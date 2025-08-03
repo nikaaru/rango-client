@@ -1,5 +1,5 @@
 {
-  "name": "@rango-dev/provider-station",
+  "name": "@nikaru-dev/provider-station",
   "version": "0.46.0",
   "license": "MIT",
   "type": "module",
@@ -24,8 +24,8 @@
     "react": ">=16"
   },
   "dependencies": {
-    "@rango-dev/signer-terra": "^0.37.0",
-    "@rango-dev/wallets-shared": "^0.47.0",
+    "@nikaru-dev/signer-terra": "^0.37.0",
+    "@nikaru-dev/wallets-shared": "^0.47.0",
     "@terra-money/wallet-controller": "^3.11.2",
     "rango-types": "^0.1.88"
   },

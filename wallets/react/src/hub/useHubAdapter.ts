@@ -1,11 +1,11 @@
 import type { AllProxiedNamespaces, ExtensionLink } from './types.js';
 import type { ProviderContext, Providers } from '../index.js';
-import type { Provider } from '@rango-dev/wallets-core';
-import type { LegacyNamespaceInputForConnect } from '@rango-dev/wallets-core/legacy';
-import type { VersionedProviders } from '@rango-dev/wallets-core/utils';
+import type { Provider } from '@nikaru-dev/wallets-core';
+import type { LegacyNamespaceInputForConnect } from '@nikaru-dev/wallets-core/legacy';
+import type { VersionedProviders } from '@nikaru-dev/wallets-core/utils';
 
-import { utils } from '@rango-dev/wallets-core/namespaces/evm';
-import { type WalletInfo } from '@rango-dev/wallets-shared';
+import { utils } from '@nikaru-dev/wallets-core/namespaces/evm';
+import { type WalletInfo } from '@nikaru-dev/wallets-shared';
 import { useEffect, useRef, useState } from 'react';
 import { Ok, Result } from 'ts-results';
 

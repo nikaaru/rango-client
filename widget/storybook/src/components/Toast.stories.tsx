@@ -1,7 +1,7 @@
-import type { ToastPropTypes } from '@rango-dev/ui';
+import type { ToastPropTypes } from '@nikaru-dev/ui';
 import type { Meta } from '@storybook/react';
 
-import { Button, Toast, ToastProvider, useToast } from '@rango-dev/ui';
+import { Button, Toast, ToastProvider, useToast } from '@nikaru-dev/ui';
 import React from 'react';
 
 export default {

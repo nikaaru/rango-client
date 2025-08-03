@@ -1,1 +1,1 @@
-# @rango-dev/provider-default
+# @nikaru-dev/provider-default

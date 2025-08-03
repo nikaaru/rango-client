@@ -1,8 +1,8 @@
-import type { ProviderAPI as EvmProviderApi } from '@rango-dev/wallets-core/namespaces/evm';
-import type { ProviderAPI as SolanaProviderApi } from '@rango-dev/wallets-core/namespaces/solana';
-import type { ProviderAPI as SuiProviderApi } from '@rango-dev/wallets-core/namespaces/sui';
+import type { ProviderAPI as EvmProviderApi } from '@nikaru-dev/wallets-core/namespaces/evm';
+import type { ProviderAPI as SolanaProviderApi } from '@nikaru-dev/wallets-core/namespaces/solana';
+import type { ProviderAPI as SuiProviderApi } from '@nikaru-dev/wallets-core/namespaces/sui';
 
-import { LegacyNetworks } from '@rango-dev/wallets-core/legacy';
+import { LegacyNetworks } from '@nikaru-dev/wallets-core/legacy';
 
 export type Provider = Map<string, unknown>;
 

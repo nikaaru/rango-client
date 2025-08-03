@@ -1,4 +1,4 @@
-import { legacyProviderImportsToVersionsInterface } from '@rango-dev/wallets-core/utils';
+import { legacyProviderImportsToVersionsInterface } from '@nikaru-dev/wallets-core/utils';
 import { renderHook } from '@testing-library/react-hooks';
 import { TransactionType } from 'rango-types';
 import React from 'react';

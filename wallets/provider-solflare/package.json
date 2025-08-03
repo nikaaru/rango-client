@@ -1,5 +1,5 @@
 {
-  "name": "@rango-dev/provider-solflare",
+  "name": "@nikaru-dev/provider-solflare",
   "version": "0.14.0",
   "license": "MIT",
   "type": "module",
@@ -21,8 +21,8 @@
     "lint": "eslint \"**/*.{ts,tsx}\""
   },
   "dependencies": {
-    "@rango-dev/signer-solana": "^0.42.0",
-    "@rango-dev/wallets-shared": "^0.47.0",
+    "@nikaru-dev/signer-solana": "^0.42.0",
+    "@nikaru-dev/wallets-shared": "^0.47.0",
     "@solana/web3.js": "^1.91.4",
     "@solflare-wallet/sdk": "^1.4.2",
     "bs58": "^5.0.0",

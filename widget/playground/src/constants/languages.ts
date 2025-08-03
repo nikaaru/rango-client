@@ -33,7 +33,7 @@ import {
   Turkish,
   Ukrainian,
   Vietnamese,
-} from '@rango-dev/ui';
+} from '@nikaru-dev/ui';
 
 export const DEFAULT_LANGUAGE = 'en';
 

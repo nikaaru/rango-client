@@ -1,6 +1,6 @@
-import type { Layer } from '@rango-dev/logging-types';
+import type { Layer } from '@nikaru-dev/logging-types';
 
-import { Level } from '@rango-dev/logging-types';
+import { Level } from '@nikaru-dev/logging-types';
 
 import { formatMessage } from './helpers';
 

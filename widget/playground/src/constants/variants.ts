@@ -1,4 +1,4 @@
-import type { WidgetVariant } from '@rango-dev/widget-embedded';
+import type { WidgetVariant } from '@nikaru-dev/widget-embedded';
 
 export const VARIANTS: { label: string; value: WidgetVariant }[] = [
   {

@@ -1,7 +1,7 @@
-import type { ChainTokenPropTypes } from '@rango-dev/ui';
+import type { ChainTokenPropTypes } from '@nikaru-dev/ui';
 import type { Meta } from '@storybook/react';
 
-import { ChainToken } from '@rango-dev/ui';
+import { ChainToken } from '@nikaru-dev/ui';
 import React from 'react';
 
 const meta: Meta<typeof ChainToken> = {

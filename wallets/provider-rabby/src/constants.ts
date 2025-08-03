@@ -1,4 +1,4 @@
-import { type ProviderInfo } from '@rango-dev/wallets-core';
+import { type ProviderInfo } from '@nikaru-dev/wallets-core';
 import { type BlockchainMeta, evmBlockchains } from 'rango-types';
 
 export const WALLET_ID = 'rabby';

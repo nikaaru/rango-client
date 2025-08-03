@@ -1,5 +1,5 @@
 {
-  "name": "@rango-dev/widget-app",
+  "name": "@nikaru-dev/widget-app",
   "version": "0.40.0",
   "license": "MIT",
   "private": true,
@@ -19,9 +19,9 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "@rango-dev/logging-console": "^0.10.0",
-    "@rango-dev/logging-subscriber": "^0.10.0",
-    "@rango-dev/widget-embedded": "^0.46.0",
+    "@nikaru-dev/logging-console": "^0.10.0",
+    "@nikaru-dev/logging-subscriber": "^0.10.0",
+    "@nikaru-dev/widget-embedded": "^0.46.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.8.0"

@@ -1,5 +1,5 @@
 {
-  "name": "@rango-dev/logging-console",
+  "name": "@nikaru-dev/logging-console",
   "version": "0.10.0",
   "license": "MIT",
   "type": "module",
@@ -14,7 +14,7 @@
     "src"
   ],
   "dependencies": {
-    "@rango-dev/logging-types": "^0.10.0"
+    "@nikaru-dev/logging-types": "^0.10.0"
   },
   "scripts": {
     "build": "node ../../scripts/build/command.mjs --path logging/console",

@@ -1,1 +1,1 @@
-# @rango-dev/provider-cosmostation
+# @nikaru-dev/provider-cosmostation

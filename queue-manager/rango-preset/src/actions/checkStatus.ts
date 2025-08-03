@@ -1,12 +1,12 @@
 import type { SwapQueueContext, SwapStorage } from '../types';
-import type { ExecuterActions } from '@rango-dev/queue-manager-core';
+import type { ExecuterActions } from '@nikaru-dev/queue-manager-core';
 import type {
   CheckTxStatusRequest,
   Transaction,
   TransactionStatusResponse,
 } from 'rango-sdk';
 
-import { warn } from '@rango-dev/logging-core';
+import { warn } from '@nikaru-dev/logging-core';
 import { type GenericSigner, SignerError } from 'rango-types';
 
 import {
