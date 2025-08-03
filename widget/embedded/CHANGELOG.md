@@ -1,3 +1,12 @@
+# [0.23.0](https://github.com/nikaaru/rango-client/compare/widget-embedded@0.22.0...widget-embedded@0.23.0) (2025-08-03)
+
+
+### Features
+
+* change history page title ([d40c80a](https://github.com/nikaaru/rango-client/commit/d40c80a07aa550b264a22b9f6d9fb606262dfd04))
+
+
+
 # 0.22.0 (2025-08-03)
 
 

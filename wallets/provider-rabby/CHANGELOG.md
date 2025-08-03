@@ -1,3 +1,7 @@
+# [0.16.0](https://github.com/nikaaru/rango-client/compare/provider-rabby@0.15.0...provider-rabby@0.16.0) (2025-08-03)
+
+
+
 # 0.15.0 (2025-08-03)
 
 

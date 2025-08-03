@@ -1,3 +1,7 @@
+# [0.12.0](https://github.com/nikaaru/rango-client/compare/logging-console@0.11.0...logging-console@0.12.0) (2025-08-03)
+
+
+
 # 0.11.0 (2025-08-03)
 
 

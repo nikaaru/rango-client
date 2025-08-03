@@ -1,3 +1,7 @@
+# [0.21.0](https://github.com/nikaaru/rango-client/compare/provider-walletconnect-2@0.20.0...provider-walletconnect-2@0.21.0) (2025-08-03)
+
+
+
 # 0.20.0 (2025-08-03)
 
 

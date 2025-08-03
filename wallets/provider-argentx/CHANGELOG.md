@@ -1,3 +1,7 @@
+# [0.29.0](https://github.com/nikaaru/rango-client/compare/provider-argentx@0.28.0...provider-argentx@0.29.0) (2025-08-03)
+
+
+
 # 0.28.0 (2025-08-03)
 
 
