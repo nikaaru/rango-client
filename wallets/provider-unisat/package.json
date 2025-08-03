@@ -21,7 +21,7 @@
     "lint": "eslint \"**/*.{ts,tsx}\""
   },
   "dependencies": {
-    "@nikaru-dev/wallets-shared": "^0.47.0",
+    "@nikaru-dev/wallets-shared": "^0.26.1-next.0",
     "bitcoinjs-lib": "^6.1.7",
     "rango-types": "^0.1.88"
   },

@@ -24,8 +24,8 @@
     "lint": "eslint \"**/*.{ts,tsx}\""
   },
   "dependencies": {
-    "@nikaru-dev/signer-evm": "^0.38.0",
-    "@nikaru-dev/wallets-shared": "^0.47.0",
+    "@nikaru-dev/signer-evm": "^0.26.1-next.0",
+    "@nikaru-dev/wallets-shared": "^0.26.1-next.0",
     "@trezor/connect-web": "^9.5.0",
     "ethers": "^6.13.2",
     "rango-types": "^0.1.88"

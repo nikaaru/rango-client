@@ -1,6 +1,6 @@
 {
   "name": "@nikaru-dev/wallets-react",
-  "version": "0.33.0",
+  "version": "0.12.1-next.0",
   "license": "MIT",
   "type": "module",
   "source": "./src/index.ts",
@@ -35,8 +35,8 @@
     "react-dom": "^17.0.0 || ^18.0.0"
   },
   "dependencies": {
-    "@nikaru-dev/wallets-core": "^0.46.0",
-    "@nikaru-dev/wallets-shared": "^0.47.0",
+    "@nikaru-dev/wallets-core": "^0.27.1-next.0",
+    "@nikaru-dev/wallets-shared": "^0.26.1-next.0",
     "rango-types": "^0.1.88",
     "ts-results": "^3.3.0"
   },

@@ -24,7 +24,7 @@
     "@mysten/sui": "^1.21.2",
     "@mysten/wallet-standard": "^0.13.26",
     "@nikaru-dev/signer-sui": "^0.6.0",
-    "@nikaru-dev/wallets-shared": "^0.47.0",
+    "@nikaru-dev/wallets-shared": "^0.26.1-next.0",
     "rango-types": "^0.1.88"
   },
   "publishConfig": {
