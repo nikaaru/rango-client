@@ -1,3 +1,27 @@
+# 0.28.0 (2025-08-03)
+
+
+### Bug Fixes
+
+* bump sdk and fix type issues ([c297c46](https://github.com/nikaaru/rango-client/commit/c297c46620f853b6317664dae04061af3dfbbd71))
+* fix HMR for widget and playground ([71c15da](https://github.com/nikaaru/rango-client/commit/71c15dadab4d161006b9f05a77c286b05c931528))
+* rename pbt to ptb for sui ([6023ef8](https://github.com/nikaaru/rango-client/commit/6023ef84340b25430001d5efd0e005bdd96ff2ae))
+* rename to nikaru-dev ([1c9d861](https://github.com/nikaaru/rango-client/commit/1c9d861b66efc4f58fca6c6b5ea240339e86ffe8))
+* update rango-types and fix notification bugs ([e5660ec](https://github.com/nikaaru/rango-client/commit/e5660ec9e67c96c9f27ddd29773b67aaa60a69d2))
+* upgrade versions ([d882467](https://github.com/nikaaru/rango-client/commit/d8824673529745ad7e7f3c959a45b0192d91962f))
+
+
+### Features
+
+* update sui to consider recent api changes ([265ff47](https://github.com/nikaaru/rango-client/commit/265ff47fc90db86fd3c94183b3e48105241e6ae6))
+
+
+### Reverts
+
+* Revert "chore(release): publish" ([064ce15](https://github.com/nikaaru/rango-client/commit/064ce157a2f819856f647f83aeb1c0410542e8d7))
+
+
+
 # [0.38.0](https://github.com/rango-exchange/rango-client/compare/signer-starknet@0.37.0...signer-starknet@0.38.0) (2025-07-22)
 
 

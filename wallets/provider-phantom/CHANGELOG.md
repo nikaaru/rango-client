@@ -1,3 +1,47 @@
+# 0.27.0 (2025-08-03)
+
+
+### Bug Fixes
+
+* bump sdk and fix type issues ([c297c46](https://github.com/nikaaru/rango-client/commit/c297c46620f853b6317664dae04061af3dfbbd71))
+* cleanup wallets' subscriber when setProvider get null ([a05dfba](https://github.com/nikaaru/rango-client/commit/a05dfba623facc20debeee3d149fddc779e66278))
+* error rethrow in or action ([8c302eb](https://github.com/nikaaru/rango-client/commit/8c302ebf4dcacfa457fc760d56886f0ae4727ebf))
+* fix HMR for widget and playground ([71c15da](https://github.com/nikaaru/rango-client/commit/71c15dadab4d161006b9f05a77c286b05c931528))
+* fix phantom transaction failure on sui namespace disabled ([aaf9d8a](https://github.com/nikaaru/rango-client/commit/aaf9d8aa21ceaf6c1a9540df72fb68f358523de4))
+* fix the connection problem that happens when another wallet takes over the requested one ([e262f4c](https://github.com/nikaaru/rango-client/commit/e262f4c03b7dbf486dbffb91cfea26f44f915953))
+* make hub compatible with external wallets ([180402a](https://github.com/nikaaru/rango-client/commit/180402a2f8ae59e15b3583c94078e7112a0da2f7))
+* rename pbt to ptb for sui ([6023ef8](https://github.com/nikaaru/rango-client/commit/6023ef84340b25430001d5efd0e005bdd96ff2ae))
+* rename to nikaru-dev ([1c9d861](https://github.com/nikaaru/rango-client/commit/1c9d861b66efc4f58fca6c6b5ea240339e86ffe8))
+* update rango-types and fix notification bugs ([e5660ec](https://github.com/nikaaru/rango-client/commit/e5660ec9e67c96c9f27ddd29773b67aaa60a69d2))
+* upgrade versions ([d882467](https://github.com/nikaaru/rango-client/commit/d8824673529745ad7e7f3c959a45b0192d91962f))
+
+
+### Features
+
+* add an adapter for Hub for wallets-react and enabling Hub by default. ([016fe92](https://github.com/nikaaru/rango-client/commit/016fe924f30426b5ee92313c2bb9213a31210d71))
+* add base chain to phantom evm supported chains ([96e0855](https://github.com/nikaaru/rango-client/commit/96e0855e8b814ef042b62308eabaa90ff595cc04))
+* add bitcoin signer for phantom on hub ([822c346](https://github.com/nikaaru/rango-client/commit/822c34622d5e2505496f2da39699c9a275912d4e))
+* add can eager connect to namespaces ([a2dc132](https://github.com/nikaaru/rango-client/commit/a2dc13235cfc4bb9d6eec44895ad9747d24d01df))
+* add ton connect provider ([250ca69](https://github.com/nikaaru/rango-client/commit/250ca69a7c4fa19d2bc9b054dc82cfab8b905fd5))
+* implement updated design for initial connect modal ([469ff34](https://github.com/nikaaru/rango-client/commit/469ff34f1d72e0bcda94d804c95055ce613d9803))
+* migrate trust wallet to use hub and add support for solana ([b5b5749](https://github.com/nikaaru/rango-client/commit/b5b5749216ee02e9f9fb11295e5b5d0533629409))
+* Sui support for Phantom ([dff432b](https://github.com/nikaaru/rango-client/commit/dff432b53b04cc9c8ccdda2c1b12168feca78e20))
+* update sui to consider recent api changes ([265ff47](https://github.com/nikaaru/rango-client/commit/265ff47fc90db86fd3c94183b3e48105241e6ae6))
+* update wallets readme ([fa8d59d](https://github.com/nikaaru/rango-client/commit/fa8d59df5688e1444cdb3b9321e775974e9f2e43))
+
+
+### Performance Improvements
+
+* lazy load signer packages ([bc6fa14](https://github.com/nikaaru/rango-client/commit/bc6fa141c2281cb202294e8df5a78b11d1cdabfb))
+
+
+### Reverts
+
+* Revert "chore(release): publish" ([064ce15](https://github.com/nikaaru/rango-client/commit/064ce157a2f819856f647f83aeb1c0410542e8d7))
+* Revert "support for rango-types cjs format" ([a424f87](https://github.com/nikaaru/rango-client/commit/a424f878872b128c1bc673f0d58ba1b99dd29d74))
+
+
+
 # [0.48.0](https://github.com/rango-exchange/rango-client/compare/provider-phantom@0.47.0...provider-phantom@0.48.0) (2025-07-22)
 
 

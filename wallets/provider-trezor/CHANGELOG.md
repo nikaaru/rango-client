@@ -1,3 +1,39 @@
+# 0.15.0 (2025-08-03)
+
+
+### Bug Fixes
+
+* bump sdk and fix type issues ([c297c46](https://github.com/nikaaru/rango-client/commit/c297c46620f853b6317664dae04061af3dfbbd71))
+* enabling trezor by removing bundling for @trezor/connect-web ([72f85aa](https://github.com/nikaaru/rango-client/commit/72f85aaa010c7c3406fef1c57996205b9a87834d))
+* import Trezor module ([2cff0ee](https://github.com/nikaaru/rango-client/commit/2cff0eea776168637015d686813466876875b6e5))
+* incorrect error message on Trezor wallet transaction rejection ([615b6df](https://github.com/nikaaru/rango-client/commit/615b6dfc827b8e98d1be2bedcfd5e224d09b1854))
+* rename pbt to ptb for sui ([6023ef8](https://github.com/nikaaru/rango-client/commit/6023ef84340b25430001d5efd0e005bdd96ff2ae))
+* rename to nikaru-dev ([1c9d861](https://github.com/nikaaru/rango-client/commit/1c9d861b66efc4f58fca6c6b5ea240339e86ffe8))
+* resolve issues with trezor provider's sign message method ([3497584](https://github.com/nikaaru/rango-client/commit/34975844bd376928b431ce7b64f2b6176d50985d))
+* upgrade versions ([d882467](https://github.com/nikaaru/rango-client/commit/d8824673529745ad7e7f3c959a45b0192d91962f))
+
+
+### Features
+
+* add derivation path modal for trezor wallet ([74fb02e](https://github.com/nikaaru/rango-client/commit/74fb02ee9c91f4d16f6787e3fe30f3d8c697885d))
+* add derivation path to swap wallets ([0728ac4](https://github.com/nikaaru/rango-client/commit/0728ac40a67f648d254db2461627b7cd408a28c5))
+* add support for Trezor hardware wallet ([838a17d](https://github.com/nikaaru/rango-client/commit/838a17db0e780664f19b3c6edde82f1972af858d))
+* implement updated design for initial connect modal ([469ff34](https://github.com/nikaaru/rango-client/commit/469ff34f1d72e0bcda94d804c95055ce613d9803))
+* update sui to consider recent api changes ([265ff47](https://github.com/nikaaru/rango-client/commit/265ff47fc90db86fd3c94183b3e48105241e6ae6))
+
+
+### Performance Improvements
+
+* enable code splitting in build process ([e929b66](https://github.com/nikaaru/rango-client/commit/e929b6698d1f19074bf6552fc438fe1fed04930d))
+* lazy load signer packages ([bc6fa14](https://github.com/nikaaru/rango-client/commit/bc6fa141c2281cb202294e8df5a78b11d1cdabfb))
+
+
+### Reverts
+
+* Revert "chore(release): publish" ([064ce15](https://github.com/nikaaru/rango-client/commit/064ce157a2f819856f647f83aeb1c0410542e8d7))
+
+
+
 # [0.14.0](https://github.com/rango-exchange/rango-client/compare/provider-trezor@0.13.0...provider-trezor@0.14.0) (2025-07-22)
 
 

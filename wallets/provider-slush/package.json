@@ -1,6 +1,6 @@
 {
   "name": "@nikaru-dev/provider-slush",
-  "version": "0.3.1-next.0",
+  "version": "0.4.0",
   "license": "MIT",
   "type": "module",
   "source": "./src/mod.ts",
@@ -23,8 +23,8 @@
   "dependencies": {
     "@mysten/sui": "^1.21.2",
     "@mysten/wallet-standard": "^0.13.26",
-    "@nikaru-dev/signer-sui": "^0.6.1-next.0",
-    "@nikaru-dev/wallets-shared": "^0.26.1-next.1",
+    "@nikaru-dev/signer-sui": "^0.7.0",
+    "@nikaru-dev/wallets-shared": "^0.27.0",
     "rango-types": "^0.1.88"
   },
   "publishConfig": {
