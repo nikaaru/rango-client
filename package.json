@@ -51,8 +51,7 @@
     "i18n": "yarn i18n:extract && yarn i18n:compile",
     "test": "vitest",
     "test:coverage": "vitest run --coverage",
-    "commitlint": "commitlint --edit",
-    "postinstall": "patch-package && yarn workspace @nikaru-dev/signer-cosmos run patch-package"
+    "commitlint": "commitlint --edit"
   },
   "dependencies": {
     "husky": "^8.0.3",
