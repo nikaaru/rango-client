@@ -1,4 +1,4 @@
-import { ProviderBuilder } from '@rango-dev/wallets-core';
+import { ProviderBuilder } from '@nikaru-dev/wallets-core';
 
 import { metadata, WALLET_ID } from './constants.js';
 import { utxo } from './namespaces/utxo.js';

@@ -1,5 +1,5 @@
-import type { NamespaceInputForConnect } from '@rango-dev/wallets-core/dist/legacy/types';
-import type { Network, WalletType } from '@rango-dev/wallets-shared';
+import type { NamespaceInputForConnect } from '@nikaru-dev/wallets-core/dist/legacy/types';
+import type { Network, WalletType } from '@nikaru-dev/wallets-shared';
 import type {
   BlockchainMeta,
   ConfirmRouteResponse,

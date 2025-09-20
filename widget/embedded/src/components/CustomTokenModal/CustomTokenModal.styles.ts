@@ -1,4 +1,4 @@
-import { Button, darkTheme, styled, Typography } from '@rango-dev/ui';
+import { Button, darkTheme, styled, Typography } from '@nikaru-dev/ui';
 
 export const StyledLink = styled('a', {
   textDecoration: 'none',

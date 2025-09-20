@@ -1,6 +1,6 @@
 import type { Mode } from '../store/config';
 import type { ColorsType, PresetType } from '../types';
-import type { WidgetColorsKeys } from '@rango-dev/widget-embedded';
+import type { WidgetColorsKeys } from '@nikaru-dev/widget-embedded';
 
 import { shallowEqual } from './common';
 

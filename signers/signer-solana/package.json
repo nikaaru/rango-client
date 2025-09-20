@@ -1,6 +1,6 @@
 {
-  "name": "@rango-dev/signer-solana",
-  "version": "0.44.0",
+  "name": "@nikaru-dev/signer-solana",
+  "version": "0.27.0",
   "license": "MIT",
   "type": "module",
   "source": "./src/index.ts",

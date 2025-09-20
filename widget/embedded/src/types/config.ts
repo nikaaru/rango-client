@@ -1,6 +1,6 @@
-import type { Language, theme } from '@rango-dev/ui';
-import type { LegacyProviderInterface } from '@rango-dev/wallets-core/dist/legacy/mod';
-import type { WalletType } from '@rango-dev/wallets-shared';
+import type { Language, theme } from '@nikaru-dev/ui';
+import type { LegacyProviderInterface } from '@nikaru-dev/wallets-core/dist/legacy/mod';
+import type { WalletType } from '@nikaru-dev/wallets-shared';
 import type { Asset } from 'rango-sdk';
 import type { ReactElement } from 'react';
 

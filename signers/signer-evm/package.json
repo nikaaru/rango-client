@@ -1,6 +1,6 @@
 {
-  "name": "@rango-dev/signer-evm",
-  "version": "0.40.0",
+  "name": "@nikaru-dev/signer-evm",
+  "version": "0.27.0",
   "license": "MIT",
   "type": "module",
   "source": "./src/index.ts",

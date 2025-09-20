@@ -1,6 +1,6 @@
 import type { TonConnectUI } from '@tonconnect/ui';
 
-import { dynamicImportWithRefinedError } from '@rango-dev/wallets-shared';
+import { dynamicImportWithRefinedError } from '@nikaru-dev/wallets-shared';
 
 export async function getTonConnectUIModule() {
   const tonConnectUI = await dynamicImportWithRefinedError(

@@ -9,8 +9,8 @@ import {
   Typography,
   Wallet,
   WalletState,
-} from '@rango-dev/ui';
-import { useWallets } from '@rango-dev/wallets-react';
+} from '@nikaru-dev/ui';
+import { useWallets } from '@nikaru-dev/wallets-react';
 import React, { useState } from 'react';
 
 import { Layout, PageContainer } from '../components/Layout';

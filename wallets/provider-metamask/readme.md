@@ -1,1 +1,1 @@
-# @rango-dev/provider-metamask
+# @nikaru-dev/provider-metamask

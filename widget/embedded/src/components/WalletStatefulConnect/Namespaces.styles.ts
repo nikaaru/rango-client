@@ -1,4 +1,4 @@
-import { Button, styled } from '@rango-dev/ui';
+import { Button, styled } from '@nikaru-dev/ui';
 
 export const NamespaceList = styled('ul', {
   padding: 0,

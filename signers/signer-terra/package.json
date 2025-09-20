@@ -1,6 +1,6 @@
 {
-  "name": "@rango-dev/signer-terra",
-  "version": "0.39.0",
+  "name": "@nikaru-dev/signer-terra",
+  "version": "0.27.0",
   "license": "MIT",
   "type": "module",
   "source": "./src/index.ts",

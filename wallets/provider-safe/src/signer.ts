@@ -1,7 +1,7 @@
-import type { ProviderAPI } from '@rango-dev/wallets-core/namespaces/evm';
+import type { ProviderAPI } from '@nikaru-dev/wallets-core/namespaces/evm';
 import type { SignerFactory } from 'rango-types';
 
-import { dynamicImportWithRefinedError } from '@rango-dev/wallets-shared';
+import { dynamicImportWithRefinedError } from '@nikaru-dev/wallets-shared';
 import { DefaultSignerFactory, TransactionType as TxType } from 'rango-types';
 
 export default async function getSigners(

@@ -1,1 +1,1 @@
-# @rango-dev/provider-okx
+# @nikaru-dev/provider-okx

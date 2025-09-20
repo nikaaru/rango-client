@@ -6,8 +6,8 @@ import {
   MessageBox,
   WalletImageContainer,
   WalletState,
-} from '@rango-dev/ui';
-import { useWallets } from '@rango-dev/wallets-react';
+} from '@nikaru-dev/ui';
+import { useWallets } from '@nikaru-dev/wallets-react';
 import React from 'react';
 
 import { mapStatusToWalletState } from '../../utils/wallets';

@@ -1,6 +1,6 @@
-import type { Network, ProviderConnectResult } from '@rango-dev/wallets-shared';
+import type { Network, ProviderConnectResult } from '@nikaru-dev/wallets-shared';
 
-import { Networks } from '@rango-dev/wallets-shared';
+import { Networks } from '@nikaru-dev/wallets-shared';
 
 type Provider = Map<Network, any>;
 

@@ -1,4 +1,4 @@
-import { ReverseIcon } from '@rango-dev/ui';
+import { ReverseIcon } from '@nikaru-dev/ui';
 import React from 'react';
 
 import { useQuoteStore } from '../../store/quote';

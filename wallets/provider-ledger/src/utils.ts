@@ -1,13 +1,13 @@
 import type Transport from '@ledgerhq/hw-transport';
 
 import { getAltStatusMessage } from '@ledgerhq/errors';
-import { LegacyNetworks } from '@rango-dev/wallets-core/legacy';
-import { CAIP_SOLANA_CHAIN_ID } from '@rango-dev/wallets-core/namespaces/solana';
+import { LegacyNetworks } from '@nikaru-dev/wallets-core/legacy';
+import { CAIP_SOLANA_CHAIN_ID } from '@nikaru-dev/wallets-core/namespaces/solana';
 import {
   dynamicImportWithRefinedError,
   ETHEREUM_CHAIN_ID,
   type ProviderConnectResult,
-} from '@rango-dev/wallets-shared';
+} from '@nikaru-dev/wallets-shared';
 import bs58 from 'bs58';
 
 import { HEXADECIMAL_BASE } from './constants.js';

@@ -1,1 +1,1 @@
-# @rango-dev/provider-frontier
+# @nikaru-dev/provider-frontier

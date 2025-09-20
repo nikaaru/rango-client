@@ -5,9 +5,9 @@ import type {
   BottomAxisData,
   TooltipDataType,
 } from './BarChart.types.js';
-import type { BarGroupBar, SeriesPoint } from '@visx/shape/lib/types';
+import type { BarGroupBar, SeriesPoint } from '@visx/shape';
 
-import { Divider } from '@rango-dev/ui';
+import { Divider } from '@nikaru-dev/ui';
 import { AxisBottom, AxisLeft } from '@visx/axis';
 import { localPoint } from '@visx/event';
 import { Grid } from '@visx/grid';

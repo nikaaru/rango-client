@@ -5,13 +5,13 @@ import type {
   Subscribe,
   SwitchNetwork,
   WalletInfo,
-} from '@rango-dev/wallets-shared';
+} from '@nikaru-dev/wallets-shared';
 import type { BlockchainMeta, SignerFactory } from 'rango-types';
 
 import {
   type LegacyProviderInterface,
   LegacyNetworks as Networks,
-} from '@rango-dev/wallets-core/legacy';
+} from '@nikaru-dev/wallets-core/legacy';
 import {
   canSwitchNetworkToEvm,
   chooseInstance,
@@ -19,7 +19,7 @@ import {
   subscribeToEvm,
   switchNetworkForEvm,
   WalletTypes,
-} from '@rango-dev/wallets-shared';
+} from '@nikaru-dev/wallets-shared';
 import { evmBlockchains, solanaBlockchain } from 'rango-types';
 
 import signer from '../signer.js';

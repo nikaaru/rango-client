@@ -1,7 +1,7 @@
-import type { PriceImpactPropTypes } from '@rango-dev/ui';
+import type { PriceImpactPropTypes } from '@nikaru-dev/ui';
 import type { Meta } from '@storybook/react';
 
-import { PriceImpact } from '@rango-dev/ui';
+import { PriceImpact } from '@nikaru-dev/ui';
 import React from 'react';
 
 const meta: Meta<typeof PriceImpact> = {

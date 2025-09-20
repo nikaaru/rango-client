@@ -1,1 +1,1 @@
-# @rango-dev/provider-xdefi
+# @nikaru-dev/provider-xdefi

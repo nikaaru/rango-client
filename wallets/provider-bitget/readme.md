@@ -1,1 +1,1 @@
-# @rango-dev/provider-bitget
+# @nikaru-dev/provider-bitget

@@ -1,15 +1,15 @@
-import type { EvmActions } from '@rango-dev/wallets-core/namespaces/evm';
+import type { EvmActions } from '@nikaru-dev/wallets-core/namespaces/evm';
 
-import { NamespaceBuilder } from '@rango-dev/wallets-core';
+import { NamespaceBuilder } from '@nikaru-dev/wallets-core';
 import {
   type CaipAccount,
   builders as commonBuilders,
-} from '@rango-dev/wallets-core/namespaces/common';
+} from '@nikaru-dev/wallets-core/namespaces/common';
 import {
   builders,
   CAIP_NAMESPACE,
-} from '@rango-dev/wallets-core/namespaces/evm';
-import { CAIP } from '@rango-dev/wallets-core/utils';
+} from '@nikaru-dev/wallets-core/namespaces/evm';
+import { CAIP } from '@nikaru-dev/wallets-core/utils';
 
 import { WALLET_ID } from '../constants.js';
 import { setDerivationPath } from '../state.js';
