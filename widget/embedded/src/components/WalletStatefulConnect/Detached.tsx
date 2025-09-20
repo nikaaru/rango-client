@@ -1,6 +1,6 @@
 import type { PropTypes } from './Detached.types';
-import type { LegacyNamespaceMeta } from '@rango-dev/wallets-core/legacy';
-import type { Namespace } from '@rango-dev/wallets-core/namespaces/common';
+import type { LegacyNamespaceMeta } from '@nikaru-dev/wallets-core/legacy';
+import type { Namespace } from '@nikaru-dev/wallets-core/namespaces/common';
 
 import { i18n } from '@lingui/core';
 import {
@@ -10,8 +10,8 @@ import {
   Image,
   MessageBox,
   WalletImageContainer,
-} from '@rango-dev/ui';
-import { useWallets } from '@rango-dev/wallets-react';
+} from '@nikaru-dev/ui';
+import { useWallets } from '@nikaru-dev/wallets-react';
 import React from 'react';
 
 import { NamespaceUnsupportedItem } from '../NamespaceItem/NamespaceUnsupportedItem';

@@ -1,11 +1,11 @@
-import type { ProviderAPI } from '@rango-dev/wallets-core/namespaces/cosmos';
+import type { ProviderAPI } from '@nikaru-dev/wallets-core/namespaces/cosmos';
 import type { CosmosTransaction, GenericSigner } from 'rango-types';
 
 import {
   dynamicImportWithRefinedError,
   getNetworkInstance,
   Networks,
-} from '@rango-dev/wallets-shared';
+} from '@nikaru-dev/wallets-shared';
 import { SignerError, SignerErrorCode } from 'rango-types';
 
 type CosmosExternalProvider = ProviderAPI;
@@ -37,7 +37,7 @@ export class CustomCosmosSigner implements GenericSigner<CosmosTransaction> {
   }
   async signAndSendTx(tx: CosmosTransaction): Promise<{ hash: string }> {
     const { executeCosmosTransaction } = await dynamicImportWithRefinedError(
-      async () => await import('@rango-dev/signer-cosmos')
+      async () => await import('@nikaru-dev/signer-cosmos')
     );
 
     if (tx.rawTransfer === null) {

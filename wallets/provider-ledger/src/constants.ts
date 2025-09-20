@@ -1,6 +1,6 @@
-import { type ProviderMetadata } from '@rango-dev/wallets-core';
-import { LegacyNetworks } from '@rango-dev/wallets-core/legacy';
-import { Networks } from '@rango-dev/wallets-shared';
+import { type ProviderMetadata } from '@nikaru-dev/wallets-core';
+import { LegacyNetworks } from '@nikaru-dev/wallets-core/legacy';
+import { Networks } from '@nikaru-dev/wallets-shared';
 import { type BlockchainMeta } from 'rango-types';
 
 import getSigners from './signer.js';

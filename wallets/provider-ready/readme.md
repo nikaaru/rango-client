@@ -1,1 +1,1 @@
-# @rango-dev/provider-ready
+# @nikaru-dev/provider-ready

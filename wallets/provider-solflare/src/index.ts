@@ -3,10 +3,10 @@ import type {
   Connect,
   Subscribe,
   WalletInfo,
-} from '@rango-dev/wallets-shared';
+} from '@nikaru-dev/wallets-shared';
 import type { BlockchainMeta, SignerFactory } from 'rango-types';
 
-import { Networks, WalletTypes } from '@rango-dev/wallets-shared';
+import { Networks, WalletTypes } from '@nikaru-dev/wallets-shared';
 import Solflare from '@solflare-wallet/sdk';
 import { solanaBlockchain } from 'rango-types';
 

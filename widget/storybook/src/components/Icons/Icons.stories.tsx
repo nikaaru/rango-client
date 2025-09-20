@@ -1,7 +1,7 @@
-import type { SvgIconProps } from '@rango-dev/ui';
+import type { SvgIconProps } from '@nikaru-dev/ui';
 import type { Meta } from '@storybook/react';
 
-import { AutoThemeIcon, styled, Typography } from '@rango-dev/ui';
+import { AutoThemeIcon, styled, Typography } from '@nikaru-dev/ui';
 import React from 'react';
 
 import { Icons } from '.';

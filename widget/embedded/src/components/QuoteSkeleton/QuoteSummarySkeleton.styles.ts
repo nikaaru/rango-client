@@ -1,4 +1,4 @@
-import { css, styled } from '@rango-dev/ui';
+import { css, styled } from '@nikaru-dev/ui';
 
 export const FlexContent = styled('div', {
   display: 'flex',

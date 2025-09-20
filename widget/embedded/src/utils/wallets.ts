@@ -5,28 +5,28 @@ import type {
   Wallet,
   WalletInfoWithExtra,
 } from '../types';
-import type { Namespace } from '@rango-dev/wallets-core/namespaces/common';
-import type { ExtendedWalletInfo } from '@rango-dev/wallets-react';
+import type { Namespace } from '@nikaru-dev/wallets-core/namespaces/common';
+import type { ExtendedWalletInfo } from '@nikaru-dev/wallets-react';
 import type {
   Network,
   WalletState,
   WalletType,
   WalletTypes,
-} from '@rango-dev/wallets-shared';
+} from '@nikaru-dev/wallets-shared';
 import type { BlockchainMeta, Token, TransactionType } from 'rango-sdk';
 
 import {
   BlockchainCategories,
   WalletState as WalletStatus,
-} from '@rango-dev/ui';
-import { legacyReadAccountAddress as readAccountAddress } from '@rango-dev/wallets-core/legacy';
+} from '@nikaru-dev/ui';
+import { legacyReadAccountAddress as readAccountAddress } from '@nikaru-dev/wallets-core/legacy';
 import {
   detectInstallLink,
   getCosmosExperimentalChainInfo,
   isEvmAddress,
   KEPLR_COMPATIBLE_WALLETS,
   Networks,
-} from '@rango-dev/wallets-shared';
+} from '@nikaru-dev/wallets-shared';
 import BigNumber from 'bignumber.js';
 import { isCosmosBlockchain } from 'rango-types';
 

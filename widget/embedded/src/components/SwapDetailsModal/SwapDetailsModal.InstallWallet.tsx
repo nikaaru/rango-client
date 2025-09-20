@@ -1,9 +1,9 @@
 import type { InstallWalletContentProps } from './SwapDetailsModal.types';
 
 import { i18n } from '@lingui/core';
-import { Button, Divider, Image, MessageBox, WarningIcon } from '@rango-dev/ui';
-import { useWallets } from '@rango-dev/wallets-react';
-import { detectInstallLink } from '@rango-dev/wallets-shared';
+import { Button, Divider, Image, MessageBox, WarningIcon } from '@nikaru-dev/ui';
+import { useWallets } from '@nikaru-dev/wallets-react';
+import { detectInstallLink } from '@nikaru-dev/wallets-shared';
 import React from 'react';
 
 import {

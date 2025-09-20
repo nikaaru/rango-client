@@ -1,7 +1,7 @@
-import type { FlagPropTypes } from '@rango-dev/ui';
+import type { FlagPropTypes } from '@nikaru-dev/ui';
 import type { Meta } from '@storybook/react';
 
-import { English, styled, Typography } from '@rango-dev/ui';
+import { English, styled, Typography } from '@nikaru-dev/ui';
 import React from 'react';
 
 import { Flags } from '.';

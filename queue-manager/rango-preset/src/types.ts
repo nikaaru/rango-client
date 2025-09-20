@@ -3,15 +3,15 @@ import type {
   QueueContext,
   QueueDef,
   QueueStorage,
-} from '@rango-dev/queue-manager-core';
-import type { LegacyConnectResult as ConnectResult } from '@rango-dev/wallets-core/legacy';
+} from '@nikaru-dev/queue-manager-core';
+import type { LegacyConnectResult as ConnectResult } from '@nikaru-dev/wallets-core/legacy';
 import type {
   Meta,
   Network,
   Providers,
   WalletState,
   WalletType,
-} from '@rango-dev/wallets-shared';
+} from '@nikaru-dev/wallets-shared';
 import type { Transaction } from 'rango-sdk';
 import type {
   APIErrorCode,

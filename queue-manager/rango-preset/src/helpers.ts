@@ -19,14 +19,14 @@ import type {
   QueueName,
   QueueType,
   SetStorage,
-} from '@rango-dev/queue-manager-core';
+} from '@nikaru-dev/queue-manager-core';
 import type {
   Meta,
   Network,
   Providers,
   WalletState,
   WalletType,
-} from '@rango-dev/wallets-shared';
+} from '@nikaru-dev/wallets-shared';
 import type {
   CreateTransactionResponse,
   EvmBlockchainMeta,
@@ -41,13 +41,13 @@ import type {
   StepStatus,
 } from 'rango-types';
 
-import { warn } from '@rango-dev/logging-core';
-import { Status } from '@rango-dev/queue-manager-core';
-import { legacyReadAccountAddress as readAccountAddress } from '@rango-dev/wallets-core/legacy';
+import { warn } from '@nikaru-dev/logging-core';
+import { Status } from '@nikaru-dev/queue-manager-core';
+import { legacyReadAccountAddress as readAccountAddress } from '@nikaru-dev/wallets-core/legacy';
 import {
   getBlockChainNameFromId,
   getEvmProvider,
-} from '@rango-dev/wallets-shared';
+} from '@nikaru-dev/wallets-shared';
 import BigNumber from 'bignumber.js';
 import {
   PendingSwapNetworkStatus,

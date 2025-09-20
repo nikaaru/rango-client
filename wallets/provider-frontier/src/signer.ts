@@ -1,12 +1,12 @@
-import type { LegacyNetworkProviderMap } from '@rango-dev/wallets-core/legacy';
+import type { LegacyNetworkProviderMap } from '@nikaru-dev/wallets-core/legacy';
 import type { SignerFactory } from 'rango-types';
 
-import { DefaultSolanaSigner } from '@rango-dev/signer-solana';
+import { DefaultSolanaSigner } from '@nikaru-dev/signer-solana';
 import {
   dynamicImportWithRefinedError,
   getNetworkInstance,
   Networks,
-} from '@rango-dev/wallets-shared';
+} from '@nikaru-dev/wallets-shared';
 import { DefaultSignerFactory, TransactionType as TxType } from 'rango-types';
 
 export default async function getSigners(
@@ -16,7 +16,7 @@ export default async function getSigners(
   const solProvider = getNetworkInstance(provider, Networks.SOLANA);
   const signers = new DefaultSignerFactory();
   const { DefaultEvmSigner } = await dynamicImportWithRefinedError(
-    async () => await import('@rango-dev/signer-evm')
+    async () => await import('@nikaru-dev/signer-evm')
   );
   signers.registerSigner(TxType.EVM, new DefaultEvmSigner(ethProvider));
   signers.registerSigner(TxType.SOLANA, new DefaultSolanaSigner(solProvider));

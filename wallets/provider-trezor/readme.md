@@ -1,1 +1,1 @@
-# @rango-dev/provider-trezor
+# @nikaru-dev/provider-trezor

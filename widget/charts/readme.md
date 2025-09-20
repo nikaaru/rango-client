@@ -1,4 +1,4 @@
-# @rango-dev/charts
+# @nikaru-dev/charts
 
 Rango charts
 

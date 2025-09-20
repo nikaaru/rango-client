@@ -1,1 +1,1 @@
-# @rango-dev/queue-manager-demo
+# @nikaru-dev/queue-manager-demo

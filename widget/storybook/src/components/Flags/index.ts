@@ -35,7 +35,7 @@ import {
   Turkish,
   Ukrainian,
   Vietnamese,
-} from '@rango-dev/ui';
+} from '@nikaru-dev/ui';
 
 export const Flags = {
   English,

@@ -1,4 +1,4 @@
-import { css, darkTheme, styled } from '@rango-dev/ui';
+import { css, darkTheme, styled } from '@nikaru-dev/ui';
 
 export const wordWrap = css({
   wordWrap: 'break-word',

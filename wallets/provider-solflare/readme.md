@@ -1,1 +1,1 @@
-# @rango-dev/provider-solflare
+# @nikaru-dev/provider-solflare

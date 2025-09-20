@@ -1,1 +1,1 @@
-# @rango-dev/provider-exodus
+# @nikaru-dev/provider-exodus

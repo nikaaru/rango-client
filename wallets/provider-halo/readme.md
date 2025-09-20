@@ -1,1 +1,1 @@
-# @rango-dev/provider-halo
+# @nikaru-dev/provider-halo

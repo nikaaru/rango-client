@@ -1,7 +1,7 @@
 import type { SignerFactory } from 'rango-types';
 
-import { getInstanceOrThrow } from '@rango-dev/wallets-core/namespaces/sui';
-import { dynamicImportWithRefinedError } from '@rango-dev/wallets-shared';
+import { getInstanceOrThrow } from '@nikaru-dev/wallets-core/namespaces/sui';
+import { dynamicImportWithRefinedError } from '@nikaru-dev/wallets-shared';
 import { DefaultSignerFactory, TransactionType as TxType } from 'rango-types';
 
 import { WALLET_NAME_IN_WALLET_STANDARD } from './constants.js';
@@ -10,7 +10,7 @@ export default async function getSigners(): Promise<SignerFactory> {
   const suiWalletProvider = getInstanceOrThrow(WALLET_NAME_IN_WALLET_STANDARD);
 
   const { DefaultSuiSigner } = await dynamicImportWithRefinedError(
-    async () => await import('@rango-dev/signer-sui')
+    async () => await import('@nikaru-dev/signer-sui')
   );
   const signers = new DefaultSignerFactory();
   signers.registerSigner(TxType.SUI, new DefaultSuiSigner(suiWalletProvider));

@@ -1,1 +1,1 @@
-# @rango-dev/provider-leap-cosmos
+# @nikaru-dev/provider-leap-cosmos

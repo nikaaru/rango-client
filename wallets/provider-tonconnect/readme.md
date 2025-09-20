@@ -1,3 +1,3 @@
-# @rango-dev/provider-tonconnect
+# @nikaru-dev/provider-tonconnect
 
 TonConnect

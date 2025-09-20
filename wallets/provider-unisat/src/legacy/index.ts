@@ -1,7 +1,7 @@
-import type { LegacyProviderInterface } from '@rango-dev/wallets-core/legacy';
-import type { WalletInfo } from '@rango-dev/wallets-shared';
+import type { LegacyProviderInterface } from '@nikaru-dev/wallets-core/legacy';
+import type { WalletInfo } from '@nikaru-dev/wallets-shared';
 
-import { LegacyNetworks as Networks } from '@rango-dev/wallets-core/legacy';
+import { LegacyNetworks as Networks } from '@nikaru-dev/wallets-core/legacy';
 import {
   type BlockchainMeta,
   type SignerFactory,

@@ -15,7 +15,7 @@ import {
   Skeleton,
   Typography,
   VirtualizedList,
-} from '@rango-dev/ui';
+} from '@nikaru-dev/ui';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 

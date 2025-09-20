@@ -1,15 +1,15 @@
-import type { EvmActions } from '@rango-dev/wallets-core/namespaces/evm';
+import type { EvmActions } from '@nikaru-dev/wallets-core/namespaces/evm';
 
-import { NamespaceBuilder } from '@rango-dev/wallets-core';
+import { NamespaceBuilder } from '@nikaru-dev/wallets-core';
 import {
   builders as commonBuilders,
   standardizeAndThrowError,
-} from '@rango-dev/wallets-core/namespaces/common';
+} from '@nikaru-dev/wallets-core/namespaces/common';
 import {
   actions,
   builders,
   hooks,
-} from '@rango-dev/wallets-core/namespaces/evm';
+} from '@nikaru-dev/wallets-core/namespaces/evm';
 
 import { WALLET_ID } from '../constants.js';
 import { evmPhantom } from '../utils.js';
