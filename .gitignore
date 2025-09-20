@@ -3,6 +3,8 @@ dist/
 lerna-debug.log
 .vercel
 
+.cursor
+
 # i18n
 translations/**/*.ts
 
