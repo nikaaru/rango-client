@@ -1,6 +1,6 @@
 {
   "name": "@nikaru-dev/provider-braavos",
-  "version": "0.44.1-next.3",
+  "version": "0.22.0",
   "license": "MIT",
   "type": "module",
   "source": "./src/index.ts",
@@ -21,8 +21,8 @@
     "lint": "eslint \"**/*.{ts,tsx}\""
   },
   "dependencies": {
-    "@nikaru-dev/signer-starknet": "^0.40.0",
-    "@nikaru-dev/wallets-shared": "^0.50.1-next.3",
+    "@nikaru-dev/signer-starknet": "^0.28.0",
+    "@nikaru-dev/wallets-shared": "^0.28.0",
     "rango-types": "^0.1.89"
   },
   "publishConfig": {
