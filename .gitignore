@@ -3,11 +3,9 @@ dist/
 lerna-debug.log
 .vercel
 
-.cursor
-
 # i18n
 translations/**/*.ts
-
+.cursor
 # dependencies
 node_modules
 .pnp

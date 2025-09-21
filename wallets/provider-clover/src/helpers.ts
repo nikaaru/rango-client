@@ -1,7 +1,4 @@
-import type {
-  Network,
-  ProviderConnectResult,
-} from '@nikaru-dev/wallets-shared';
+import type { Network, ProviderConnectResult } from '@nikaru-dev/wallets-shared';
 
 import { Networks } from '@nikaru-dev/wallets-shared';
 

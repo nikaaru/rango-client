@@ -1,6 +1,6 @@
 {
   "name": "rango-client",
-  "version": "1.0.0",
+  "version": "0.45.0",
   "private": true,
   "engines": {
     "node": ">=20",
@@ -51,7 +51,8 @@
     "i18n": "yarn i18n:extract && yarn i18n:compile",
     "test": "vitest",
     "test:coverage": "vitest run --coverage",
-    "commitlint": "commitlint --edit"
+    "commitlint": "commitlint --edit",
+    "postinstall": "patch-package && yarn workspace @nikaru-dev/signer-cosmos run patch-package"
   },
   "dependencies": {
     "husky": "^8.0.3",

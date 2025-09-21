@@ -1,7 +1,7 @@
 import type { StarknetProviderAPI } from './helpers.js';
 import type { SignerFactory } from 'rango-types';
 
-import { DefaultStarknetSigner } from '@rango-dev/signer-starknet';
+import { DefaultStarknetSigner } from '@nikaru-dev/signer-starknet';
 import { DefaultSignerFactory, TransactionType as TxType } from 'rango-types';
 
 export default async function getSigners(

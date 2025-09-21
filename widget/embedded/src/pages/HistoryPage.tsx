@@ -171,7 +171,7 @@ export function HistoryPage() {
   return (
     <Layout
       header={{
-        title: i18n.t('test widget version3'),
+        title: i18n.t('History'),
         suffix: (
           <SuffixContainer>
             <Button
